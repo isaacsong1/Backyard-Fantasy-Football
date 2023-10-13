@@ -1,454 +1,457 @@
 {
-    "players": [
-      {
-        "id": 1,
-        "name": "Billy Jean Blackwood",
-        "nickname": "Crazy Legs",
-        "image": "https://static.wikia.nocookie.net/backyardfootballgame/images/8/86/Billy_Jean_Blackwood.png/revision/latest?cb=20211016152429",
-        "team": "",
-        "attribute": {
-          "Catching": 2,
-          "Running": 4,
-          "Kicking": 2
-        },
-        "team_img": "",
-        "past_PPR": 7.9,
-        "PPR_projected": 12.1
+
+  "players": [
+    {
+      "id": 1,
+      "name": "Billy Jean Blackwood",
+      "nickname": "Crazy Legs",
+      "image": "https://static.wikia.nocookie.net/backyardfootballgame/images/8/86/Billy_Jean_Blackwood.png/revision/latest?cb=20211016152429",
+      "team": "",
+      "attribute": {
+        "Catching": 2,
+        "Running": 4,
+        "Kicking": 2
       },
-      {
-        "id": 2,
-        "name": "Lisa Crocket",
-        "nickname": "Mad Dog",
-        "image": "https://static.wikia.nocookie.net/backyardfootballgame/images/3/30/Lisa_Crocket.png/revision/latest?cb=20211011192902",
-        "team": "",
-        "attribute": {
-          "Catching": 3,
-          "Running": 3,
-          "Kicking": 3
-        },
-        "team_img": "",
-        "past_PPR": 14.6,
-        "PPR_projected": 11.4
+      "team_img": "",
+      "past_PPR": 7.9,
+      "PPR_projected": 12.1
+    },
+    {
+      "id": 2,
+      "name": "Lisa Crocket",
+      "nickname": "Mad Dog",
+      "image": "https://static.wikia.nocookie.net/backyardfootballgame/images/3/30/Lisa_Crocket.png/revision/latest?cb=20211011192902",
+      "team": "",
+      "attribute": {
+        "Catching": 3,
+        "Running": 3,
+        "Kicking": 3
       },
-      {
-        "id": 3,
-        "name": "Angela Delvecchio",
-        "nickname": "Sugar Pop",
-        "image": "https://static.wikia.nocookie.net/backyardfootballgame/images/2/29/Angela_Delvecchio.png/revision/latest?cb=20211011233541",
-        "team": "",
-        "attribute": {
-          "Catching": 1,
-          "Running": 1,
-          "Kicking": 3
-        },
-        "team_img": "",
-        "past_PPR": 6.7,
-        "PPR_projected": 6.4
+      "team_img": "",
+      "past_PPR": 14.6,
+      "PPR_projected": 11.4
+    },
+    {
+      "id": 3,
+      "name": "Angela Delvecchio",
+      "nickname": "Sugar Pop",
+      "image": "https://static.wikia.nocookie.net/backyardfootballgame/images/2/29/Angela_Delvecchio.png/revision/latest?cb=20211011233541",
+      "team": "",
+      "attribute": {
+        "Catching": 1,
+        "Running": 1,
+        "Kicking": 3
       },
-      {
-        "id": 4,
-        "name": "Tony Delvecchio",
-        "nickname": "Vec",
-        "image": "https://static.wikia.nocookie.net/backyardfootballgame/images/0/01/Tony_Delvecchio.png/revision/latest?cb=20211012021747",
-        "team": "",
-        "attribute": {
-          "Catching": 2,
-          "Running": 2,
-          "Kicking": 2
-        },
-        "team_img": "",
-        "past_PPR": 9.8,
-        "PPR_projected": 9.0
+      "team_img": "",
+      "past_PPR": 6.7,
+      "PPR_projected": 6.4
+    },
+    {
+      "id": 4,
+      "name": "Tony Delvecchio",
+      "nickname": "Vec",
+      "image": "https://static.wikia.nocookie.net/backyardfootballgame/images/0/01/Tony_Delvecchio.png/revision/latest?cb=20211012021747",
+      "team": "",
+      "attribute": {
+        "Catching": 2,
+        "Running": 2,
+        "Kicking": 2
       },
-      {
-        "id": 5,
-        "name": "Ronny Dobs",
-        "nickname": "Spud",
-        "image": "https://static.wikia.nocookie.net/backyardfootballgame/images/8/83/Ronny_Dobbs.png/revision/latest?cb=20211013030622",
-        "team": "",
-        "attribute": {
-          "Catching": 1,
-          "Running": 2,
-          "Kicking": 1
-        },
-        "team_img": "",
-        "past_PPR": 5.6,
-        "PPR_projected": 7.9
+      "team_img": "",
+      "past_PPR": 9.8,
+      "PPR_projected": 9.0
+    },
+    {
+      "id": 5,
+      "name": "Ronny Dobs",
+      "nickname": "Spud",
+      "image": "https://static.wikia.nocookie.net/backyardfootballgame/images/8/83/Ronny_Dobbs.png/revision/latest?cb=20211013030622",
+      "team": "",
+      "attribute": {
+        "Catching": 1,
+        "Running": 2,
+        "Kicking": 1
       },
-      {
-        "id": 6,
-        "name": "Sally Dobbs",
-        "nickname": "The Boss",
-        "image": "",
-        "team": "",
-        "attribute": {
-          "Catching": 4,
-          "Running": 3,
-          "Kicking": 2
-        },
-        "team_img": "",
-        "past_PPR": 11.8,
-        "PPR_projected": 13.5
+      "team_img": "",
+      "past_PPR": 5.6,
+      "PPR_projected": 7.9
+    },
+    {
+      "id": 6,
+      "name": "Sally Dobbs",
+      "nickname": "The Boss",
+      "image": "",
+      "team": "",
+      "attribute": {
+        "Catching": 4,
+        "Running": 3,
+        "Kicking": 2
       },
-      {
-        "id": 7,
-        "name": "Marky Dobbs",
-        "nickname": "Cootie",
-        "image": "",
-        "team": "",
-        "attribute": {
-          "Catching": 3,
-          "Running": 3,
-          "Kicking": 2
-        },
-        "team_img": "",
-        "past_PPR": 11.5,
-        "PPR_projected": 10.4
+      "team_img": "",
+      "past_PPR": 11.8,
+      "PPR_projected": 13.5
+    },
+    {
+      "id": 7,
+      "name": "Marky Dobbs",
+      "nickname": "Cootie",
+      "image": "",
+      "team": "",
+      "attribute": {
+        "Catching": 3,
+        "Running": 3,
+        "Kicking": 2
       },
-      {
-        "id": 8,
-        "name": "Kimmy Eckman",
-        "nickname": "Twinkie Toes",
-        "image": "https://static.wikia.nocookie.net/backyardfootballgame/images/3/3d/Kimmy_Eckman.png/revision/latest?cb=20230823062743",
-        "team": "",
-        "attribute": {
-          "Catching": 1,
-          "Running": 1,
-          "Kicking": 3
-        },
-        "team_img": "",
-        "past_PPR": 8.6,
-        "PPR_projected": 8.4
+      "team_img": "",
+      "past_PPR": 11.5,
+      "PPR_projected": 10.4
+    },
+    {
+      "id": 8,
+      "name": "Kimmy Eckman",
+      "nickname": "Twinkie Toes",
+      "image": "https://static.wikia.nocookie.net/backyardfootballgame/images/3/3d/Kimmy_Eckman.png/revision/latest?cb=20230823062743",
+      "team": "",
+      "attribute": {
+        "Catching": 1,
+        "Running": 1,
+        "Kicking": 3
       },
-      {
-        "id": 9,
-        "name": "Annie Frazier",
-        "nickname": "Flipper",
-        "image": "https://static.wikia.nocookie.net/backyardfootballgame/images/7/77/Annie_Frazier.png/revision/latest?cb=20121117173625",
-        "team": "",
-        "attribute": {
-          "Catching": 3,
-          "Running": 3,
-          "Kicking": 4
-        },
-        "team_img": "",
-        "past_PPR": 12.1,
-        "PPR_projected": 9.7
+      "team_img": "",
+      "past_PPR": 8.6,
+      "PPR_projected": 8.4
+    },
+    {
+      "id": 9,
+      "name": "Annie Frazier",
+      "nickname": "Flipper",
+      "image": "https://static.wikia.nocookie.net/backyardfootballgame/images/7/77/Annie_Frazier.png/revision/latest?cb=20121117173625",
+      "team": "",
+      "attribute": {
+        "Catching": 3,
+        "Running": 3,
+        "Kicking": 4
       },
-      {
-        "id": 10,
-        "name": "Jorge Garcia",
-        "nickname": "Bonkers",
-        "image": "",
-        "team": "",
-        "attribute": {
-          "Catching": 2,
-          "Running": 2,
-          "Kicking": 3
-        },
-        "team_img": "",
-        "past_PPR": 8.3,
-        "PPR_projected": 10.0
+      "team_img": "",
+      "past_PPR": 12.1,
+      "PPR_projected": 9.7
+    },
+    {
+      "id": 10,
+      "name": "Jorge Garcia",
+      "nickname": "Bonkers",
+      "image": "",
+      "team": "",
+      "attribute": {
+        "Catching": 2,
+        "Running": 2,
+        "Kicking": 3
       },
-      {
-        "id": 11,
-        "name": "Gretchen Hasselhoff",
-        "nickname": "Jabberjaw",
-        "image": "https://static.wikia.nocookie.net/backyardfootballgame/images/5/57/Gretchen_Hasselhoff.png/revision/latest?cb=20230921001151",
-        "team": "",
-        "attribute": {
-          "Catching": 2,
-          "Running": 3,
-          "Kicking": 1
-        },
-        "team_img": "",
-        "past_PPR": 7.7,
-        "PPR_projected": 6.9
+      "team_img": "",
+      "past_PPR": 8.3,
+      "PPR_projected": 10.0
+    },
+    {
+      "id": 11,
+      "name": "Gretchen Hasselhoff",
+      "nickname": "Jabberjaw",
+      "image": "https://static.wikia.nocookie.net/backyardfootballgame/images/5/57/Gretchen_Hasselhoff.png/revision/latest?cb=20230921001151",
+      "team": "",
+      "attribute": {
+        "Catching": 2,
+        "Running": 3,
+        "Kicking": 1
       },
-      {
-        "id": 12,
-        "name": "Ricky Johnson",
-        "nickname": "Fella",
-        "image": "",
-        "team": "",
-        "attribute": {
-          "Catching": 2,
-          "Running": 3,
-          "Kicking": 4
-        },
-        "team_img": "",
-        "past_PPR": 8.5,
-        "PPR_projected": 9.9
+      "team_img": "",
+      "past_PPR": 7.7,
+      "PPR_projected": 6.9
+    },
+    {
+      "id": 12,
+      "name": "Ricky Johnson",
+      "nickname": "Fella",
+      "image": "",
+      "team": "",
+      "attribute": {
+        "Catching": 2,
+        "Running": 3,
+        "Kicking": 4
       },
-      {
-        "id": 13,
-        "name": "Kenny Kawaguchi",
-        "nickname": "K-man",
-        "image": "",
-        "team": "",
-        "attribute": {
-          "Catching": 3,
-          "Running": 3,
-          "Kicking": 3
-        },
-        "team_img": "",
-        "past_PPR": 10.6,
-        "PPR_projected": 11.3
+      "team_img": "",
+      "past_PPR": 8.5,
+      "PPR_projected": 9.9
+    },
+    {
+      "id": 13,
+      "name": "Kenny Kawaguchi",
+      "nickname": "K-man",
+      "image": "",
+      "team": "",
+      "attribute": {
+        "Catching": 3,
+        "Running": 3,
+        "Kicking": 3
       },
-      {
-        "id": 14,
-        "name": "Vicki Kawaguchi",
-        "nickname": "Swan",
-        "image": "https://static.wikia.nocookie.net/backyardfootballgame/images/d/da/Vicki_Kawaguchi.png/revision/latest?cb=20230823062800",
-        "team": "",
-        "attribute": {
-          "Catching": 4,
-          "Running": 3,
-          "Kicking": 3
-        },
-        "team_img": "",
-        "past_PPR": 17.1,
-        "PPR_projected": 15.7
+      "team_img": "",
+      "past_PPR": 10.6,
+      "PPR_projected": 11.3
+    },
+    {
+      "id": 14,
+      "name": "Vicki Kawaguchi",
+      "nickname": "Swan",
+      "image": "https://static.wikia.nocookie.net/backyardfootballgame/images/d/da/Vicki_Kawaguchi.png/revision/latest?cb=20230823062800",
+      "team": "",
+      "attribute": {
+        "Catching": 4,
+        "Running": 3,
+        "Kicking": 3
       },
-      {
-        "id": 15,
-        "name": "Achmed Khan",
-        "nickname": "Axeman",
-        "image": "",
-        "team": "",
-        "attribute": {
-          "Catching": 2,
-          "Running": 4,
-          "Kicking": 3
-        },
-        "team_img": "",
-        "past_PPR": 12.6,
-        "PPR_projected": 13.2
+      "team_img": "",
+      "past_PPR": 17.1,
+      "PPR_projected": 15.7
+    },
+    {
+      "id": 15,
+      "name": "Achmed Khan",
+      "nickname": "Axeman",
+      "image": "",
+      "team": "",
+      "attribute": {
+        "Catching": 2,
+        "Running": 4,
+        "Kicking": 3
       },
-      {
-        "id": 16,
-        "name": "Amir Khan",
-        "nickname": "Sticks",
-        "image": "",
-        "team": "",
-        "attribute": {
-          "Catching": 2,
-          "Running": 2,
-          "Kicking": 3
-        },
-        "team_img": "",
-        "past_PPR": 10.9,
-        "PPR_projected": 9.7
+      "team_img": "",
+      "past_PPR": 12.6,
+      "PPR_projected": 13.2
+    },
+    {
+      "id": 16,
+      "name": "Amir Khan",
+      "nickname": "Sticks",
+      "image": "",
+      "team": "",
+      "attribute": {
+        "Catching": 2,
+        "Running": 2,
+        "Kicking": 3
       },
-      {
-        "id": 17,
-        "name": "Luanne Lui",
-        "nickname": "Lulu",
-        "image": "https://static.wikia.nocookie.net/backyardfootballgame/images/d/da/Luanne_Lui.png/revision/latest?cb=20230819053043",
-        "team": "",
-        "attribute": {
-          "Catching": 2,
-          "Running": 4,
-          "Kicking": 3
-        },
-        "team_img": "",
-        "past_PPR": 15.6,
-        "PPR_projected": 13.7
+      "team_img": "",
+      "past_PPR": 10.9,
+      "PPR_projected": 9.7
+    },
+    {
+      "id": 17,
+      "name": "Luanne Lui",
+      "nickname": "Lulu",
+      "image": "https://static.wikia.nocookie.net/backyardfootballgame/images/d/da/Luanne_Lui.png/revision/latest?cb=20230819053043",
+      "team": "",
+      "attribute": {
+        "Catching": 2,
+        "Running": 4,
+        "Kicking": 3
       },
-      {
-        "id": 18,
-        "name": "Maria Luna",
-        "nickname": "Pinky",
-        "image": "https://static.wikia.nocookie.net/backyardfootballgame/images/6/60/Maria_Luna.png/revision/latest?cb=20230819053029",
-        "team": "",
-        "attribute": {
-          "Catching": 4,
-          "Running": 2,
-          "Kicking": 3
-        },
-        "team_img": "",
-        "past_PPR": 18.9,
-        "PPR_projected": 14.1
+      "team_img": "",
+      "past_PPR": 15.6,
+      "PPR_projected": 13.7
+    },
+    {
+      "id": 18,
+      "name": "Maria Luna",
+      "nickname": "Pinky",
+      "image": "https://static.wikia.nocookie.net/backyardfootballgame/images/6/60/Maria_Luna.png/revision/latest?cb=20230819053029",
+      "team": "",
+      "attribute": {
+        "Catching": 4,
+        "Running": 2,
+        "Kicking": 3
       },
-      {
-        "id": 19,
-        "name": "Stephanie Morgan",
-        "nickname": "Bubbles",
-        "image": "",
-        "team": "",
-        "attribute": {
-          "Catching": 2,
-          "Running": 2,
-          "Kicking": 2
-        },
-        "team_img": "",
-        "past_PPR": 8.7,
-        "PPR_projected": 7.4
+      "team_img": "",
+      "past_PPR": 18.9,
+      "PPR_projected": 14.1
+    },
+    {
+      "id": 19,
+      "name": "Stephanie Morgan",
+      "nickname": "Bubbles",
+      "image": "",
+      "team": "",
+      "attribute": {
+        "Catching": 2,
+        "Running": 2,
+        "Kicking": 2
       },
-      {
-        "id": 20,
-        "name": "Dimitri Petrovich",
-        "nickname": "Paste",
-        "image": "",
-        "team": "",
-        "attribute": {
-          "Catching": 4,
-          "Running": 2,
-          "Kicking": 4
-        },
-        "team_img": "",
-        "past_PPR": 17.5,
-        "PPR_projected": 12.3
+      "team_img": "",
+      "past_PPR": 8.7,
+      "PPR_projected": 7.4
+    },
+    {
+      "id": 20,
+      "name": "Dimitri Petrovich",
+      "nickname": "Paste",
+      "image": "",
+      "team": "",
+      "attribute": {
+        "Catching": 4,
+        "Running": 2,
+        "Kicking": 4
       },
-      {
-        "id": 21,
-        "name": "Kiesha Phillips",
-        "nickname": "Flash",
-        "image": "",
-        "team": "",
-        "attribute": {
-          "Catching": 1,
-          "Running": 5,
-          "Kicking": 2
-        },
-        "team_img": "",
-        "past_PPR": 20.6,
-        "PPR_projected": 18.5
+      "team_img": "",
+      "past_PPR": 17.5,
+      "PPR_projected": 12.3
+    },
+    {
+      "id": 21,
+      "name": "Kiesha Phillips",
+      "nickname": "Flash",
+      "image": "",
+      "team": "",
+      "attribute": {
+        "Catching": 1,
+        "Running": 5,
+        "Kicking": 2
       },
-      {
-        "id": 22,
-        "name": "Dante Robinson",
-        "nickname": "Stretch",
-        "image": "",
-        "team": "",
-        "attribute": {
-          "Catching": 4,
-          "Running": 2,
-          "Kicking": 2
-        },
-        "team_img": "",
-        "past_PPR": 17.2,
-        "PPR_projected": 16.6
+      "team_img": "",
+      "past_PPR": 20.6,
+      "PPR_projected": 18.5
+    },
+    {
+      "id": 22,
+      "name": "Dante Robinson",
+      "nickname": "Stretch",
+      "image": "",
+      "team": "",
+      "attribute": {
+        "Catching": 4,
+        "Running": 2,
+        "Kicking": 2
       },
-      {
-        "id": 23,
-        "name": "Pablo Sanchez",
-        "nickname": "Secret Weapon",
-        "image": "",
-        "team": "",
-        "attribute": {
-          "Catching": 5,
-          "Running": 5,
-          "Kicking": 1
-        },
-        "team_img": "",
-        "past_PPR": 21.4,
-        "PPR_projected": 19.6
+      "team_img": "",
+      "past_PPR": 17.2,
+      "PPR_projected": 16.6
+    },
+    {
+      "id": 23,
+      "name": "Pablo Sanchez",
+      "nickname": "Secret Weapon",
+      "image": "",
+      "team": "",
+      "attribute": {
+        "Catching": 5,
+        "Running": 5,
+        "Kicking": 1
       },
-      {
-        "id": 24,
-        "name": "Jocinda Smith",
-        "nickname": "MVP",
-        "image": "",
-        "team": "",
-        "attribute": {
-          "Catching": 4,
-          "Running": 4,
-          "Kicking": 3
-        },
-        "team_img": "",
-        "past_PPR": 21.9,
-        "PPR_projected": 19.4
+      "team_img": "",
+      "past_PPR": 21.4,
+      "PPR_projected": 19.6
+    },
+    {
+      "id": 24,
+      "name": "Jocinda Smith",
+      "nickname": "MVP",
+      "image": "",
+      "team": "",
+      "attribute": {
+        "Catching": 4,
+        "Running": 4,
+        "Kicking": 3
       },
-      {
-        "id": 25,
-        "name": "Ernie Steele",
-        "nickname": "Funnybones",
-        "image": "https://static.wikia.nocookie.net/backyardfootballgame/images/2/21/Ernie_Steele.png/revision/latest?cb=20211015035645",
-        "team": "",
-        "attribute": {
-          "Catching": 4,
-          "Running": 2,
-          "Kicking": 2
-        },
-        "team_img": "",
-        "past_PPR": 16.2,
-        "PPR_projected": 14.7
+      "team_img": "",
+      "past_PPR": 21.9,
+      "PPR_projected": 19.4
+    },
+    {
+      "id": 25,
+      "name": "Ernie Steele",
+      "nickname": "Funnybones",
+      "image": "https://static.wikia.nocookie.net/backyardfootballgame/images/2/21/Ernie_Steele.png/revision/latest?cb=20211015035645",
+      "team": "",
+      "attribute": {
+        "Catching": 4,
+        "Running": 2,
+        "Kicking": 2
       },
-      {
-        "id": 26,
-        "name": "Mikey Thomas",
-        "nickname": "Nugget",
-        "image": "",
-        "team": "",
-        "attribute": {
-          "Catching": 1,
-          "Running": 1,
-          "Kicking": 3
-        },
-        "team_img": "",
-        "past_PPR": 6.7,
-        "PPR_projected": 8.4
+      "team_img": "",
+      "past_PPR": 16.2,
+      "PPR_projected": 14.7
+    },
+    {
+      "id": 26,
+      "name": "Mikey Thomas",
+      "nickname": "Nugget",
+      "image": "",
+      "team": "",
+      "attribute": {
+        "Catching": 1,
+        "Running": 1,
+        "Kicking": 3
       },
-      {
-        "id": 27,
-        "name": "Ashley Webber",
-        "nickname": "Little Smokey",
-        "image": "",
-        "team": "",
-        "attribute": {
-          "Catching": 2,
-          "Running": 2,
-          "Kicking": 2
-        },
-        "team_img": "",
-        "past_PPR": 10.0,
-        "PPR_projected": 10.0
+      "team_img": "",
+      "past_PPR": 6.7,
+      "PPR_projected": 8.4
+    },
+    {
+      "id": 27,
+      "name": "Ashley Webber",
+      "nickname": "Little Smokey",
+      "image": "",
+      "team": "",
+      "attribute": {
+        "Catching": 2,
+        "Running": 2,
+        "Kicking": 2
       },
-      {
-        "id": 28,
-        "name": "Sidney Webber",
-        "nickname": "Little Smokey",
-        "image": "",
-        "team": "",
-        "attribute": {
-          "Catching": 2,
-          "Running": 2,
-          "Kicking": 2
-        },
-        "team_img": "",
-        "past_PPR": 10.5,
-        "PPR_projected": 10.0
+      "team_img": "",
+      "past_PPR": 10.0,
+      "PPR_projected": 10.0
+    },
+    {
+      "id": 28,
+      "name": "Sidney Webber",
+      "nickname": "Little Smokey",
+      "image": "",
+      "team": "",
+      "attribute": {
+        "Catching": 2,
+        "Running": 2,
+        "Kicking": 2
       },
-      {
-        "id": 29,
-        "name": "Pete Wheelie",
-        "nickname": "Wheelie",
-        "image": "",
-        "team": "",
-        "attribute": {
-          "Catching": 3,
-          "Running": 4,
-          "Kicking": 1
-        },
-        "team_img": "",
-        "past_PPR": 13.5,
-        "PPR_projected": 9.7
+      "team_img": "",
+      "past_PPR": 10.5,
+      "PPR_projected": 10.0
+    },
+    {
+      "id": 29,
+      "name": "Pete Wheelie",
+      "nickname": "Wheelie",
+      "image": "",
+      "team": "",
+      "attribute": {
+        "Catching": 3,
+        "Running": 4,
+        "Kicking": 1
       },
-      {
-        "id": 30,
-        "name": "Reese Worthington",
-        "nickname": "Big Toe",
-        "image": "",
-        "team": "",
-        "attribute": {
-          "Catching": 2,
-          "Running": 3,
-          "Kicking": 5
-        },
-        "team_img": "",
-        "past_PPR": 9.7,
-        "PPR_projected": 11.5
-      }
-    ]
-  } 
+      "team_img": "",
+      "past_PPR": 13.5,
+      "PPR_projected": 9.7
+    },
+    {
+      "id": 30,
+      "name": "Reese Worthington",
+      "nickname": "Big Toe",
+      "image": "",
+      "team": "",
+      "attribute": {
+        "Catching": 2,
+        "Running": 3,
+        "Kicking": 5
+      },
+      "team_img": "",
+      "past_PPR": 9.7,
+      "PPR_projected": 11.5
+    }
+  ]
+} 
+
+   
