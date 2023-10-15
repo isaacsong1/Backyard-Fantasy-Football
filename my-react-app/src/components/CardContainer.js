@@ -1,20 +1,25 @@
-import React, {useState, useEffect} from "react"
+import React from "react"
 import Card from "./Card"
-const URL = "http://localhost:3000/players"
 
-function CardContainer()  {
-  const [players, setPlayers] = useState([])
 
-  useEffect(() => {
-    fetch(URL)
-    .then(res => res.json())
-    .then(setPlayers)
-    .catch(err => alert('error'))
-  }, [])
+function CardContainer({players, addToRoster, handleSort})  {
+ 
   return (
     <div>
-      <h1>Football Players</h1>
-     { players.map(player => <Card key={player.id} {...player}/>)}
+      <h3>Football Players</h3>
+      <select>
+        <option>QB</option>
+        <option>RB</option>
+        <option>WR</option>
+        <option>K</option>
+      </select>
+      <select onChange={handleSort}>
+        <option value="highestPPR">Highest PPR</option>
+        <option value="lowestPPR">Lowest PPR</option>
+      </select>
+      <ul id="playerTable">
+     { players.map(player => <Card key={player.id} player={player} handleRoster={addToRoster}/>)}
+     </ul>
     </div>
   )
 }
