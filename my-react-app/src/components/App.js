@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import Header from "./Header";
 import CardContainer from "./CardContainer";
 import YourTeam from "./YourTeam";
+import NavBar from "./NavBar";
 const URL = "http://localhost:3000/players"
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
   return (
     <div className="App">
      <Header /> 
+     <NavBar />
      <YourTeam yourTeam={yourTeam} removeFromRoster={removeFromRoster}/>
      <CardContainer players={players} addToRoster={addToRoster} handleSort={handleSort}/>
      
