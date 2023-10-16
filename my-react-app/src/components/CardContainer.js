@@ -1,11 +1,13 @@
 import React from "react"
 import Card from "./Card"
+import NavBar from "./NavBar"
 
 
 function CardContainer({players, addToRoster, handleSort})  {
  
   return (
     <div>
+      <NavBar />
       <h3>Football Players</h3>
       <select>
         <option>QB</option>
