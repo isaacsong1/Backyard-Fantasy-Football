@@ -18,6 +18,11 @@ function NavBar() {
           >
           My Team
         </NavLink>
+        <NavLink
+          to='/signin'
+          >
+          Sign In
+        </NavLink>
       </nav>
     )
 }

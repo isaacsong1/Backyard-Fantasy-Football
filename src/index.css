@@ -15,10 +15,10 @@ code {
 
 img.logo {
   width: 90%;
-  height: 25%;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-top: 2.5%;
+  height: 15%;
+  /* padding-left: 5%; */
+  /* padding-right: 5%; */
+  /* padding-top: 2.5%; */
 }
 
 
@@ -28,7 +28,7 @@ img.logo {
   width: 65vw;
   height: 70vh;
   overflow: scroll;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 10px;
   border: 20px black;
   overflow-x: hidden;
@@ -62,7 +62,8 @@ img.logo {
   margin-bottom: 10px;
   display: grid;
   place-items: center;
-  box-shadow: 5px 10px;
+  /* box-shadow: 5px 10px; */
+  border: 1px solid rgb(59, 59, 59);
 }
 #btn {
   border: 1px solid rgb(224, 216, 216);
