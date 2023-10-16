@@ -1,9 +1,12 @@
 import React, {useState, useEffect} from "react";
+
 import Header from "./Header";
 import CardContainer from "./CardContainer";
 import YourTeam from "./YourTeam";
 import NavBar from "./NavBar";
 import FeaturedPlayers from "./FeaturedPlayers";
+import { Outlet, useOutletContext } from "react-router-dom";
+
 const URL = "http://localhost:3000/players"
 
 function App() {
@@ -12,10 +15,12 @@ function App() {
   const [filteredPlayers, setFilteredPlayers] = useState([])
  
 
+
   useEffect(() => {
     fetch(URL)
     .then(res => res.json())
     .then(setPlayers)
+
     .catch(err => alert('error'))
   }, [])
 
@@ -53,11 +58,26 @@ function App() {
      <Header /> 
      <NavBar />
      <FeaturedPlayers players={players}/>
+     <Outlet context={[players, setPlayers]} />
      {/* <YourTeam player={players} removeFromRoster={removeFromRoster}/> */}
      {/* <CardContainer players={players} filteredPlayers={filteredPlayers} addToRoster={addToRoster} handleSort={handleSort} handleFilter={handleFilter}/> */}
+     </div>
      
-    </div>
-  );
+)
+
+  // const addToRoster = (playerAdded) => {
+  //   setPlayers(currentPlayers => currentPlayers.filter(player => player.id !== playerAdded.id)) 
+  //     setYourTeam(currentYourTeam => [playerAdded, ...currentYourTeam])
+  // } 
+
+  // const removeFromRoster = (playerRemove) => {
+  //   setYourTeam(currentYourTeam => currentYourTeam.filter(player => player.id !== playerRemove.id))
+  //   setPlayers(currentPlayers => [playerRemove, ...currentPlayers])
+  // }
+
+  
+
+ 
 }
 
 export default App;
