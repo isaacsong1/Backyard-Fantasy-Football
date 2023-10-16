@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
-import Card from "./Card";
+import { Card } from 'semantic-ui-react'
+import PlayerCard from "./PlayerCard";
 import NavBar from "./NavBar";
+
 
 
 function CardContainer()  {
@@ -23,7 +25,8 @@ function CardContainer()  {
 
   const mappedPlayers = players
                         .filter(player => filterBy === "All" || player.position.toUpperCase() === filterBy.toUpperCase())
-                        .map(player => <Card key={player.id} player={player} />)
+                        .map(player => <PlayerCard key={player.id} player={player} />)
+
 
   return (
     <div>
@@ -40,10 +43,13 @@ function CardContainer()  {
         <option value="highestPPR">Highest PPR</option>
         <option value="lowestPPR">Lowest PPR</option>
       </select>
-        <div id="playerTable">
+        {/* <div id="playerTable">
           {mappedPlayers}
-        {/* handleRoster={addToRoster} */}
-        </div>
+        handleRoster={addToRoster}
+        </div> */}
+        <Card.Group id='playerTable' itemsPerRow={6}>
+          {mappedPlayers}
+        </Card.Group>
     </div>
   )
 }

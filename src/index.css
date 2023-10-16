@@ -24,15 +24,15 @@ img.logo {
 
 #playerTable {
   background-color: grey;
-  display: grid;
-  width: 65vw;
-  height: 70vh;
-  overflow: scroll;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 10px;
-  border: 20px black;
+  margin: auto;
+  width: 85vw;
+  /* overflow: scroll; */
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  /* grid-column-gap: 10px; */
+  /* border: 20px black; */
   overflow-x: hidden;
-  margin-left: 40px;
+  /* margin-left: 40px; */
+  justify-content: center;
 }
 
 #yourTeam {
@@ -54,16 +54,17 @@ img.logo {
 }
 
 #playerCard {
-  height: 35vh;
-  width: 22vh;
-  background-color: whitesmoke;
-  border-radius: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  display: grid;
-  place-items: center;
+  height: 60vh;
+  width: 30vw;
+  justify-content: space-around;
+  /* background-color: whitesmoke; */
+  /* border-radius: 10px; */
+  /* margin-top: 10px; */
+  /* margin-bottom: 10px; */
+  /* display: grid; */
+  /* place-items: center; */
   /* box-shadow: 5px 10px; */
-  border: 1px solid rgb(59, 59, 59);
+  /* border: 1px solid rgb(59, 59, 59); */
 }
 #btn {
   border: 1px solid rgb(224, 216, 216);
@@ -82,4 +83,7 @@ margin: 1px;
   margin: 1px;
 }
 
-
+.ui.card {
+  /* width: 30vw; */
+  height: 50vh;
+}
