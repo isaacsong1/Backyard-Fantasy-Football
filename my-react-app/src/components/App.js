@@ -36,12 +36,19 @@ function App() {
     }
   }
 
+  const handleFilter = (e) => {
+    const selectedValue = e.target.value;
+    if (selectedValue) {
+      setPlayers(currentPlayers => currentPlayers.filter(player => player.position === selectedValue))
+    } 
+  }
+
   return (
     <div className="App">
      <Header /> 
      <NavBar />
      <YourTeam yourTeam={yourTeam} removeFromRoster={removeFromRoster}/>
-     <CardContainer players={players} addToRoster={addToRoster} handleSort={handleSort}/>
+     <CardContainer players={players} addToRoster={addToRoster} handleSort={handleSort} handleFilter={handleFilter}/>
      
     </div>
   );
