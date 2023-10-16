@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./Card";
+import PlayerCard from "./PlayerCard";
 import NavBar from "./NavBar";
 
 function YourTeam({yourTeam, removeFromRoster}) {
@@ -8,7 +8,7 @@ function YourTeam({yourTeam, removeFromRoster}) {
     <NavBar />
       <h3>Your Team</h3>
       <ul id="yourTeam">
-      {yourTeam.map(player => <Card key={player.id} player={player} handleRoster={removeFromRoster}/>)}
+      {/* {yourTeam.map(player => <PlayerCard key={player.id} player={player} handleRoster={removeFromRoster}/>)} */}
       </ul>
   </div>
   )
