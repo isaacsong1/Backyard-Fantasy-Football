@@ -3,17 +3,17 @@ import { NavLink } from "react-router-dom";
 function NavBar() {
     return(
         <nav className="navbar">
-        <NavLink
+        <NavLink id='navLink'
           to='/'
           >
           Home
         </NavLink>
-        <NavLink
+        <NavLink id='navLink'
           to='/players'
           >
           Players
         </NavLink>
-        <NavLink
+        <NavLink id='navLink'
           to='/myteam'
           >
           My Team

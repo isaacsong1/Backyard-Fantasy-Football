@@ -1,12 +1,12 @@
 import React, {useState} from "react"
 
 function Card({player, handleRoster})  {
-  const [checkPPR, setCheckPPR] = useState(false)
+  const [checkPPR, setCheckPPR] = useState(true)
   
 
-  const handlePPR = () => {
-    setCheckPPR(currentPPR => !currentPPR)
-  }
+  // const handlePPR = () => {
+  //   setCheckPPR(currentPPR => !currentPPR)
+  // }
 
  
   return (
@@ -19,12 +19,12 @@ function Card({player, handleRoster})  {
         <>
         {checkPPR ? 
         <div>
-          <p id="ppr">Projected PPR: {player.PPR_projected}</p>
-          <p id="ppr">Last Weeks PPR: {player.past_PPR}</p>
+          {player.PPR_projected < player.past_PPR ? <h3>Projected PPR: {player.PPR_projected}<span id='greenArrow'>▲</span></h3>: <h3>Projected PPR: {player.PPR_projected}🔻</h3>}
+          
         </div>
  :""}
         </>
-        <button id='btn' onClick={handlePPR}>See PPR</button>
+        {/* <button id='btn' onClick={handlePPR}>See PPR</button> */}
         <button id='btn' onClick={() => handleRoster(player)}>Handle Roster</button>
     </div>
     

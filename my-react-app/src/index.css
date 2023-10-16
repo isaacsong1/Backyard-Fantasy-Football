@@ -1,6 +1,6 @@
 body {
+
   margin: 0;
-  background-color: rgba(21, 99, 9, 1);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -13,12 +13,19 @@ code {
     monospace;
 }
 
+.App {
+  height: 100vh;
+  background-image: url("https://i.pinimg.com/736x/f8/cd/d5/f8cdd5f210f21e225922296389f46dd4.jpg");
+  background-size: cover;
+}
+
 img.logo {
   width: 90%;
   height: 25%;
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 2.5%;
+  background-color: rgb(56, 80, 52, 0.7);
 }
 
 
@@ -34,6 +41,46 @@ img.logo {
   overflow-x: hidden;
   margin-left: 40px;
 }
+
+.navbar {
+  width: 100vh;
+  height: 20px;
+  display: inline-flex;
+}
+
+#navLink {
+  margin-left: 40px;
+  
+}
+
+#featuredPlayersList {
+  background-color: rgb(56, 80, 52, 0.7);
+  display: flex;
+  width: 74vh;
+  margin: auto;
+  height: 40vh;
+  margin-left: 41px;
+  grid-column-gap: 10px;
+  border: 20px black;
+  overflow-y: hidden;
+}
+
+#featuredPlayerText {
+  text-align: center;
+}
+
+#featuredPlayers {
+  display: grid;
+  width: 89vh;
+  margin: auto;
+}
+#greenArrow {
+  color: rgb(9, 193, 9);
+}
+
+
+
+
 
 #yourTeam {
   background-color: whitesmoke;
@@ -57,10 +104,9 @@ img.logo {
   height: 35vh;
   width: 22vh;
   background-color: whitesmoke;
-  border-radius: 10px;
+  border-radius: 2px;
   margin-top: 10px;
   margin-bottom: 10px;
-  display: grid;
   place-items: center;
   box-shadow: 5px 10px;
 }

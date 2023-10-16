@@ -3,11 +3,13 @@ import Header from "./Header";
 import CardContainer from "./CardContainer";
 import YourTeam from "./YourTeam";
 import NavBar from "./NavBar";
+import FeaturedPlayers from "./FeaturedPlayers";
 const URL = "http://localhost:3000/players"
 
 function App() {
   const [players, setPlayers] = useState([])
   const [yourTeam, setYourTeam] = useState([])
+  const [filteredPlayers, setFilteredPlayers] = useState([])
  
 
   useEffect(() => {
@@ -38,17 +40,21 @@ function App() {
 
   const handleFilter = (e) => {
     const selectedValue = e.target.value;
-    if (selectedValue) {
-      setPlayers(currentPlayers => currentPlayers.filter(player => player.position === selectedValue))
-    } 
+    const filteredPlayers = players.filter(player => player.position === selectedValue)
+     if (selectedValue) {
+      return (
+        setPlayers(filteredPlayers)
+      )
+    }
   }
 
   return (
     <div className="App">
      <Header /> 
      <NavBar />
-     <YourTeam yourTeam={yourTeam} removeFromRoster={removeFromRoster}/>
-     <CardContainer players={players} addToRoster={addToRoster} handleSort={handleSort} handleFilter={handleFilter}/>
+     <FeaturedPlayers players={players}/>
+     {/* <YourTeam player={players} removeFromRoster={removeFromRoster}/> */}
+     <CardContainer players={players} filteredPlayers={filteredPlayers} addToRoster={addToRoster} handleSort={handleSort} handleFilter={handleFilter}/>
      
     </div>
   );

@@ -3,13 +3,14 @@ import Card from "./Card"
 import NavBar from "./NavBar"
 
 
-function CardContainer({players, addToRoster, handleSort, handleFilter})  {
+function CardContainer({players, addToRoster, handleSort, handleFilter, filteredPlayers})  {
  
   return (
     <div>
       <NavBar />
       <h3>Football Players</h3>
       <select onChange={handleFilter}>
+        <option value="All">All</option>
         <option value="QB">QB</option>
         <option value="RB">RB</option>
         <option value="WR">WR</option>
@@ -21,6 +22,7 @@ function CardContainer({players, addToRoster, handleSort, handleFilter})  {
       </select>
       <ul id="playerTable">
      { players.map(player => <Card key={player.id} player={player} handleRoster={addToRoster}/>)}
+     { filteredPlayers.map(player => <Card key={player.id} player={player} handleRoster={addToRoster}/>)}
      </ul>
     </div>
   )
