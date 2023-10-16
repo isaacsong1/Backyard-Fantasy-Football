@@ -5,16 +5,18 @@ import YourTeam from "./components/YourTeam"
 const routes = [
     {
         path:'/',
-        element: <App />
+        element: <App />,
+        children: [
+            {
+                path:'/players',
+                element: <CardContainer />
+            },
+            {
+                path:'/myteam',
+                element: <YourTeam />
+            }
+        ],
     },
-    {
-        path:'/players',
-        element: <CardContainer />
-    },
-    {
-        path:'/myteam',
-        element: <YourTeam />
-    }
 ]
 
 export default routes
