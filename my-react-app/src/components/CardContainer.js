@@ -2,16 +2,16 @@ import React from "react"
 import Card from "./Card"
 
 
-function CardContainer({players, addToRoster, handleSort})  {
+function CardContainer({players, addToRoster, handleSort, handleFilter})  {
  
   return (
     <div>
       <h3>Football Players</h3>
-      <select>
-        <option>QB</option>
-        <option>RB</option>
-        <option>WR</option>
-        <option>K</option>
+      <select onChange={handleFilter}>
+        <option value="QB">QB</option>
+        <option value="RB">RB</option>
+        <option value="WR">WR</option>
+        <option value="K">K</option>
       </select>
       <select onChange={handleSort}>
         <option value="highestPPR">Highest PPR</option>

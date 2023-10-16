@@ -13,7 +13,7 @@ function Card({player, handleRoster})  {
 
     <div id='playerCard'>
         <h4 id="name">{player.name}</h4>
-         <h5 id="nickname">{player.nickname}</h5>
+         <h5 id="nickname">{player.nickname} : {player.position}</h5>
         <img id='img' src={player.image}/>
        
         <>
