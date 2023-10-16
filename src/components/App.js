@@ -54,7 +54,7 @@ function App() {
      <NavBar />
      <FeaturedPlayers players={players}/>
      {/* <YourTeam player={players} removeFromRoster={removeFromRoster}/> */}
-     <CardContainer players={players} filteredPlayers={filteredPlayers} addToRoster={addToRoster} handleSort={handleSort} handleFilter={handleFilter}/>
+     {/* <CardContainer players={players} filteredPlayers={filteredPlayers} addToRoster={addToRoster} handleSort={handleSort} handleFilter={handleFilter}/> */}
      
     </div>
   );
