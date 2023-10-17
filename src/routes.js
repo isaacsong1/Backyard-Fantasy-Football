@@ -3,6 +3,7 @@ import CardContainer from "./components/CardContainer"
 import YourTeam from "./components/YourTeam"
 import Home from "./components/Home"
 import SignIn from "./components/SignIn"
+import NewTeam from "./components/NewTeam"
 
 
 const routes = [
@@ -21,7 +22,12 @@ const routes = [
             {
                 path:'/myteam',
                 element: <YourTeam />
+            },
+            {
+                path:'/newteam',
+                element: <NewTeam />
             }
+                
         ],
     },
     {

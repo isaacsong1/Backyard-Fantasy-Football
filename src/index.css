@@ -1,6 +1,8 @@
 body {
   margin: 0;
-  background-color: rgba(21, 99, 9, 1);
+  height: 100%;
+  background-image: url("https://i.pinimg.com/736x/f8/cd/d5/f8cdd5f210f21e225922296389f46dd4.jpg");
+  background-size: cover;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -13,29 +15,100 @@ code {
     monospace;
 }
 
-img.logo {
-  width: 90%;
-  height: 15%;
-  /* padding-left: 5%; */
-  /* padding-right: 5%; */
-  /* padding-top: 2.5%; */
+.App {
+  height: 100%;
+  background-image: url("https://i.pinimg.com/736x/f8/cd/d5/f8cdd5f210f21e225922296389f46dd4.jpg");
+  background-size: cover;
 }
 
-
-#playerTable {
-  background-color: grey;
+#logo{
+  width: 104vh;
   margin: auto;
-  width: 85vw;
-  /* overflow: scroll; */
-  /* grid-template-columns: 1fr 1fr 1fr; */
-  /* grid-column-gap: 10px; */
-  /* border: 20px black; */
-  overflow-x: hidden;
-  /* margin-left: 40px; */
-  justify-content: center;
 }
 
-#yourTeam {
+img.logo {
+  width: 105vh;
+  height: 19vh;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2.5%;
+  background-color: rgb(56, 80, 52, 0.7);
+
+}
+
+.navbar {
+  margin-top: 15px;
+  width: 100vh;
+  height: 2vh;
+  display: grid;
+  margin-left: -4vh;
+}
+
+#link {
+  background-image: url("https://www.clker.com/cliparts/8/A/u/x/E/t/football-helmet-blue-hi.png");
+  margin-left: 40px;
+  margin-bottom: 5vh;
+  background-size: 12vh, 12vh;
+  width: 12vh;
+  height: 10vh;
+  text-align: center;
+  color: red;
+  font-weight: 900;
+  
+}
+
+#featuredPlayersList {
+  background-color: rgb(56, 80, 52, 0.7);
+  display: flex;
+  width: 74vh;
+  margin: auto;
+  height: 40vh;
+  margin-left: 41px;
+  grid-column-gap: 10px;
+  border: 20px black;
+  overflow-y: hidden;
+}
+
+#featuredPlayerText {
+  text-align: center;
+}
+
+#featuredPlayers {
+  margin-top: 8vh;
+  display: grid;
+  width: 89vh;
+  margin: auto;
+}
+
+#playerContainer {
+  text-align: center;
+}
+
+  #playerTable {
+    background-color: rgb(56, 80, 52, 0.7);
+    display: grid;
+    width: 66vw;
+    height: 61vh;
+    overflow: scroll;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    border: 20px black;
+    overflow-x: hidden;
+    margin:auto;
+    margin-top: 5vh;
+
+  }
+
+  #yourTeam {
+    text-align: center;
+  }
+
+  #newTeamForm {
+    width: 75vh;
+    margin: auto;
+  }
+
+#yourTeamList {
   background-color: whitesmoke;
   display: flex;
   width: 90%;
@@ -45,26 +118,29 @@ img.logo {
   grid-column-gap: 10px;
   border: 20px black;
   overflow-y: hidden;
-
+  width: 75vh;
+  margin: auto;
 }
 
 #img {
+  width: 21vh;
   height: 149px;
   margin: 1px;
 }
 
 #playerCard {
-  height: 60vh;
-  width: 30vw;
-  justify-content: space-around;
-  /* background-color: whitesmoke; */
-  /* border-radius: 10px; */
-  /* margin-top: 10px; */
-  /* margin-bottom: 10px; */
-  /* display: grid; */
-  /* place-items: center; */
+  height: 35vh;
+  width: 22vh;
+  background-color: whitesmoke;
+  border-radius: 2px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  place-items: center;
   /* box-shadow: 5px 10px; */
-  /* border: 1px solid rgb(59, 59, 59); */
+  border: 1px solid rgb(59, 59, 59);
+}
+#greenArrow {
+  color: rgb(9, 193, 9);
 }
 #btn {
   border: 1px solid rgb(224, 216, 216);

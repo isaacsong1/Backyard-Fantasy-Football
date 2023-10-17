@@ -29,7 +29,7 @@ function CardContainer()  {
 
 
   return (
-    <div>
+    <div id="playerContainer">
       {/* <NavBar /> */}
       <h3>Football Players</h3>
       <select onChange={handleFilter} value={filterBy} >
@@ -43,13 +43,13 @@ function CardContainer()  {
         <option value="highestPPR">Highest PPR</option>
         <option value="lowestPPR">Lowest PPR</option>
       </select>
-        {/* <div id="playerTable">
+        <div id="playerTable">
           {mappedPlayers}
-        handleRoster={addToRoster}
-        </div> */}
-        <Card.Group id='playerTable' itemsPerRow={6}>
+        {/* handleRoster={addToRoster} */}
+        </div>
+        {/* <Card.Group id='playerTable' itemsPerRow={6}>
           {mappedPlayers}
-        </Card.Group>
+        </Card.Group> */}
     </div>
   )
 }

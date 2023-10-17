@@ -1,13 +1,16 @@
 import React, {useState, useEffect} from "react";
-import { Outlet, useOutletContext } from "react-router-dom";
+import Home from "./Home"
+import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import NavBar from "./NavBar";
+
+
 
 const URL = "http://localhost:3000/players"
 
 function App() {
   const [players, setPlayers] = useState([])
-  // const [yourTeam, setYourTeam] = useState([])
+  const [yourTeam, setYourTeam] = useState([])
 
 
   useEffect(() => {

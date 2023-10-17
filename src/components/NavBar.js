@@ -4,24 +4,34 @@ function NavBar() {
     return(
         <nav className="navbar">
         <NavLink
+          id="link"
           to='/'
           >
           Home
         </NavLink>
         <NavLink
+          id="link"
           to='/players'
           >
-          Players
+          Player Draft
         </NavLink>
         <NavLink
+          id="link"
           to='/myteam'
           >
           My Team
         </NavLink>
         <NavLink
+          id="link"
+          to='/newteam'
+          >
+          Create New Team
+        </NavLink>
+        <NavLink
+          id="link"
           to='/signin'
           >
-          Sign In
+         Log in/Sign-up
         </NavLink>
       </nav>
     )
