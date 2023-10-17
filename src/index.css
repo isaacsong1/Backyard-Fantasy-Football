@@ -109,11 +109,50 @@ img.logo {
     margin: auto;
   }
 
+  #form {
+    display: inline-flex;
+    width: 95vh;
+    margin-left: -6vh;
+  }
+
+  #teamList {
+    background-color: rgb(56, 80, 52, 0.7);
+    display: grid;
+    width: 66vw;
+    height: 33vh;
+    overflow: scroll;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    border: 20px black;
+    overflow-x: hidden;
+    margin-top: 5vh;
+  }
+
+  #teamCard {
+    display: flex;
+    align-items: baseline;
+    height: 5vh;
+    margin-bottom: 3vh;
+  }
+
+  #teamId {
+    margin-right: 7vh;
+  }
+
+  #teamImg {
+    height: 3vh;
+    margin-right: 7vh;
+  }
+
+  #teamName {
+    width: 35vh;
+  }
+
 #yourTeamList {
   background-color: whitesmoke;
   display: flex;
   width: 90%;
-  height: 40vh;
+  height: 33vh;
   overflow: scroll;
   margin-left: 41px;
   grid-column-gap: 10px;
