@@ -7,7 +7,7 @@ import NavBar from "./NavBar";
 
 
 function CardContainer()  {
-  const [players, setPlayers] = useOutletContext();
+  const {players, setPlayers} = useOutletContext();
   const [filterBy, setFilterBy] = useState("All");
 
   const handleSort = (e) => {
@@ -43,13 +43,12 @@ function CardContainer()  {
         <option value="highestPPR">Highest PPR</option>
         <option value="lowestPPR">Lowest PPR</option>
       </select>
-        <div id="playerTable">
+        {/* <div id="playerTable">
           {mappedPlayers}
-        {/* handleRoster={addToRoster} */}
-        </div>
-        {/* <Card.Group id='playerTable' itemsPerRow={6}>
+        </div> */}
+        <Card.Group id='playerTable' itemsPerRow={6}>
           {mappedPlayers}
-        </Card.Group> */}
+        </Card.Group>
     </div>
   )
 }
