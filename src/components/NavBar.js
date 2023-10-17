@@ -33,6 +33,7 @@ function NavBar() {
           >
          Log in/Sign-up
         </NavLink>
+
       </nav>
     )
 }

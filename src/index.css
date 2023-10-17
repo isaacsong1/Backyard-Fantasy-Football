@@ -55,6 +55,7 @@ img.logo {
   color: red;
   font-weight: 900;
   
+
 }
 
 #featuredPlayersList {
@@ -163,3 +164,19 @@ margin: 1px;
   /* width: 30vw; */
   height: 50vh;
 }
+
+form {
+  text-align: center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
+  color: whitesmoke;
+  padding-top: 15%;
+}
+
+input {
+  width: 25%;
+  padding: 11px 20px;
+  margin: 15px 0;
+}
+
+
