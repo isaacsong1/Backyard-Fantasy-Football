@@ -31,7 +31,7 @@ function NavBar() {
           id="link"
           to='/signin'
           >
-         Log in/Sign-up
+          Log in/Sign-up
         </NavLink>
 
       </nav>

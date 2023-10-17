@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import { Card } from 'semantic-ui-react'
 import PlayerCard from "./PlayerCard";
-import NavBar from "./NavBar";
-
-
 
 function CardContainer()  {
-  const [players, setPlayers] = useOutletContext();
+  const {players, setPlayers} = useOutletContext();
   const [filterBy, setFilterBy] = useState("All");
 
   const handleSort = (e) => {
@@ -24,13 +21,13 @@ function CardContainer()  {
   }
 
   const mappedPlayers = players
+                        .filter(player => player.isDrafted !== true)
                         .filter(player => filterBy === "All" || player.position.toUpperCase() === filterBy.toUpperCase())
                         .map(player => <PlayerCard key={player.id} player={player} />)
 
 
   return (
     <div id="playerContainer">
-      {/* <NavBar /> */}
       <h3>Football Players</h3>
       <select onChange={handleFilter} value={filterBy} >
         <option value="All">Select a Position</option>
@@ -43,13 +40,9 @@ function CardContainer()  {
         <option value="highestPPR">Highest PPR</option>
         <option value="lowestPPR">Lowest PPR</option>
       </select>
-        <div id="playerTable">
+        <Card.Group id='playerTable' itemsPerRow={6}>
           {mappedPlayers}
-        {/* handleRoster={addToRoster} */}
-        </div>
-        {/* <Card.Group id='playerTable' itemsPerRow={6}>
-          {mappedPlayers}
-        </Card.Group> */}
+        </Card.Group>
     </div>
   )
 }

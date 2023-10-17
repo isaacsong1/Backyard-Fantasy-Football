@@ -89,12 +89,12 @@ img.logo {
 
   #playerTable {
     background-color: rgb(56, 80, 52, 0.7);
-    display: grid;
+    /* display: grid; */
     width: 66vw;
     height: 61vh;
     overflow: scroll;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 10px;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    /* grid-column-gap: 10px; */
     border: 20px black;
     overflow-x: hidden;
     margin:auto;
@@ -171,8 +171,8 @@ img.logo {
 }
 
 #playerCard {
-  height: 35vh;
-  width: 22vh;
+  /* height: 35vh; */
+  /* width: 22vh; */
   background-color: whitesmoke;
   border-radius: 2px;
   margin-top: 10px;
