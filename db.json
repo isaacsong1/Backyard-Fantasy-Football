@@ -644,5 +644,22 @@
       "owner": "Table4",
       "id": 3
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Wesley",
+      "password": "Smith"
+    },
+    {
+      "id": 2,
+      "name": "Isaac",
+      "password": "Song"
+    },
+    {
+      "id": 3,
+      "name": "Austin",
+      "password": "Ohlfs"
+    }
   ]
 }

@@ -3,7 +3,6 @@ import Home from "./Home"
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import NavBar from "./NavBar";
-import { CookiesProvider, useCookies } from "react-cookie";
 import SignIn from "./SignIn";
 
 
@@ -11,15 +10,10 @@ import SignIn from "./SignIn";
 const URL = "http://localhost:3000/players"
 
 function App() {
-  const [cookies, setCookie] = useCookies(["user"]);
-
   const [players, setPlayers] = useState([])
   const [yourTeam, setYourTeam] = useState([])
+  const [user, setUser] = useState({name: "", password: ""})
   
-  function handleLogin(user) {
-    setCookie("user", user, { path: "/" });
-  }
-
   useEffect(() => {
     fetch(URL)
     .then(res => res.json())
@@ -36,22 +30,19 @@ function App() {
   //   setYourTeam(currentYourTeam => currentYourTeam.filter(player => player.id !== playerRemove.id))
   //   setPlayers(currentPlayers => [playerRemove, ...currentPlayers])
   // }
-
   
 
   return (
-    <CookiesProvider>
       <div className="App">
         <Header /> 
         <NavBar />
-        <Outlet context={[players, setPlayers]} />
+        <Outlet context={[players, setPlayers]} context={[user, setUser]}/>
         {/* {cookies.user ? (
           <Home context={[players, setPlayers]} user={cookies.user} />
           ) : ( 
           <SignIn onLogin={handleLogin}/> */}
           {/* )} */}
       </div>
-    </ CookiesProvider>
   );
 }
 
