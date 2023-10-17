@@ -7,6 +7,10 @@ const SignIn = () => {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("")
     const navigate = useNavigate()
+    const adminUser = {
+        adminName: "Wesley",
+        adminPassword: "football"
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault()
