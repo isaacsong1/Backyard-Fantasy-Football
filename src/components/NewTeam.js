@@ -52,7 +52,7 @@ const NewTeam = () => {
         <br/>
         <input type="text" id="fname" name="name" value={newTeam.name} onChange={e => handleChange(e)}/>
           <br/>
-        <label htmlFor="lname">Image url:</label>
+        <label for="lname">Image url:</label>
         <br/>
         <input type="text" id="lname" name="image" value={newTeam.image} onChange={e => handleChange(e)}/>
           <br/>
