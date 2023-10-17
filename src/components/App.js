@@ -30,7 +30,7 @@ function App() {
   }
 
   const handleDeleteFromRoster = (playerToRemove) => {
-    setYourTeam(currYourTeam => currYourTeam.filter(player => player.id !== playerToRemove.id));
+    console.log(playerToRemove)
   }
   
 
