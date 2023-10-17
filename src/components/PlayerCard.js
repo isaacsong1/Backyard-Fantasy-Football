@@ -6,6 +6,8 @@ function PlayerCard({player})  {
   const {handleAddToRoster} = useOutletContext();
 
   const handleClick = () => {
+
+    // player.isDrafted ? handleAddToRoster(player)
     handleAddToRoster(player)
   }
 
