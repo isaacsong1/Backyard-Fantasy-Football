@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import NavBar from "./NavBar";
+import SignIn from "./SignIn";
 
 
 
@@ -10,14 +11,15 @@ const URL = "http://localhost:3000/players"
 function App() {
   const [players, setPlayers] = useState([])
   const [yourTeam, setYourTeam] = useState([])
-
-
+  const [user, setUser] = useState({name: "", password: ""})
+  
   useEffect(() => {
     fetch(URL)
     .then(res => res.json())
     .then(currPlayers => setPlayers(currPlayers.map(player => ({...player, isDrafted: false}))))
     .catch(err => alert(err))
   }, [])
+
 
   const handleAddToRoster = (playerToAdd) => {
     const playerToFind = yourTeam.find(player => player.id === playerToAdd.id)
@@ -38,8 +40,9 @@ function App() {
     <div className="App">
       <Header /> 
       <NavBar />
-      <Outlet context={{players, setPlayers, yourTeam, handleAddToRoster, handleDeleteFromRoster}} />
+      <Outlet context={{players, setPlayers, yourTeam, handleAddToRoster, handleDeleteFromRoster, user, setUser}} />
     </div>
+
   );
 }
 
