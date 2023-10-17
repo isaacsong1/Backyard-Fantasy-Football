@@ -18,23 +18,45 @@ const SignIn = () => {
         .catch(err => console.log(err))
       }, []);
 
+      const findUser = (e) => {
+        e.preventDefault();
     
+        const foundUser = users.find((user) => user.name === name);
     
-
+        if (foundUser) {
+          navigate("/myteam");
+        } else {
+          console.log('User not found');
+        }
+      };
     return (
         <>
         {/* <Header /> */}
         <NavBar />
         <section>
-        <form>
+        <form onSubmit={findUser}>
             <h1>Register To Play!</h1>
             <label htmlFor='username'>Enter Username</label>
             <br />
-            <input value={name} onChange={(e) => setName(e.target.value)} type="username" placeholder="Username" id="username" name="username"></input>
+            <input 
+                value={name} 
+                onChange={(e) => setName(e.target.value)} 
+                type="username" 
+                placeholder="Username" 
+                id="username" 
+                name="username">
+                </input>
             <br />
             <br /><label htmlFor='password'>Password</label>
             <br />
-            <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder='********' id="password"name="password"></input>
+            <input 
+                value={password} 
+                onChange={(e) => setPassword(e.target.value)} 
+                type="password" 
+                placeholder='********' 
+                id="password"
+                name="password">
+                </input>
             <br />
             <button>Sign In</button> <br />
             <br />
