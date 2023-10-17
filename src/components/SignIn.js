@@ -1,18 +1,26 @@
 import { useState } from 'react'
+import Header from "./Header"
 import NavBar from "./NavBar";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
     const [name, setName] = useState("");
     const [password, setPassword] = useState("")
+    const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        debugger
+        if (name && password){
+            navigate("/myteam")
+        } else {
+            alert("Please provide valid information")
+        }
 
     }
 
     return (
         <>
+        {/* <Header /> */}
         <NavBar />
         <form onSubmit={handleSubmit}>
             <h1>Please Sign In</h1>
