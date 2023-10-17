@@ -87,3 +87,23 @@ margin: 1px;
   /* width: 30vw; */
   height: 50vh;
 }
+
+form {
+  text-align: center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
+  font-style: bold;
+  display:block;
+  color: whitesmoke;
+  align-items: center;
+  padding-top: 25%;
+  justify-content: center;
+}
+
+input {
+  width: 25%;
+  padding: 12px 20px;
+  margin: 15px 0;
+}
+
+
