@@ -24,6 +24,7 @@ function CardContainer()  {
   }
 
   const mappedPlayers = players
+                        .filter(player => player.isDrafted !== true)
                         .filter(player => filterBy === "All" || player.position.toUpperCase() === filterBy.toUpperCase())
                         .map(player => <PlayerCard key={player.id} player={player} />)
 

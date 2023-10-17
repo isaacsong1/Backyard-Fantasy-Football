@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     fetch(URL)
     .then(res => res.json())
-    .then(setPlayers)
+    .then(currPlayers => setPlayers(currPlayers.map(player => ({...player, isDrafted: false}))))
     .catch(err => alert(err))
   }, [])
 
@@ -33,8 +33,8 @@ function App() {
   const handleAddToRoster = (playerToAdd) => {
     const playerToFind = yourTeam.find(player => player.id === playerToAdd.id)
     if (!playerToFind) {
-      setYourTeam(currYourTeam => [playerToAdd, ...currYourTeam]);
-      setPlayers(currPlayers => currPlayers.filter(player => player.id !== playerToAdd.id));
+      setPlayers(currPlayers => currPlayers.map(player => player.id === playerToAdd.id ? ({...player, isDrafted: !player.isDrafted}): player));
+      setYourTeam(currYourTeam => [({...playerToAdd, isDrafted: !playerToAdd.isDrafted}), ...currYourTeam]);
     } else {
       alert('That player is already on your team.');
     }
@@ -43,8 +43,6 @@ function App() {
   const handleDeleteFromRoster = (playerToRemove) => {
     setYourTeam(currYourTeam => currYourTeam.filter(player => player.id !== playerToRemove.id));
   }
-  
-
   
 
   return (
