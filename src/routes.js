@@ -6,42 +6,38 @@ import SignIn from "./components/SignIn";
 import NewTeam from "./components/NewTeam";
 import Register from "./components/Register";
 
-const loggedIn = window.localStorage.getItem("isLoggedIn");
-
 const routes = [
   {
     path: '/',
     element: <App />,
-    children: loggedIn
-      ? [
-          {
+    children: [
+        {
             path: '/',
+            index: true,
             element: <Home />
-          },
-          {
+        },
+        {
             path: '/players',
             element: <CardContainer />
-          },
-          {
+        },
+        {
             path: '/myteam',
             element: <MyTeam />
-          },
-          {
+        },
+        {
             path: '/newteam',
             element: <NewTeam />
-          }
-        ]
-      : [
-          {
-            path: '/',
+        },
+        {
+            path: '/signin',
             element: <SignIn />
-          },
-          {
+        },
+        {
             path: '/register',
             element: <Register />
-          }
-        ]
-  }
+        }
+    ]
+}
 ];
 
 export default routes;

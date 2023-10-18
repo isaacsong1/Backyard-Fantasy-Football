@@ -12,6 +12,7 @@ function MyTeam() {
   const {pickTeam} = useOutletContext();
   const [myTeamPlayers, setMyTeamPlayers] = useState([])
   const filterMyTeam = myTeam.filter(player => player.isDrafted !== false)
+  const loggedInUser = window.localStorage.getItem("user")
 
   // const handlePickTeam = (pickedTeam) => {
   //   setPickTeam(pickedTeam)
@@ -39,6 +40,7 @@ function MyTeam() {
    .then(myTeam = false)
    .catch(err => alert(''))
   }
+
 
 
   return (

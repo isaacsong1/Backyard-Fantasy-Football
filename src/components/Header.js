@@ -10,7 +10,7 @@ function Header()  {
   const loggedIn = window.localStorage.getItem("isLoggedIn")
 
   const handleSignIn = () => {
-    navigate("/")
+    navigate("/signin")
   };
 
   const handleRegister = () => {
@@ -18,11 +18,10 @@ function Header()  {
   }
   
   const handleSignOut = async () => {
-    await new Promise((resolve) => {
       window.localStorage.removeItem("isLoggedIn")
-      navigate("/")
-    }) 
-  }
+      window.localStorage.removeItem("user")
+      navigate("/") 
+  };
   
   
 

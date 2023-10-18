@@ -30,12 +30,12 @@ function NavBar() {
           >
           Create New Team
         </NavLink>
-        <NavLink
+        {/* <NavLink
           id="link"
           to='/'
           >
           Log in/Sign-up
-        </NavLink>
+        </NavLink> */}
       </nav>
       : null
     )
