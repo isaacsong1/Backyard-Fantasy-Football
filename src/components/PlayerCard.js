@@ -4,6 +4,7 @@ import { Button, Card, Image } from 'semantic-ui-react'
 
 function PlayerCard({player})  {
   const {handleAddToRoster, handleDeleteFromRoster} = useOutletContext();
+  const loggedIn = window.localStorage.getItem("isLoggedIn")
 
   const handleClick = () => {
 
@@ -33,6 +34,7 @@ function PlayerCard({player})  {
         <div id="PPR">
         {player.PPR_projected < player.past_PPR ? <h4>Projected PPR: {player.PPR_projected}<span id='greenArrow'>▲</span></h4>: <h4>Projected PPR: {player.PPR_projected}🔻</h4>}
         </div>
+        {loggedIn ? 
        <div id="rosterBtn">
          {/* <button id='btn' onClick={handleClick}>Handle Roster</button> */}
          <select id="btn" onChange={handleClick}>
@@ -42,6 +44,7 @@ function PlayerCard({player})  {
           <option onClick={handleClick}>Team 3</option>
          </select>
        </div>
+       : null}
         
     </div>
 
