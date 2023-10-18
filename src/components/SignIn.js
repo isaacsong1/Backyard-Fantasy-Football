@@ -8,29 +8,35 @@ import Logo from '../Logo.png'
 
 
 const SignIn = () => {
-    const {users, setLoggedInUser} = useOutletContext()
+
+    const {users, setLoggedInUser, handlePickTeam} = useOutletContext()
     const [name, setName] = useState("");
     const [password, setPassword] = useState("")
+
     const navigate = useNavigate()
 
-    const findUser = (e) => {
-        e.preventDefault();
+    // const findUser = (e) => {
+    //     e.preventDefault();
     
-        const foundUser = users.find((user) => user.name === name.trim());
+    //     const foundUser = users.find((user) => user.name === name.trim());
         
+
         if (foundUser && foundUser.password !== password) {
             console.log("Password does not match")
         } else if(foundUser && foundUser.password === password) {
             window.localStorage.setItem("isLoggedIn", true);
             window.localStorage.setItem("user", foundUser.name)
+            window.localStorage.setItem("team", foundUser.team)
             setLoggedInUser(foundUser)
             setName("")
             setPassword("")
+            handlePickTeam(window.localStorage.getItem("team"))
             navigate("/myTeam")
         } else {
             console.log('User not found');
         }
       };
+
         
     
     const addNewUser = () => {

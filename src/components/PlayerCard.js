@@ -36,13 +36,13 @@ function PlayerCard({player})  {
         </div>
         {loggedIn ? 
        <div id="rosterBtn">
-         {/* <button id='btn' onClick={handleClick}>Handle Roster</button> */}
-         <select id="btn" onChange={handleClick}>
+         <button id='btn' onClick={handleClick}>Handle Roster</button>
+         {/* <select id="btn" onChange={handleClick}>
           <option>Handle Roster</option>
           <option onClick={handleClick}>Team 1</option>
           <option onClick={handleClick}>Team 2</option>
           <option onClick={handleClick}>Team 3</option>
-         </select>
+         </select> */}
        </div>
        : null}
         
