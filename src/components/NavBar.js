@@ -1,7 +1,10 @@
 import { NavLink } from "react-router-dom";
 
+
 function NavBar() {
+  const loggedIn = window.localStorage.getItem("isLoggedIn")
     return(
+     loggedIn ?
         <nav className="navbar">
         <NavLink
           id="link"
@@ -27,14 +30,14 @@ function NavBar() {
           >
           Create New Team
         </NavLink>
-        <NavLink
+        {/* <NavLink
           id="link"
-          to='/signin'
+          to='/'
           >
           Log in/Sign-up
-        </NavLink>
-
+        </NavLink> */}
       </nav>
+      : null
     )
 }
 

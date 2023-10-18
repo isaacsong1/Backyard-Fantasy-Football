@@ -11,6 +11,7 @@ function MyTeam() {
   const {pickTeam} = useOutletContext();
   const [myTeamPlayers, setMyTeamPlayers] = useState([])
   const filterMyTeam = myTeam.filter(player => player.isDrafted !== false)
+  const loggedInUser = window.localStorage.getItem("user")
 
   // const draftPlayers = () => {
   //   fetch(`${URL}/${pickTeam.id}`, {
@@ -26,6 +27,7 @@ function MyTeam() {
   //  .then(myTeam = false)
   //  .catch(err => alert(''))
   // }
+
 
 
   return (

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom"
+import { Form, Input } from 'semantic-ui-react'
 const userURL = "http://localhost:3000/users"
 
 
@@ -42,7 +43,7 @@ function Register() {
                 navigate("/signin")
             })
         } else {
-            alert("Please confirm passwords match")
+            console.log("Please provide info")
         }
     };
 
@@ -51,41 +52,43 @@ function Register() {
         <section>
             <form onSubmit={handleSubmit}>
                 <h1>Register Now!</h1>
-                <label htmlFor='name'>Username</label>
-                <br />
-                <input
-                    onChange={handleChange}
-                    value={formData.name}
-                    type="name"
-                    placeholder="User's Name"
-                    id="name"
-                    name="name">
-                </input>
-                <br />
-                <br /><label htmlFor='password'>Password</label>
-                <br />
-                <input
-                    onChange={handleChange}
-                    value={formData.password}
-                    type="password"
-                    placeholder='********'
-                    id="password"
-                    name="password">
-                </input>
-                <br />
-                <br /><label htmlFor='confirm'>Confirm Password</label>
-                <br />
-                <input
-                    onChange={handleChange}
-                    value={formData.confirm}
-                    type="password"
-                    placeholder='********'
-                    id="confirm"
-                    name="confirm">
-                </input>
-                <br />
-                <button>Register</button> <br />
-                <br />
+                <Form.Field required>
+                    <label htmlFor='name'>Username</label><br />
+                    <br />
+                    <Input
+                        onChange={handleChange}
+                        value={formData.name}
+                        type="name"
+                        placeholder="User's Name"
+                        id="name"
+                        name="name"
+                    />
+                    <br /> 
+                    <br /><label htmlFor='password'>Password</label><br />
+                    <br />
+                    <Input
+                        onChange={handleChange}
+                        value={formData.password}
+                        type="password"
+                        placeholder='********'
+                        id="password"
+                        name="password"
+                    />
+                    <br />
+                    <br /><label htmlFor='confirm'>Confirm Password</label><br />
+                    <br />
+                    <Input
+                        onChange={handleChange}
+                        value={formData.confirm}
+                        type="password"
+                        placeholder='********'
+                        id="confirm"
+                        name="confirm"
+                    />
+                    <br />
+                    <button>Register</button> <br />
+                    <br />
+                </Form.Field>
             </form>
         </section>
     )
