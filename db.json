@@ -830,7 +830,7 @@
   "users": [
     {
       "id": 1,
-      "name": "Wesley",
+      "username": "Wesley",
       "password": "Smith"
     },
     {
@@ -842,6 +842,16 @@
       "id": 3,
       "name": "Austin",
       "password": "Ohlfs"
+    },
+    {
+      "name": "Michael",
+      "password": "Scott",
+      "id": 4
+    },
+    {
+      "name": "Dwight",
+      "password": "Schrute",
+      "id": 5
     }
   ]
 }
