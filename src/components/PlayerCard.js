@@ -3,13 +3,16 @@ import { useOutletContext } from 'react-router-dom';
 import { Button, Card, Image } from 'semantic-ui-react'
 
 function PlayerCard({player})  {
-  const {handleAddToRoster} = useOutletContext();
+  const {handleAddToRoster, handleDeleteFromRoster} = useOutletContext();
 
   const handleClick = () => {
-    handleAddToRoster(player)
+
+    player.isDrafted ? handleDeleteFromRoster(player) : handleAddToRoster(player)
+    // handleAddToRoster(player)
   }
 
   return (
+
     // <Card id='playerCard'>
     //   <Image src={player.image} alt={player.name} />
     //   <Card.Content>
@@ -35,6 +38,7 @@ function PlayerCard({player})  {
        </div>
         
     </div>
+
   )
 }
 

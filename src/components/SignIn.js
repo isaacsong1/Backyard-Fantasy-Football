@@ -18,27 +18,63 @@ const SignIn = () => {
         .catch(err => console.log(err))
       }, []);
 
+    const findUser = (e) => {
+        e.preventDefault();
     
+        const foundUser = users.find((user) => user.name === name);
     
+        if (foundUser && foundUser.password !== password) {
+            console.log("Password does not match")
+        } else if(foundUser && foundUser.password === password) {
+            navigate("/myteam")
+            setName("")
+            setPassword("")
+        } else {
+            console.log('User not found');
+        }
+      };
+    
+    const addNewUser = () => {
+      navigate("/register")
+    };
+    
+
 
     return (
         <>
+
         <Header />
         <NavBar />
+
         <section>
-        <form>
-            <h1>Register To Play!</h1>
-            <label htmlFor='username'>Enter Username</label>
-            <br />
-            <input value={name} onChange={(e) => setName(e.target.value)} type="username" placeholder="Username" id="username" name="username"></input>
-            <br />
-            <br /><label htmlFor='password'>Password</label>
-            <br />
-            <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder='********' id="password"name="password"></input>
-            <br />
-            <button>Sign In</button> <br />
-            <br />
-        </form>
+            <form onSubmit={findUser}>
+                <h1>Sign In To Play!</h1>
+                <label htmlFor='username'>Username</label>
+                <br />
+                <input 
+                    value={name} 
+                    onChange={(e) => setName(e.target.value)} 
+                    type="username" 
+                    placeholder="Username" 
+                    id="username" 
+                    name="username">
+                </input>
+                <br />
+                <br /><label htmlFor='password'>Password</label>
+                <br />
+                <input 
+                    value={password} 
+                    onChange={(e) => setPassword(e.target.value)} 
+                    type="password" 
+                    placeholder='********' 
+                    id="password"
+                    name="password">
+                </input>
+                <br />
+                <button>Sign In</button> <br />
+                <br />
+            </form>
+            <button onClick={addNewUser}>New User? Register Here!</button>
         </section>
         </>
     )
