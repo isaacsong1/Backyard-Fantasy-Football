@@ -95,7 +95,6 @@ function App() {
     }
     setMyTeam(foundTeam.players)
   }
-  };
   // const draftPlayers = () => {
     
   //   fetch(`${URL}/${pickTeam.id}`, {
@@ -120,8 +119,8 @@ function App() {
       <NavBar />
       <Outlet context={{players, setPlayers, myTeam, handleAddToRoster, handleDeleteFromRoster, teams, handlePickTeam, pickTeam, users, loggedInUser, setLoggedInUser, selectedTeam, setSelectedTeam}} />
     </div>
-
   );
+
 }
 
 export default App;
