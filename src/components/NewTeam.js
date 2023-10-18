@@ -16,6 +16,7 @@ const NewTeam = () => {
   })
  
   const handleSubmit = (e) => {
+    e.preventDefault(); 
     fetch(URL, {
       method: "POST",
       headers: {
@@ -26,8 +27,9 @@ const NewTeam = () => {
     .then(res => res.json())
     .then((data) => {
       const form = e.target;
+      console.log(data);
       form.reset(); 
-      e.preventDefault(); 
+      
     })
     .catch(err => alert('err'))
     
