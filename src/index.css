@@ -256,4 +256,9 @@ input {
   margin: 15px 0;
 }
 
-
+#signin {
+  margin-top: 8vh;
+  display: grid;
+  width: 89vh;
+  margin: auto;
+}
