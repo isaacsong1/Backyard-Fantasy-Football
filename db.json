@@ -835,6 +835,20 @@
       "team_img": "",
       "past_PPR": 10.9,
       "PPR_projected": 9.7
+    },
+    {
+      "name": "Austins Team",
+      "image": "https://miamicityballers.files.wordpress.com/2017/10/mcb-ballers-logo-e1507338731901.jpg",
+      "owner": "Austin",
+      "players": [],
+      "id": 51
+    },
+    {
+      "name": "New Team",
+      "image": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/38813032154_46b72a.jpg",
+      "owner": "Austin",
+      "players": [],
+      "id": 52
     }
   ],
   "teams": [
@@ -860,12 +874,98 @@
       "players": []
     },
     {
-      "name": "Gridiron Guru's",
-      "image": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/38813032154_46b72a.jpg",
-      "owner": "Michael",
-      "roster": "team",
-      "id": 4,
-      "players": []
+      "name": "AFT",
+      "image": "https://miamicityballers.files.wordpress.com/2017/10/mcb-ballers-logo-e1507338731901.jpg",
+      "owner": "Austin",
+      "players": [],
+      "id": 4
+    },
+    {
+      "name": "Austins New Team",
+      "image": "https://sportsteamhistory.com/wp-content/uploads/2020/04/chicago_enforcers_2001.png",
+      "owner": "Austin",
+      "players": [],
+      "id": 5
+    },
+    {
+      "name": "BullDogs",
+      "image": "https://miamicityballers.files.wordpress.com/2017/10/mcb-ballers-logo-e1507338731901.jpg",
+      "owner": "Austin",
+      "players": [],
+      "id": 6
+    },
+    {
+      "name": "Austins Team",
+      "image": "https://miamicityballers.files.wordpress.com/2017/10/mcb-ballers-logo-e1507338731901.jpg",
+      "owner": "Austin",
+      "players": [],
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "name": "name",
+      "image": "https://miamicityballers.files.wordpress.com/2017/10/mcb-ballers-logo-e1507338731901.jpg",
+      "owner": "Austin",
+      "players": [],
+      "id": 9
+    },
+    {
+      "name": "Austins Team",
+      "image": "https://miamicityballers.files.wordpress.com/2017/10/mcb-ballers-logo-e1507338731901.jpg",
+      "owner": "Austin",
+      "players": [],
+      "id": 10
+    },
+    {
+      "name": "Austins Team",
+      "image": "https://miamicityballers.files.wordpress.com/2017/10/mcb-ballers-logo-e1507338731901.jpg",
+      "owner": "Austin",
+      "players": [],
+      "id": 11
+    },
+    {
+      "name": "Jessie",
+      "image": "https://miamicityballers.files.wordpress.com/2017/10/mcb-ballers-logo-e1507338731901.jpg",
+      "owner": "Table4",
+      "players": [],
+      "id": 12
+    },
+    {
+      "name": "Rubber Tree",
+      "image": "https://miamicityballers.files.wordpress.com/2017/10/mcb-ballers-logo-e1507338731901.jpg",
+      "owner": "Table2",
+      "players": [],
+      "id": 13
+    },
+    {
+      "name": "Sid",
+      "image": "https://miamicityballers.files.wordpress.com/2017/10/mcb-ballers-logo-e1507338731901.jpg",
+      "owner": "Table2",
+      "players": [],
+      "id": 14
+    },
+    {
+      "name": "Newest Team",
+      "image": "https://miamicityballers.files.wordpress.com/2017/10/mcb-ballers-logo-e1507338731901.jpg",
+      "owner": "Austin",
+      "players": [],
+      "id": 15
+    },
+    {
+      "name": "Isaacs Team",
+      "image": "https://miamicityballers.files.wordpress.com/2017/10/mcb-ballers-logo-e1507338731901.jpg",
+      "owner": "Isaac",
+      "players": [],
+      "id": 16
+    },
+    {
+      "name": "Isaacs new team",
+      "image": "https://miamicityballers.files.wordpress.com/2017/10/mcb-ballers-logo-e1507338731901.jpg",
+      "owner": "Austin",
+      "players": [],
+      "id": 17
     }
   ],
   "users": [
@@ -873,19 +973,29 @@
       "id": 1,
       "name": "Wesley",
       "password": "Smith",
-      "teams": []
+      "teams": {}
     },
     {
       "id": 2,
       "name": "Isaac",
       "password": "Song",
-      "teams": []
+      "teams": {
+        "name": "Isaacs new team",
+        "image": "https://miamicityballers.files.wordpress.com/2017/10/mcb-ballers-logo-e1507338731901.jpg",
+        "owner": "Austin",
+        "players": []
+      }
     },
     {
       "id": 3,
       "name": "Austin",
       "password": "Ohlfs",
-      "teams": []
+      "teams": {
+        "name": "Newest Team",
+        "image": "https://miamicityballers.files.wordpress.com/2017/10/mcb-ballers-logo-e1507338731901.jpg",
+        "owner": "Austin",
+        "players": []
+      }
     }
   ]
 }

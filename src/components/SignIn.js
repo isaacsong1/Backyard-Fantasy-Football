@@ -7,28 +7,33 @@ import { useNavigate, useOutletContext } from "react-router-dom";
 
 const SignIn = () => {
     const {users, setLoggedInUser} = useOutletContext()
-    const [name, setName] = useState("");
-    const [password, setPassword] = useState("")
+    const {findUser} = useOutletContext()
+    const {name} = useOutletContext()
+    const {password} = useOutletContext()
+    const {setName} = useOutletContext()
+    const {setPassword} = useOutletContext()
+    // const [name, setName] = useState("");
+    // const [password, setPassword] = useState("")
     const navigate = useNavigate()
 
-    const findUser = (e) => {
-        e.preventDefault();
+    // const findUser = (e) => {
+    //     e.preventDefault();
     
-        const foundUser = users.find((user) => user.name === name.trim());
+    //     const foundUser = users.find((user) => user.name === name.trim());
         
-        if (foundUser && foundUser.password !== password) {
-            console.log("Password does not match")
-        } else if(foundUser && foundUser.password === password) {
-            window.localStorage.setItem("isLoggedIn", true);
-            window.localStorage.setItem("user", foundUser.name)
-            setLoggedInUser(foundUser)
-            setName("")
-            setPassword("")
-            navigate("/myTeam")
-        } else {
-            console.log('User not found');
-        }
-      };
+    //     if (foundUser && foundUser.password !== password) {
+    //         console.log("Password does not match")
+    //     } else if(foundUser && foundUser.password === password) {
+    //         window.localStorage.setItem("isLoggedIn", true);
+    //         window.localStorage.setItem("user", foundUser.name)
+    //         setLoggedInUser(foundUser)
+    //         setName("")
+    //         setPassword("")
+    //         navigate("/newTeam")
+    //     } else {
+    //         console.log('User not found');
+    //     }
+    //   };
         
     
     const addNewUser = () => {
