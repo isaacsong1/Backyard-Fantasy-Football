@@ -1,7 +1,7 @@
 import React from 'react'
 import TeamCard from './TeamCard'
 
-const TeamList = ({teams}) => {
+const TeamList = ({teams, handlePickTeam}) => {
   return (
     <div id="teamList">
       <tabel>
@@ -12,7 +12,7 @@ const TeamList = ({teams}) => {
           <td><h3>Owner</h3></td>
         </thead>
         {
-          teams.map(team => <TeamCard key={team.id} team={team}/>)
+          teams.map(team => <TeamCard key={team.id} team={team} handlePickTeam={handlePickTeam}/>)
         }
       </tabel>
     </div>

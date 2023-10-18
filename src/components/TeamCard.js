@@ -1,8 +1,8 @@
 import React from "react";
 
-const TeamCard = ({team}) => {
+const TeamCard = ({team, handlePickTeam}) => {
   return (
-    <div id="teamCard">
+    <div id="teamCard" onClick={() => handlePickTeam(team)}>
       <td><h2 id="teamId">{team.id}</h2></td>
       <td><img 
       id='teamImg'

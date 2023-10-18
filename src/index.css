@@ -125,6 +125,20 @@ img.logo {
     grid-column-gap: 10px;
     border: 20px black;
     overflow-x: hidden;
+    /* margin-top: 5vh; */
+  
+  }
+
+  #pickTeam {
+    background-color: rgb(56, 80, 52, 0.7);
+    display: grid;
+    width: 66vw;
+    height: 20vh;
+    overflow: scroll;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    border: 20px black;
+    overflow-x: hidden;
     margin-top: 5vh;
   }
 
@@ -147,6 +161,10 @@ img.logo {
 
   #teamName {
     width: 35vh;
+  }
+
+  #yourTeam {
+    text-align: -webkit-center;
   }
 
 #yourTeamList {
