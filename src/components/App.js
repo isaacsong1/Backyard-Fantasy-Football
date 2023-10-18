@@ -21,7 +21,8 @@ function App() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("")
   const [pickTeam, setPickTeam] = useState({})
- 
+  const [selectedTeam, setSelectedTeam] = useState("")
+
   const navigate = useNavigate()
 
   console.log(loggedInUser.name)
@@ -48,27 +49,41 @@ function App() {
     .then(usersArray => setUsers(usersArray))
     .catch(err => console.log(err))
   }, []);
+
 //! ------------------------------------
   
 //! HELPER FUNCTIONS -------------------
   const handleAddToRoster = (playerToAdd) => {
     const playerToFind = myTeam.find(player => player.id === playerToAdd.id)
+    const teamToFind = teams.find(team => team.name === selectedTeam)
     if (!playerToFind) {
-      setPlayers(currPlayers => currPlayers.map(player => player.id === playerToAdd.id ? ({...player, isDrafted: !player.isDrafted}): player));
-      setMyTeam(currYourTeam => [({...playerToAdd, isDrafted: !playerToAdd.isDrafted}), ...currYourTeam]);
+      if (!!selectedTeam) {
+        teamToFind.players.push({...playerToAdd, isDrafted: !playerToAdd.isDrafted})
+        fetch(`${teamsURL}/${teamToFind.id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(teamToFind)
+        })
+        .then(resp => resp.json())
+        .then(() => {
+          setPlayers(currPlayers => currPlayers.map(player => player.id === playerToAdd.id ? ({...player, isDrafted: !player.isDrafted}): player));
+          setMyTeam(currYourTeam => [({...playerToAdd, isDrafted: !playerToAdd.isDrafted}), ...currYourTeam]);
+        })
+        .catch(err => alert(err))
+      }   
     } else {
       alert('That player is already on your team.');
     }
+
   };
+
   const handleDeleteFromRoster = (playerToRemove) => {
     setPlayers(currPlayers => ([...currPlayers, ({...playerToRemove, isDrafted: !playerToRemove.isDrafted})]));
     setMyTeam(currMyTeam => currMyTeam.map(player => player.id === playerToRemove.id ? ({...player, isDrafted: !player.isDrafted}) : player));
   };
-  const handlePickTeam = (pickedTeam) => {
-    setPickTeam(pickedTeam)
-    navigate("/myTeam")
-  
-  };
+
 
  
  
@@ -121,6 +136,26 @@ function App() {
   }
    } 
 
+
+  const handlePickTeam = (pickedTeamName) => {
+    // setPickTeam(pickedTeam)
+    // navigate("/myTeam")
+    setSelectedTeam(pickedTeamName)
+    const foundTeam = teams.find(obj => obj.name === pickedTeamName)
+    console.log(foundTeam)
+    if (foundTeam) {
+      setPlayers(currPlayers => currPlayers.map(player => {
+        const playerName = player.name
+        if (foundTeam.players.find(draftedPlayer => draftedPlayer.name === playerName)) {
+          return {...player, isDrafted: !player.isDrafted}
+        } else {
+          return player
+        }
+      }))
+      setMyTeam(foundTeam.players)
+    }
+  }
+
   // const draftPlayers = () => {
     
   //   fetch(`${URL}/${pickTeam.id}`, {
@@ -160,10 +195,14 @@ const findUser = (e) => {
     <div className="App">
       <Header /> 
       <NavBar />
-      <Outlet context={{players, setPlayers, myTeam, handleAddToRoster, handleDeleteFromRoster, teams, handlePickTeam, pickTeam, users, loggedInUser, setLoggedInUser, handleSubmit, findUser, password, name, setName, setPassword}} />
-    </div>
 
+
+
+      <Outlet context={{players, setPlayers, myTeam, handleAddToRoster, handleDeleteFromRoster, teams, handlePickTeam, pickTeam, users, loggedInUser, setLoggedInUser, selectedTeam, setSelectedTeam, handleSubmit, findUser, password, name, setName, setPassword}} />
+
+    </div>
   );
+
 }
 
 export default App;

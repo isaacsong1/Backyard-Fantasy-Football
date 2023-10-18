@@ -4,7 +4,7 @@ import { Card } from 'semantic-ui-react'
 import PlayerCard from "./PlayerCard";
 
 function CardContainer()  {
-  const {players, setPlayers} = useOutletContext();
+  const {players, setPlayers, selectedTeam} = useOutletContext();
   const [filterBy, setFilterBy] = useState("All");
 
   const handleSort = (e) => {
@@ -28,7 +28,8 @@ function CardContainer()  {
 
   return (
     <div id="playerContainer">
-      <h3>Football Players</h3>
+      <h2>Football Players</h2>
+      {selectedTeam ? <h3>{selectedTeam}</h3> : null}
       <select onChange={handleFilter} value={filterBy} >
         <option value="All">All Players</option>
         <option value="QB">QB</option>

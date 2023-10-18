@@ -20,20 +20,17 @@ const NewTeam = () => {
     owner: "",
     players: []
 })
- 
+
 const handleChange = ({target: {name, value}}) => {
   setNewTeam(currentNewTeam => {
     return {
       ...currentNewTeam,
       [name]: value
+
   }
   })
 } 
-  const handlePickTeam = (pickedTeam) => {
-    
-    setPickTeam(pickedTeam)
-    navigate("/myTeam")
-  }
+
 const onSubmit = (e) => {
   e.preventDefault()
   handleSubmit(newTeam)

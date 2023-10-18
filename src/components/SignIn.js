@@ -6,14 +6,11 @@ import { useNavigate, useOutletContext } from "react-router-dom";
 
 
 const SignIn = () => {
-    const {users, setLoggedInUser} = useOutletContext()
-    const {findUser} = useOutletContext()
-    const {name} = useOutletContext()
-    const {password} = useOutletContext()
-    const {setName} = useOutletContext()
-    const {setPassword} = useOutletContext()
-    // const [name, setName] = useState("");
-    // const [password, setPassword] = useState("")
+
+    const {users, setLoggedInUser, handlePickTeam} = useOutletContext()
+    const [name, setName] = useState("");
+    const [password, setPassword] = useState("")
+
     const navigate = useNavigate()
 
     // const findUser = (e) => {
@@ -21,19 +18,23 @@ const SignIn = () => {
     
     //     const foundUser = users.find((user) => user.name === name.trim());
         
-    //     if (foundUser && foundUser.password !== password) {
-    //         console.log("Password does not match")
-    //     } else if(foundUser && foundUser.password === password) {
-    //         window.localStorage.setItem("isLoggedIn", true);
-    //         window.localStorage.setItem("user", foundUser.name)
-    //         setLoggedInUser(foundUser)
-    //         setName("")
-    //         setPassword("")
-    //         navigate("/newTeam")
-    //     } else {
-    //         console.log('User not found');
-    //     }
-    //   };
+
+        if (foundUser && foundUser.password !== password) {
+            console.log("Password does not match")
+        } else if(foundUser && foundUser.password === password) {
+            window.localStorage.setItem("isLoggedIn", true);
+            window.localStorage.setItem("user", foundUser.name)
+            window.localStorage.setItem("team", foundUser.team)
+            setLoggedInUser(foundUser)
+            setName("")
+            setPassword("")
+            handlePickTeam(window.localStorage.getItem("team"))
+            navigate("/myTeam")
+        } else {
+            console.log('User not found');
+        }
+      };
+
         
     
     const addNewUser = () => {
