@@ -4,6 +4,7 @@ import MyTeam from "./components/MyTeam"
 import Home from "./components/Home"
 import SignIn from "./components/SignIn"
 import NewTeam from "./components/NewTeam"
+import Register from "./components/Register"
 
 
 const routes = [
@@ -33,6 +34,10 @@ const routes = [
     {
         path: '/signin',
         element: <SignIn />
+    },
+    {
+        path: '/register',
+        element: <Register />
     }
 ]
 

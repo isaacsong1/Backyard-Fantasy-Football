@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import NavBar from "./NavBar";
+import SignIn from "./SignIn";
 
 
 
@@ -11,13 +12,13 @@ function App() {
   const [players, setPlayers] = useState([])
   const [myTeam, setMyTeam] = useState([])
 
-
   useEffect(() => {
     fetch(URL)
     .then(res => res.json())
     .then(currPlayers => setPlayers(currPlayers.map(player => ({...player, isDrafted: false}))))
     .catch(err => alert(err))
   }, [])
+
 
   const handleAddToRoster = (playerToAdd) => {
     const playerToFind = myTeam.find(player => player.id === playerToAdd.id)
@@ -41,6 +42,7 @@ function App() {
       <NavBar />
       <Outlet context={{players, setPlayers, myTeam, handleAddToRoster, handleDeleteFromRoster}} />
     </div>
+
   );
 }
 

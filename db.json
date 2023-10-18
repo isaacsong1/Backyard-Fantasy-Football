@@ -1,5 +1,4 @@
 {
-
   "players": [
     {
       "id": 1,
@@ -63,7 +62,7 @@
       },
       "team_img": "",
       "past_PPR": 9.8,
-      "PPR_projected": 9.0
+      "PPR_projected": 9
     },
     {
       "id": 5,
@@ -159,7 +158,7 @@
       },
       "team_img": "",
       "past_PPR": 8.3,
-      "PPR_projected": 10.0
+      "PPR_projected": 10
     },
     {
       "id": 11,
@@ -430,8 +429,8 @@
         "Kicking": 2
       },
       "team_img": "",
-      "past_PPR": 10.0,
-      "PPR_projected": 10.0
+      "past_PPR": 10,
+      "PPR_projected": 10
     },
     {
       "id": 28,
@@ -447,7 +446,7 @@
       },
       "team_img": "",
       "past_PPR": 10.5,
-      "PPR_projected": 10.0
+      "PPR_projected": 10
     },
     {
       "id": 29,
@@ -495,7 +494,7 @@
       },
       "team_img": "",
       "past_PPR": 15.7,
-      "PPR_projected": 16.0
+      "PPR_projected": 16
     },
     {
       "id": 32,
@@ -544,7 +543,7 @@
       "team_img": "",
       "past_PPR": 9.7,
       "PPR_projected": 11.5
-    }, 
+    },
     {
       "id": 35,
       "name": "Steve McNair",
@@ -591,7 +590,7 @@
       },
       "team_img": "",
       "past_PPR": 10.5,
-      "PPR_projected": 10.0
+      "PPR_projected": 10
     },
     {
       "id": 38,
@@ -624,8 +623,235 @@
       "team_img": "",
       "past_PPR": 9.7,
       "PPR_projected": 11.5
+    },
+    {
+      "id": 40,
+      "name": "Fierce Rhinos",
+      "nickname": "Position",
+      "position": "DEF",
+      "image": "https://placeit.net/_next/image?url=https%3A%2F%2Fimg0-placeit-net.s3-accelerate.amazonaws.com%2Fuploads%2Fstage%2Fstage_image%2F55970%2Foptimized_large_thumb_stage.jpg&w=2048&q=75",
+      "team": "",
+      "attribute": {
+        "Catching": 2,
+        "Running": 3,
+        "Kicking": 4
+      },
+      "team_img": "",
+      "past_PPR": 8.5,
+      "PPR_projected": 9.9
+    },
+    {
+      "id": 41,
+      "name": "Yard Burglars",
+      "nickname": "Position",
+      "position": "DEF",
+      "image": "https://placeit.net/_next/image?url=https%3A%2F%2Fimg0-placeit-net.s3-accelerate.amazonaws.com%2Fuploads%2Fstage%2Fstage_image%2F56024%2Foptimized_large_thumb_stage.jpg&w=2048&q=75",
+      "team": "",
+      "attribute": {
+        "Catching": 3,
+        "Running": 3,
+        "Kicking": 3
+      },
+      "team_img": "",
+      "past_PPR": 10.6,
+      "PPR_projected": 11.3
+    },
+    {
+      "id": 42,
+      "name": "wild Sables",
+      "nickname": "Positon",
+      "position": "DEF",
+      "image": "https://placeit.net/_next/image?url=https%3A%2F%2Fimg0-placeit-net.s3-accelerate.amazonaws.com%2Fuploads%2Fstage%2Fstage_image%2F56181%2Foptimized_large_thumb_stage.jpg&w=2048&q=75",
+      "team": "",
+      "attribute": {
+        "Catching": 4,
+        "Running": 3,
+        "Kicking": 3
+      },
+      "team_img": "",
+      "past_PPR": 17.1,
+      "PPR_projected": 15.7
+    },
+    {
+      "id": 43,
+      "name": "Furious Wasp",
+      "nickname": "Postion",
+      "position": "DEF",
+      "image": "https://placeit.net/_next/image?url=https%3A%2F%2Fimg0-placeit-net.s3-accelerate.amazonaws.com%2Fuploads%2Fstage%2Fstage_image%2F56246%2Foptimized_large_thumb_stage.jpg&w=2048&q=75",
+      "team": "",
+      "attribute": {
+        "Catching": 2,
+        "Running": 4,
+        "Kicking": 3
+      },
+      "team_img": "",
+      "past_PPR": 12.6,
+      "PPR_projected": 13.2
+    },
+    {
+      "id": 44,
+      "name": "Colorado Rockies",
+      "nickname": "Position",
+      "position": "DEF",
+      "image": "https://placeit.net/_next/image?url=https%3A%2F%2Fimg0-placeit-net.s3-accelerate.amazonaws.com%2Fuploads%2Fstage%2Fstage_image%2F45058%2Foptimized_large_thumb_stage.jpg&w=2048&q=75",
+      "team": "",
+      "attribute": {
+        "Catching": 2,
+        "Running": 2,
+        "Kicking": 3
+      },
+      "team_img": "",
+      "past_PPR": 10.9,
+      "PPR_projected": 9.7
+    },
+    {
+      "id": 45,
+      "name": "Rascal Pelicans",
+      "nickname": "Position",
+      "position": "DEF",
+      "image": "https://placeit.net/_next/image?url=https%3A%2F%2Fimg0-placeit-net.s3-accelerate.amazonaws.com%2Fuploads%2Fstage%2Fstage_image%2F48380%2Foptimized_large_thumb_stage.jpg&w=2048&q=75",
+      "team": "",
+      "attribute": {
+        "Catching": 2,
+        "Running": 4,
+        "Kicking": 3
+      },
+      "team_img": "",
+      "past_PPR": 15.6,
+      "PPR_projected": 13.7
+    },
+    {
+      "id": 46,
+      "name": "Raging Ducks",
+      "nickname": "Position",
+      "position": "DEF",
+      "image": "https://placeit.net/_next/image?url=https%3A%2F%2Fimg0-placeit-net.s3-accelerate.amazonaws.com%2Fuploads%2Fstage%2Fstage_image%2F53483%2Foptimized_large_thumb_stage.jpg&w=2048&q=75",
+      "team": "",
+      "attribute": {
+        "Catching": 2,
+        "Running": 3,
+        "Kicking": 4
+      },
+      "team_img": "",
+      "past_PPR": 8.5,
+      "PPR_projected": 9.9
+    },
+    {
+      "id": 47,
+      "name": "FootBall Tacklers",
+      "nickname": "Position",
+      "position": "DEF",
+      "image": "https://placeit.net/_next/image?url=https%3A%2F%2Fimg0-placeit-net.s3-accelerate.amazonaws.com%2Fuploads%2Fstage%2Fstage_image%2F56564%2Foptimized_large_thumb_stage.jpg&w=2048&q=75",
+      "team": "",
+      "attribute": {
+        "Catching": 3,
+        "Running": 3,
+        "Kicking": 3
+      },
+      "team_img": "",
+      "past_PPR": 10.6,
+      "PPR_projected": 11.3
+    },
+    {
+      "id": 48,
+      "name": "Night Ravens",
+      "nickname": "Position",
+      "position": "DEF",
+      "image": "https://placeit.net/_next/image?url=https%3A%2F%2Fimg0-placeit-net.s3-accelerate.amazonaws.com%2Fuploads%2Fstage%2Fstage_image%2F48382%2Foptimized_large_thumb_stage.jpg&w=2048&q=75",
+      "team": "",
+      "attribute": {
+        "Catching": 4,
+        "Running": 3,
+        "Kicking": 3
+      },
+      "team_img": "",
+      "past_PPR": 17.1,
+      "PPR_projected": 15.7
+    },
+    {
+      "id": 49,
+      "name": "Bombs of Newport",
+      "nickname": "Position",
+      "position": "DEF",
+      "image": "https://placeit.net/_next/image?url=https%3A%2F%2Fimg0-placeit-net.s3-accelerate.amazonaws.com%2Fuploads%2Fstage%2Fstage_image%2F44827%2Foptimized_large_thumb_stage.jpg&w=2048&q=75",
+      "team": "",
+      "attribute": {
+        "Catching": 2,
+        "Running": 4,
+        "Kicking": 3
+      },
+      "team_img": "",
+      "past_PPR": 12.6,
+      "PPR_projected": 13.2
+    },
+    {
+      "id": 50,
+      "name": "Tackle Thunders",
+      "nickname": "Position",
+      "position": "DEF",
+      "image": "https://placeit.net/_next/image?url=https%3A%2F%2Fimg0-placeit-net.s3-accelerate.amazonaws.com%2Fuploads%2Fstage%2Fstage_image%2F44832%2Foptimized_large_thumb_stage.jpg&w=2048&q=75",
+      "team": "",
+      "attribute": {
+        "Catching": 2,
+        "Running": 2,
+        "Kicking": 3
+      },
+      "team_img": "",
+      "past_PPR": 10.9,
+      "PPR_projected": 9.7
+    }
+  ],
+  "teams": [
+    {
+      "id": 1,
+      "name": "Gridiron Guru's",
+      "image": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/38813032154_46b72a.jpg",
+      "owner": "Table2"
+    },
+    {
+      "name": "End Zone Enforcers",
+      "image": "https://sportsteamhistory.com/wp-content/uploads/2020/04/chicago_enforcers_2001.png",
+      "owner": "Table3",
+      "id": 2
+    },
+    {
+      "name": "Backyard Ballers",
+      "image": "https://miamicityballers.files.wordpress.com/2017/10/mcb-ballers-logo-e1507338731901.jpg",
+      "owner": "Table4",
+      "id": 3
+    },
+    {
+      "name": "Gridiron Guru's",
+      "image": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/38813032154_46b72a.jpg",
+      "owner": "table3",
+      "id": 4
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "Wesley",
+      "password": "Smith"
+    },
+    {
+      "id": 2,
+      "name": "Isaac",
+      "password": "Song"
+    },
+    {
+      "id": 3,
+      "name": "Austin",
+      "password": "Ohlfs"
+    },
+    {
+      "name": "Michael",
+      "password": "Scott",
+      "id": 4
+    },
+    {
+      "name": "Dwight",
+      "password": "Schrute",
+      "id": 5
     }
   ]
-} 
-
-   
+}

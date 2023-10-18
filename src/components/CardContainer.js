@@ -30,11 +30,12 @@ function CardContainer()  {
     <div id="playerContainer">
       <h3>Football Players</h3>
       <select onChange={handleFilter} value={filterBy} >
-        <option value="All">Select a Position</option>
+        <option value="All">All Players</option>
         <option value="QB">QB</option>
         <option value="RB">RB</option>
         <option value="WR">WR</option>
         <option value="K">K</option>
+        <option value="DEF">DEF</option>
       </select>
       <select onChange={handleSort}>
         <option value="highestPPR">Highest PPR</option>
