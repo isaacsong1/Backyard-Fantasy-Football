@@ -41,7 +41,7 @@ function App() {
     .catch(err => console.log(err))
   }, []);
 
-  const allPlayers = [...players];
+  
 
   const handleAddToRoster = (playerToAdd) => {
     const playerToFind = myTeam.find(player => player.id === playerToAdd.id)
@@ -80,7 +80,7 @@ function App() {
     setSelectedTeam(pickedTeam.name)
     const foundTeam = teams.find(obj => obj.name === pickedTeam.name)
     if (foundTeam) {
-      setPlayers(allPlayers.map(player => {
+      setPlayers(currPlayers => currPlayers.map(player => {
         const playerName = player.name
         if (foundTeam.players.find(draftedPlayer => draftedPlayer.name === playerName)) {
           return {...player, isDrafted: !player.isDrafted}
