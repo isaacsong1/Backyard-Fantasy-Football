@@ -3,10 +3,12 @@ import { useOutletContext } from 'react-router-dom';
 import { Button, Card, Image } from 'semantic-ui-react'
 
 function PlayerCard({player})  {
-  const {handleAddToRoster} = useOutletContext();
+  const {handleAddToRoster, handleDeleteFromRoster} = useOutletContext();
 
   const handleClick = () => {
-    handleAddToRoster(player)
+
+    player.isDrafted ? handleDeleteFromRoster(player) : handleAddToRoster(player)
+    // handleAddToRoster(player)
   }
 
   return (
@@ -19,7 +21,7 @@ function PlayerCard({player})  {
         </Card.Meta>
         <Card.Description>
           {player.PPR_projected < player.past_PPR ? <h3>Projected PPR: {player.PPR_projected}<span id='greenArrow'>▲</span></h3>: <h3>Projected PPR: {player.PPR_projected}🔻</h3>}
-          <Button id='btn' onClick={handleClick}>Handle Roster</Button>
+          <Button id='btn' onClick={handleClick}>{player.isDrafted ? 'Remove' : 'Hire Player'}</Button>
         </Card.Description>
       </Card.Content>
     </Card>
