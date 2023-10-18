@@ -2,14 +2,15 @@ import React, {useState, useEffect} from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import NavBar from "./NavBar";
+
 import SignIn from "./SignIn";
 import { useNavigate } from "react-router-dom";
-
 
 
 const URL = "http://localhost:3000/players"
 const usersURL = "http://localhost:3000/users"
 const teamsURL = "http://localhost:3000/teams"
+
 
 function App() {
   const [players, setPlayers] = useState([])
@@ -24,7 +25,7 @@ function App() {
     .then(res => res.json())
     .then(currPlayers => setPlayers(currPlayers.map(player => ({...player, isDrafted: false}))))
     .catch(err => alert(err))
-  }, [])
+  }, []);
 
   useEffect(() => {
     fetch(teamsURL)

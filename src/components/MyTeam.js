@@ -44,7 +44,11 @@ function MyTeam() {
   return (
 
   <div id="yourTeam">
+
       <h3>{pickTeam.name}</h3>
+
+
+
       <ul id="yourTeamList">
         {myTeam ? filterMyTeam.map(player => <PlayerCard key={player.id} player={player} />) : null}
       </ul>

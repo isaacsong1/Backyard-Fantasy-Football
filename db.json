@@ -842,96 +842,8 @@
       "id": 1,
       "name": "Gridiron Guru's",
       "image": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/38813032154_46b72a.jpg",
-      "owner": "Wesley",
-      "players": [
-        {
-          "id": 40,
-          "name": "Fierce Rhinos",
-          "nickname": "Position",
-          "position": "DEF",
-          "image": "https://placeit.net/_next/image?url=https%3A%2F%2Fimg0-placeit-net.s3-accelerate.amazonaws.com%2Fuploads%2Fstage%2Fstage_image%2F55970%2Foptimized_large_thumb_stage.jpg&w=2048&q=75",
-          "team": "",
-          "attribute": {
-            "Catching": 2,
-            "Running": 3,
-            "Kicking": 4
-          },
-          "team_img": "",
-          "past_PPR": 8.5,
-          "PPR_projected": 9.9,
-          "isDrafted": true
-        },
-        {
-          "id": 32,
-          "name": "John Elway",
-          "nickname": "Duke",
-          "position": "QB",
-          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReV0ftBkwhjoL8FjeDZDji60PD470ggcq8Ef6p6N4Ly5TrTuwafG6cCn5NIwY0ycuAQAM&usqp=CAU",
-          "team": "",
-          "attribute": {
-            "Catching": 2,
-            "Running": 3,
-            "Kicking": 2
-          },
-          "team_img": "",
-          "past_PPR": 9.7,
-          "PPR_projected": 11.5,
-          "isDrafted": true
-        },
-        {
-          "id": 1,
-          "name": "Billy Jean Blackwood",
-          "nickname": "Crazy Legs",
-          "position": "WR",
-          "image": "data:image/jpeg;base64,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",
-          "team": "",
-          "attribute": {
-            "Catching": 2,
-            "Running": 4,
-            "Kicking": 2
-          },
-          "team_img": "",
-          "past_PPR": 7.9,
-          "PPR_projected": 12.1,
-          "players": [
-            {
-              "id": 41,
-              "name": "Yard Burglars",
-              "nickname": "Position",
-              "position": "DEF",
-              "image": "https://placeit.net/_next/image?url=https%3A%2F%2Fimg0-placeit-net.s3-accelerate.amazonaws.com%2Fuploads%2Fstage%2Fstage_image%2F56024%2Foptimized_large_thumb_stage.jpg&w=2048&q=75",
-              "team": "",
-              "attribute": {
-                "Catching": 3,
-                "Running": 3,
-                "Kicking": 3
-              },
-              "team_img": "",
-              "past_PPR": 10.6,
-              "PPR_projected": 11.3,
-              "isDrafted": true
-            },
-            {
-              "id": 42,
-              "name": "wild Sables",
-              "nickname": "Positon",
-              "position": "DEF",
-              "image": "https://placeit.net/_next/image?url=https%3A%2F%2Fimg0-placeit-net.s3-accelerate.amazonaws.com%2Fuploads%2Fstage%2Fstage_image%2F56181%2Foptimized_large_thumb_stage.jpg&w=2048&q=75",
-              "team": "",
-              "attribute": {
-                "Catching": 4,
-                "Running": 3,
-                "Kicking": 3
-              },
-              "team_img": "",
-              "past_PPR": 17.1,
-              "PPR_projected": 15.7,
-              "isDrafted": true
-            }
-          ],
-          "isDrafted": false
-        }
-      ]
+      "players": [],
+      "owner": "Wesley"
     },
     {
       "name": "End Zone Enforcers",
@@ -943,6 +855,7 @@
     {
       "name": "Backyard Ballers",
       "image": "https://miamicityballers.files.wordpress.com/2017/10/mcb-ballers-logo-e1507338731901.jpg",
+
       "owner": "Austin",
       "id": 3,
       "players": []
@@ -959,7 +872,7 @@
   "users": [
     {
       "id": 1,
-      "username": "Wesley",
+      "name": "Wesley",
       "password": "Smith",
       "teams": []
     },
@@ -973,24 +886,6 @@
       "id": 3,
       "name": "Austin",
       "password": "Ohlfs",
-      "teams": []
-    },
-    {
-      "name": "Michael",
-      "password": "Scott",
-      "id": 4,
-      "teams": []
-    },
-    {
-      "name": "Dwight",
-      "password": "Schrute",
-      "id": 5,
-      "teams": []
-    },
-    {
-      "name": "Michael",
-      "password": "Scott",
-      "id": 6,
       "teams": []
     }
   ]

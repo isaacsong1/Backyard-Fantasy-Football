@@ -3,6 +3,7 @@ import FeaturedPlayers from './FeaturedPlayers'
 import Header from "./Header";
 import NavBar from "./NavBar";
 import LowestFeatured from './LowestFeatured';
+import SignIn from './SignIn';
 const URL = "http://localhost:3000/players"
 
 
@@ -18,7 +19,6 @@ const Home = () => {
 
     return (
         <div>
-        
             <FeaturedPlayers players={players}/>
             <LowestFeatured players={players}/>
             
