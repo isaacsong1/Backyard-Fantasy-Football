@@ -19,6 +19,7 @@ function App() {
   const [loggedInUser, setLoggedInUser] = useState()
   const [myTeam, setMyTeam] = useState([])
   const [pickTeam, setPickTeam] = useState({})
+  const [selectedTeam, setSelectedTeam] = useState("")
   const navigate = useNavigate()
 
 //! FETCH CALLS (Players, Teams, Users)--
@@ -43,26 +44,57 @@ function App() {
     .then(usersArray => setUsers(usersArray))
     .catch(err => console.log(err))
   }, []);
+
 //! ------------------------------------
   
 //! HELPER FUNCTIONS -------------------
   const handleAddToRoster = (playerToAdd) => {
     const playerToFind = myTeam.find(player => player.id === playerToAdd.id)
+    const teamToFind = teams.find(team => team.name === selectedTeam)
+    // setMyTeam(currYourTeam => [({...playerToAdd, isDrafted: !playerToAdd.isDrafted}), ...currYourTeam]);
     if (!playerToFind) {
-      setPlayers(currPlayers => currPlayers.map(player => player.id === playerToAdd.id ? ({...player, isDrafted: !player.isDrafted}): player));
-      setMyTeam(currYourTeam => [({...playerToAdd, isDrafted: !playerToAdd.isDrafted}), ...currYourTeam]);
+      if (!!selectedTeam) {
+        teamToFind.players.push({...playerToAdd, isDrafted: !playerToAdd.isDrafted})
+        fetch(`${teamsURL}/${teamToFind.id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(teamToFind)
+        })
+        .then(resp => resp.json())
+        .then(() => {
+          setPlayers(currPlayers => currPlayers.map(player => player.id === playerToAdd.id ? ({...player, isDrafted: !player.isDrafted}): player));
+        })
+        .catch(err => alert(err))
+      }   
     } else {
       alert('That player is already on your team.');
     }
+
   };
+
   const handleDeleteFromRoster = (playerToRemove) => {
     setPlayers(currPlayers => ([...currPlayers, ({...playerToRemove, isDrafted: !playerToRemove.isDrafted})]));
     setMyTeam(currMyTeam => currMyTeam.map(player => player.id === playerToRemove.id ? ({...player, isDrafted: !player.isDrafted}) : player));
   };
   const handlePickTeam = (pickedTeam) => {
-    setPickTeam(pickedTeam)
-    navigate("/myTeam")
-  
+    // setPickTeam(pickedTeam)
+    // navigate("/myTeam")
+    setSelectedTeam(pickedTeam.name)
+    const foundTeam = teams.find(obj => obj.name === pickedTeam.name)
+    if (foundTeam) {
+      setPlayers(currPlayers => currPlayers.map(player => {
+        const playerName = player.name
+        if (foundTeam.players.find(draftedPlayer => draftedPlayer.name === playerName)) {
+          return {...player, isDrafted: !player.isDrafted}
+        } else {
+          return player
+        }
+      }))
+    }
+    setMyTeam(foundTeam.players)
+  }
   };
   // const draftPlayers = () => {
     
@@ -86,7 +118,7 @@ function App() {
     <div className="App">
       <Header /> 
       <NavBar />
-      <Outlet context={{players, setPlayers, myTeam, handleAddToRoster, handleDeleteFromRoster, teams, handlePickTeam, pickTeam, users, loggedInUser, setLoggedInUser}} />
+      <Outlet context={{players, setPlayers, myTeam, handleAddToRoster, handleDeleteFromRoster, teams, handlePickTeam, pickTeam, users, loggedInUser, setLoggedInUser, selectedTeam, setSelectedTeam}} />
     </div>
 
   );

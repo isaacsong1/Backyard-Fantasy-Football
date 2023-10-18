@@ -14,43 +14,7 @@
       },
       "team_img": "",
       "past_PPR": 7.9,
-      "PPR_projected": 12.1,
-      "players": [
-        {
-          "id": 41,
-          "name": "Yard Burglars",
-          "nickname": "Position",
-          "position": "DEF",
-          "image": "https://placeit.net/_next/image?url=https%3A%2F%2Fimg0-placeit-net.s3-accelerate.amazonaws.com%2Fuploads%2Fstage%2Fstage_image%2F56024%2Foptimized_large_thumb_stage.jpg&w=2048&q=75",
-          "team": "",
-          "attribute": {
-            "Catching": 3,
-            "Running": 3,
-            "Kicking": 3
-          },
-          "team_img": "",
-          "past_PPR": 10.6,
-          "PPR_projected": 11.3,
-          "isDrafted": true
-        },
-        {
-          "id": 42,
-          "name": "wild Sables",
-          "nickname": "Positon",
-          "position": "DEF",
-          "image": "https://placeit.net/_next/image?url=https%3A%2F%2Fimg0-placeit-net.s3-accelerate.amazonaws.com%2Fuploads%2Fstage%2Fstage_image%2F56181%2Foptimized_large_thumb_stage.jpg&w=2048&q=75",
-          "team": "",
-          "attribute": {
-            "Catching": 4,
-            "Running": 3,
-            "Kicking": 3
-          },
-          "team_img": "",
-          "past_PPR": 17.1,
-          "PPR_projected": 15.7,
-          "isDrafted": true
-        }
-      ]
+      "PPR_projected": 12.1
     },
     {
       "id": 2,
@@ -839,18 +803,20 @@
   ],
   "teams": [
     {
-      "id": 1,
       "name": "Gridiron Guru's",
-      "image": "https://yahoofantasysports-res.cloudinary.com/image/upload/t_s192sq/fantasy-logos/38813032154_46b72a.jpg",
-      "players": [],
-      "owner": "Wesley"
+      "image": "https://sportsteamhistory.com/wp-content/uploads/2020/04/chicago_enforcers_2001.png",
+      "owner": "Wesley",
+      "id": 1,
+      "players": [
+      ]
     },
     {
       "name": "End Zone Enforcers",
       "image": "https://sportsteamhistory.com/wp-content/uploads/2020/04/chicago_enforcers_2001.png",
       "owner": "Isaac",
       "id": 2,
-      "players": []
+      "players": [
+      ]
     },
     {
       "name": "Backyard Ballers",
