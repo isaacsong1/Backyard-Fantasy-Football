@@ -20,6 +20,7 @@ function Header()  {
   const handleSignOut = async () => {
       window.localStorage.removeItem("isLoggedIn")
       window.localStorage.removeItem("user")
+      window.localStorage.removeItem("team")
       navigate("/") 
   };
   

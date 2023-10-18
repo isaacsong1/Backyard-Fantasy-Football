@@ -51,7 +51,6 @@ function App() {
   const handleAddToRoster = (playerToAdd) => {
     const playerToFind = myTeam.find(player => player.id === playerToAdd.id)
     const teamToFind = teams.find(team => team.name === selectedTeam)
-    // setMyTeam(currYourTeam => [({...playerToAdd, isDrafted: !playerToAdd.isDrafted}), ...currYourTeam]);
     if (!playerToFind) {
       if (!!selectedTeam) {
         teamToFind.players.push({...playerToAdd, isDrafted: !playerToAdd.isDrafted})
@@ -65,6 +64,7 @@ function App() {
         .then(resp => resp.json())
         .then(() => {
           setPlayers(currPlayers => currPlayers.map(player => player.id === playerToAdd.id ? ({...player, isDrafted: !player.isDrafted}): player));
+          setMyTeam(currYourTeam => [({...playerToAdd, isDrafted: !playerToAdd.isDrafted}), ...currYourTeam]);
         })
         .catch(err => alert(err))
       }   
@@ -78,11 +78,12 @@ function App() {
     setPlayers(currPlayers => ([...currPlayers, ({...playerToRemove, isDrafted: !playerToRemove.isDrafted})]));
     setMyTeam(currMyTeam => currMyTeam.map(player => player.id === playerToRemove.id ? ({...player, isDrafted: !player.isDrafted}) : player));
   };
-  const handlePickTeam = (pickedTeam) => {
+  const handlePickTeam = (pickedTeamName) => {
     // setPickTeam(pickedTeam)
     // navigate("/myTeam")
-    setSelectedTeam(pickedTeam.name)
-    const foundTeam = teams.find(obj => obj.name === pickedTeam.name)
+    setSelectedTeam(pickedTeamName)
+    const foundTeam = teams.find(obj => obj.name === pickedTeamName)
+    console.log(foundTeam)
     if (foundTeam) {
       setPlayers(currPlayers => currPlayers.map(player => {
         const playerName = player.name
@@ -92,8 +93,8 @@ function App() {
           return player
         }
       }))
+      setMyTeam(foundTeam.players)
     }
-    setMyTeam(foundTeam.players)
   }
   // const draftPlayers = () => {
     

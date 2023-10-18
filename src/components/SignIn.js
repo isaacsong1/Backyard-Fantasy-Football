@@ -6,7 +6,7 @@ import { useNavigate, useOutletContext } from "react-router-dom";
 
 
 const SignIn = () => {
-    const {users, setLoggedInUser} = useOutletContext()
+    const {users, setLoggedInUser, handlePickTeam} = useOutletContext()
     const [name, setName] = useState("");
     const [password, setPassword] = useState("")
     const navigate = useNavigate()
@@ -21,9 +21,11 @@ const SignIn = () => {
         } else if(foundUser && foundUser.password === password) {
             window.localStorage.setItem("isLoggedIn", true);
             window.localStorage.setItem("user", foundUser.name)
+            window.localStorage.setItem("team", foundUser.team)
             setLoggedInUser(foundUser)
             setName("")
             setPassword("")
+            handlePickTeam(window.localStorage.getItem("team"))
             navigate("/myTeam")
         } else {
             console.log('User not found');
