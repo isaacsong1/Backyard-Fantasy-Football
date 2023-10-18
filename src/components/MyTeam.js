@@ -13,23 +13,6 @@ function MyTeam() {
   const filterMyTeam = myTeam.filter(player => player.isDrafted !== false)
   const loggedInUser = window.localStorage.getItem("user")
 
-  // const draftPlayers = () => {
-  //   fetch(`${URL}/${pickTeam.id}`, {
-  //     method: "PATCH",
-  //     headers: {
-  //       "Content-Type" : "application/json"
-  //     },
-  //     body: JSON.stringify({
-  //       players: myTeam 
-  //     })
-  //   })
-  //  .then(res => res.json())
-  //  .then(myTeam = false)
-  //  .catch(err => alert(''))
-  // }
-
-
-
   return (
 
   <div id="yourTeam">
