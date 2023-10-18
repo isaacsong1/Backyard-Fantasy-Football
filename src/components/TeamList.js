@@ -4,7 +4,7 @@ import TeamCard from './TeamCard'
 const TeamList = ({teams, handlePickTeam}) => {
   return (
     <div id="teamList">
-      <tabel>
+      <table>
         <thead id="thead">
           <td><h3>ID</h3></td>
           <td><h3>Logo</h3></td>
@@ -14,7 +14,7 @@ const TeamList = ({teams, handlePickTeam}) => {
         {
           teams.map(team => <TeamCard key={team.id} team={team} handlePickTeam={handlePickTeam}/>)
         }
-      </tabel>
+      </table>
     </div>
   )
 }

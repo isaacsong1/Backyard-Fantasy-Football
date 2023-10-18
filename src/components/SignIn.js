@@ -6,16 +6,19 @@ import { useNavigate, useOutletContext } from "react-router-dom";
 
 
 const SignIn = () => {
+
     const {users, setLoggedInUser, handlePickTeam} = useOutletContext()
     const [name, setName] = useState("");
     const [password, setPassword] = useState("")
+
     const navigate = useNavigate()
 
-    const findUser = (e) => {
-        e.preventDefault();
+    // const findUser = (e) => {
+    //     e.preventDefault();
     
-        const foundUser = users.find((user) => user.name === name.trim());
+    //     const foundUser = users.find((user) => user.name === name.trim());
         
+
         if (foundUser && foundUser.password !== password) {
             console.log("Password does not match")
         } else if(foundUser && foundUser.password === password) {
@@ -31,6 +34,7 @@ const SignIn = () => {
             console.log('User not found');
         }
       };
+
         
     
     const addNewUser = () => {

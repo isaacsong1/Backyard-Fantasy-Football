@@ -16,11 +16,16 @@ function App() {
   const [players, setPlayers] = useState([])
   const [teams, setTeams] = useState([])
   const [users, setUsers] = useState([])
-  const [loggedInUser, setLoggedInUser] = useState()
+  const [loggedInUser, setLoggedInUser] = useState({})
   const [myTeam, setMyTeam] = useState([])
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("")
   const [pickTeam, setPickTeam] = useState({})
   const [selectedTeam, setSelectedTeam] = useState("")
+
   const navigate = useNavigate()
+
+  console.log(loggedInUser.name)
 
 //! FETCH CALLS (Players, Teams, Users)--
 // Players
@@ -78,6 +83,60 @@ function App() {
     setPlayers(currPlayers => ([...currPlayers, ({...playerToRemove, isDrafted: !playerToRemove.isDrafted})]));
     setMyTeam(currMyTeam => currMyTeam.map(player => player.id === playerToRemove.id ? ({...player, isDrafted: !player.isDrafted}) : player));
   };
+
+
+ 
+ 
+
+  const handleSubmit = (newTeam) => {
+
+   if (loggedInUser.teams !== true) {
+    fetch(teamsURL, {
+      method: "POST",
+      headers: {
+        "Content-Type" : "application/json"
+      },
+      body: JSON.stringify(newTeam)
+    })
+    .then(res => {
+      if (res.ok) {
+        return (res.json())
+      } else {
+        throw(res.statusText)
+      }
+    })
+    .then(data => {
+      setTeams(currentTeams => [...currentTeams, data]);
+    })
+    .then(() => fetch(`${usersURL}/${loggedInUser.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type" : "application/json"
+      },
+      body: JSON.stringify({
+        teams: newTeam
+      })
+    })
+    .then(res => {
+      if (res.ok) {
+        return (res.json())
+      } else {
+        throw(res.statusText)
+      }
+      
+    })
+    .then((currentUser) => setLoggedInUser(currentUser))
+    )
+   
+    // .then(setNewTeam())
+    .catch(err => alert('err'))
+    
+  } else {
+    alert("You can only have one team!")
+  }
+   } 
+
+
   const handlePickTeam = (pickedTeamName) => {
     // setPickTeam(pickedTeam)
     // navigate("/myTeam")
@@ -96,6 +155,7 @@ function App() {
       setMyTeam(foundTeam.players)
     }
   }
+
   // const draftPlayers = () => {
     
   //   fetch(`${URL}/${pickTeam.id}`, {
@@ -112,13 +172,34 @@ function App() {
   //  .catch(err => alert(''))
   // };
 //? WESLEY'S CODE -----------------------
+const findUser = (e) => {
+  e.preventDefault();
 
+  const foundUser = users.find((user) => user.name === name.trim());
+  
+  if (foundUser && foundUser.password !== password) {
+      console.log("Password does not match")
+  } else if(foundUser && foundUser.password === password) {
+      window.localStorage.setItem("isLoggedIn", true);
+      window.localStorage.setItem("user", foundUser.name)
+      setLoggedInUser(foundUser)
+      setName("")
+      setPassword("")
+      navigate("/newTeam")
+  } else {
+      console.log('User not found');
+  }
+};
 //? -------------------------------------
   return (
     <div className="App">
       <Header /> 
       <NavBar />
-      <Outlet context={{players, setPlayers, myTeam, handleAddToRoster, handleDeleteFromRoster, teams, handlePickTeam, pickTeam, users, loggedInUser, setLoggedInUser, selectedTeam, setSelectedTeam}} />
+
+
+
+      <Outlet context={{players, setPlayers, myTeam, handleAddToRoster, handleDeleteFromRoster, teams, handlePickTeam, pickTeam, users, loggedInUser, setLoggedInUser, selectedTeam, setSelectedTeam, handleSubmit, findUser, password, name, setName, setPassword}} />
+
     </div>
   );
 
