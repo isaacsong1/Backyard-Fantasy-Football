@@ -9,12 +9,11 @@ function Register() {
         password: "",
         confirm: ""
         });
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
 
     const handleChange = (e) => {
         const { name, value } = e.target
-            console.log(name, value)
             setFormData({...formData, [name]: value})
     };
 
@@ -35,7 +34,6 @@ function Register() {
             })
             .then(response => response.json())
             .then(data => {
-                console.log(data)
                 setFormData({
                     name: "",
                     password: "",
@@ -46,7 +44,7 @@ function Register() {
         } else {
             alert("Please confirm passwords match")
         }
-    }
+    };
 
 
     return (
@@ -91,7 +89,7 @@ function Register() {
             </form>
         </section>
     )
-}
+};
 
 
 export default Register
