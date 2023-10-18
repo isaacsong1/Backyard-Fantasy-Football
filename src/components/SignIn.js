@@ -23,7 +23,7 @@ const SignIn = () => {
 
     return (
         <>
-        {/* <Header /> */}
+        <Header />
         <NavBar />
         <section>
         <form>
