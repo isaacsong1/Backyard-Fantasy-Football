@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 // import Header from "./Header"
 // import NavBar from "./NavBar";
-import { Button, Form, Icon, Message, Modal } from 'semantic-ui-react'
+import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+// import { Button, Form, Icon, Message, Modal } from 'semantic-ui-react'
 import { useNavigate, useOutletContext } from "react-router-dom";
+import Logo from '../Logo.png'
 
 
 const SignIn = () => {
@@ -40,39 +42,74 @@ const SignIn = () => {
     const addNewUser = () => {
       navigate("/register")
     };
-    
-  return (
-    <div id="signin">
-    <Message
-      attached
-      header="Who's Ready to Play Some Football?"
-      content='Please login to start playing!'
-    />
-    <Form onSubmit={findUser} className='attached fluid segment'>
-      <Form.Input
-        label="Username" 
-        value={name} 
-        onChange={(e) => setName(e.target.value)} 
-        type="username" 
-        placeholder="Username" 
-        id="username" 
-        name="username"/>
-      <Form.Input 
-        label='Password'
-        value={password} 
-        onChange={(e) => setPassword(e.target.value)} 
-        type="password" 
-        placeholder='********' 
-        id="password"
-        name="password"/>
-      <Button color='blue'>Log In</Button>
-    </Form>
-    <Message attached='bottom' warning>
-      <Icon name='help' />
-      New kid on the block? <button onClick={addNewUser}>Sign up here!</button>
-    </Message>
-  </div>
-)
+    return (
+            <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
+              <Grid.Column style={{ maxWidth: 450 }}>
+                <Header as='h2' color='yellow' textAlign='center'>
+                    Log In To Your Account
+                </Header>
+                <Form onSubmit={findUser} size='large'>
+                  <Segment stacked>
+                    <Form.Input 
+                        fluid icon='user'
+                        iconPosition='left'
+                        placeholder='User'
+                        value={name} 
+                        onChange={(e) => setName(e.target.value)} 
+                        />
+                    <Form.Input
+                      fluid
+                      icon='lock'
+                      iconPosition='left'
+                      placeholder='Password'
+                      type='password'
+                      value={password} 
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
+          
+                    <Button color='yellow' fluid size='large'>
+                      Login
+                    </Button>
+                  </Segment>
+                </Form>
+                <Message>
+                  New kid on the block? <button onClick={addNewUser}>Sign up here!</button>
+                </Message>
+              </Grid.Column>
+            </Grid>
+    )
+//   return (
+//     <div id="signin">
+//     <Message
+//       attached
+//       header="Who's Ready to Play Some Football?"
+//       content='Please login to start playing!'
+//     />
+//     <Form onSubmit={findUser} className='attached fluid segment'>
+//       <Form.Input
+//         label="Username" 
+//         value={name} 
+//         onChange={(e) => setName(e.target.value)} 
+//         type="username" 
+//         placeholder="Username" 
+//         id="username" 
+//         name="username"/>
+//       <Form.Input 
+//         label='Password'
+//         value={password} 
+//         onChange={(e) => setPassword(e.target.value)} 
+//         type="password" 
+//         placeholder='********' 
+//         id="password"
+//         name="password"/>
+//       <Button color='blue'>Log In</Button>
+//     </Form>
+//     <Message attached='bottom' warning>
+//       <Icon name='help' />
+//       New kid on the block? <button onClick={addNewUser}>Sign up here!</button>
+//     </Message>
+//   </div>
+// )
 
 }
 

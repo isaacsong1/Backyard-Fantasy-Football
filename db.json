@@ -989,8 +989,8 @@
       "id": 1,
       "name": "Wesley",
       "password": "Smith",
-      "teams": {}
-
+      "teams": {},
+      "team": "Gridiron Guru's"
     },
     {
       "id": 2,
@@ -1016,6 +1016,7 @@
       }
 
       "team": "Backyard Ballers"
+
 
     }
   ]

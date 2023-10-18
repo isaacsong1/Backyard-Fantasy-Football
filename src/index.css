@@ -1,8 +1,8 @@
 body {
   margin: 0;
   height: 100%;
-  background-color: green;
-  background-image: url("https://i.pinimg.com/736x/f8/cd/d5/f8cdd5f210f21e225922296389f46dd4.jpg");
+  background-color: rgba(21, 99, 9, 1);
+  /* background-image: url("https://i.pinimg.com/736x/f8/cd/d5/f8cdd5f210f21e225922296389f46dd4.jpg"); */
   background-size: cover;
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -19,7 +19,7 @@ code {
 .App {
   height: 100%;
   width: 100%;
-  background-image: url("https://i.pinimg.com/736x/f8/cd/d5/f8cdd5f210f21e225922296389f46dd4.jpg");
+  /* background-image: url("https://i.pinimg.com/736x/f8/cd/d5/f8cdd5f210f21e225922296389f46dd4.jpg"); */
   background-size: cover; 
 }
 
@@ -47,14 +47,14 @@ img.logo {
 }
 
 #link {
-  background-image: url("https://www.clker.com/cliparts/8/A/u/x/E/t/football-helmet-blue-hi.png");
+  /* background-image: url("https://www.clker.com/cliparts/8/A/u/x/E/t/football-helmet-blue-hi.png"); */
   margin-left: 40px;
   margin-bottom: 5vh;
-  background-size: 12vh, 12vh;
-  width: 12vh;
+  /* background-size: 12vh, 12vh; */
+  width: 10vh;
   height: 10vh;
   text-align: center;
-  color: red;
+  color: whitesmoke;
   font-size: large;
 }
 
