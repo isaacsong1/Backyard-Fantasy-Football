@@ -42,7 +42,10 @@ const SignIn = () => {
 
     return (
         <>
-        {/* <Header /> */}
+
+        <Header />
+        <NavBar />
+
         <section>
             <form onSubmit={findUser}>
                 <h1>Sign In To Play!</h1>

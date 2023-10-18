@@ -2,13 +2,13 @@ body {
   margin: 0;
   height: 100%;
   background-color: green;
-  /* background-image: url("https://i.pinimg.com/736x/f8/cd/d5/f8cdd5f210f21e225922296389f46dd4.jpg"); */
-  /* background-size: cover; */
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  background-image: url("https://i.pinimg.com/736x/f8/cd/d5/f8cdd5f210f21e225922296389f46dd4.jpg");
+  background-size: cover;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
 }
 
 code {
@@ -19,8 +19,8 @@ code {
 .App {
   height: 100%;
   width: 100%;
-  /* background-image: url("https://i.pinimg.com/736x/f8/cd/d5/f8cdd5f210f21e225922296389f46dd4.jpg");
-  background-size: cover; */
+  background-image: url("https://i.pinimg.com/736x/f8/cd/d5/f8cdd5f210f21e225922296389f46dd4.jpg");
+  background-size: cover; 
 }
 
 #logo{
@@ -34,7 +34,7 @@ img.logo {
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 2.5%;
-  /* background-color: rgb(56, 80, 52, 0.7); */
+  background-color: rgb(56, 80, 52, 0.7);
 
 }
 
@@ -55,9 +55,7 @@ img.logo {
   height: 10vh;
   text-align: center;
   color: red;
-  font-weight: 900;
-  
-
+  font-size: large;
 }
 
 #featuredPlayersList {
@@ -89,12 +87,12 @@ img.logo {
 
   #playerTable {
     background-color: rgb(56, 80, 52, 0.7);
-    /* display: grid; */
+    display: grid;
     width: 66vw;
     height: 61vh;
     overflow: scroll;
-    /* grid-template-columns: 1fr 1fr 1fr; */
-    /* grid-column-gap: 10px; */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 10px;
     border: 20px black;
     overflow-x: hidden;
     margin:auto;
@@ -108,7 +106,7 @@ img.logo {
 
   #newTeamForm {
     width: 75vh;
-    margin: auto;
+    margin-left: 25vh;
   }
 
   #form {
@@ -131,7 +129,7 @@ img.logo {
   }
 
   #teamCard {
-    display: flex;
+    display: inline-table;
     align-items: baseline;
     height: 5vh;
     margin-bottom: 3vh;
@@ -143,7 +141,8 @@ img.logo {
 
   #teamImg {
     height: 3vh;
-    margin-right: 7vh;
+    margin-right: 13vh;
+    margin-left: 4vh;
   }
 
   #teamName {
@@ -151,17 +150,25 @@ img.logo {
   }
 
 #yourTeamList {
-  background-color: whitesmoke;
+  background-color: rgb(56, 80, 52, 0.7);
   display: flex;
-  width: 90%;
-  height: 33vh;
+  height: 38vh;
+  width: 103vh;
   overflow: scroll;
   margin-left: 41px;
   grid-column-gap: 10px;
   border: 20px black;
   overflow-y: hidden;
-  width: 75vh;
   margin: auto;
+}
+
+#thead {
+  min-width: 775px;
+  display: inline-table;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: rgb(240, 248, 255, 0.7);
 }
 
 #img {
@@ -171,14 +178,16 @@ img.logo {
 }
 
 #playerCard {
-  /* height: 35vh; */
+  display: inline-table;
+  text-align: initial;
+  height: 33vh;
   /* width: 22vh; */
   background-color: whitesmoke;
   border-radius: 2px;
   margin-top: 10px;
   margin-bottom: 10px;
   place-items: center;
-  /* box-shadow: 5px 10px; */
+  box-shadow: 5px 10px;
   border: 1px solid rgb(59, 59, 59);
 }
 #greenArrow {
@@ -191,18 +200,27 @@ img.logo {
 
 #name {
 margin: 1px;
+font-size: 1.2em;
 }
 
 #nickname{
+  margin-top: 0vh;
 margin: 1px;
+font-weight: 300;
 }
 
 #ppr {
   margin: 1px;
+  font-size: 1.2em;
+}
+
+#rosterBtn {
+  text-align: center;
+  margin-top: 1vh;
 }
 
 .ui.card {
-  /* width: 30vw; */
+  width: 30vw;
   height: 50vh;
 }
 

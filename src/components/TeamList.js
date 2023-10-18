@@ -4,11 +4,17 @@ import TeamCard from './TeamCard'
 const TeamList = ({teams}) => {
   return (
     <div id="teamList">
-      <ul>
+      <tabel>
+        <thead id="thead">
+          <td><h3>ID</h3></td>
+          <td><h3>Logo</h3></td>
+          <td><h3>Name</h3></td>
+          <td><h3>Owner</h3></td>
+        </thead>
         {
           teams.map(team => <TeamCard key={team.id} team={team}/>)
         }
-      </ul>
+      </tabel>
     </div>
   )
 }
