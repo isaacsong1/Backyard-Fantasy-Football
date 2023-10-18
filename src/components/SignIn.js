@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Header from "./Header"
 import NavBar from "./NavBar";
 import { useNavigate } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 const usersURL = "http://localhost:3000/users"
 
 const SignIn = () => {
@@ -9,6 +10,7 @@ const SignIn = () => {
     const [password, setPassword] = useState("")
     const [users, setUsers] = useState([])
     const navigate = useNavigate()
+    
     
 
     useEffect(() => {
@@ -20,15 +22,16 @@ const SignIn = () => {
 
     const findUser = (e) => {
         e.preventDefault();
-    
+        
         const foundUser = users.find((user) => user.name === name);
     
         if (foundUser && foundUser.password !== password) {
             console.log("Password does not match")
         } else if(foundUser && foundUser.password === password) {
-            navigate("/myteam")
+            navigate("/newteam")
             setName("")
             setPassword("")
+            // setSignedInUser(foundUser)
         } else {
             console.log('User not found');
         }
@@ -76,7 +79,9 @@ const SignIn = () => {
             </form>
             <button onClick={addNewUser}>New User? Register Here!</button>
         </section>
+        
         </>
+         
     )
 }
 

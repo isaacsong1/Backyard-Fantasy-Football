@@ -1,22 +1,19 @@
 import React, {useState, useEffect} from "react";
 import TeamList from "./TeamList";
+import { handleRef } from "@fluentui/react-component-ref";
+import { useNavigate } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 const URL = "http://localhost:3000/teams"
 
 const NewTeam = () => {
-  const [teams, setTeams] = useState([])
+  const [pickTeam, setPickTeam] = useState({})
+  const navigate = useNavigate()
+  const {teams} = useOutletContext();
   const [newTeam ,setNewTeam] = useState({
     name: "",
       image: "",
       owner: ""
   })
-  console.log(newTeam)
-
-  useEffect(() => {
-    fetch(URL)
-    .then(res => res.json())
-    .then(setTeams)
-    .catch(err => alert('error'))
-  }, [])
  
   const handleSubmit = (e) => {
     fetch(URL, {
@@ -45,6 +42,12 @@ const NewTeam = () => {
     })
   } 
 
+  const handlePickTeam = (pickedTeam) => {
+    
+    setPickTeam(pickedTeam)
+    navigate("/myTeam")
+  }
+
   return (
     <div id="newTeamForm">
     <form id="form" onSubmit={handleSubmit}>
@@ -63,7 +66,7 @@ const NewTeam = () => {
         <input type="submit" value="Submit"/>
     </form>
       {
-        <TeamList teams={teams}/>
+        <TeamList teams={teams} handlePickTeam={handlePickTeam}/>
       }
     </div>
     

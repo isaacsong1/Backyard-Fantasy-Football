@@ -34,7 +34,13 @@ function PlayerCard({player})  {
         {player.PPR_projected < player.past_PPR ? <h4>Projected PPR: {player.PPR_projected}<span id='greenArrow'>▲</span></h4>: <h4>Projected PPR: {player.PPR_projected}🔻</h4>}
         </div>
        <div id="rosterBtn">
-         <button id='btn' onClick={handleClick}>Handle Roster</button>
+         {/* <button id='btn' onClick={handleClick}>Handle Roster</button> */}
+         <select id="btn" onChange={handleClick}>
+          <option>Handle Roster</option>
+          <option onClick={handleClick}>Team 1</option>
+          <option onClick={handleClick}>Team 2</option>
+          <option onClick={handleClick}>Team 3</option>
+         </select>
        </div>
         
     </div>
