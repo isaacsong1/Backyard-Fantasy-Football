@@ -1,6 +1,6 @@
 import App from "./components/App"
 import CardContainer from "./components/CardContainer"
-import YourTeam from "./components/YourTeam"
+import MyTeam from "./components/MyTeam"
 import Home from "./components/Home"
 import SignIn from "./components/SignIn"
 import NewTeam from "./components/NewTeam"
@@ -21,7 +21,7 @@ const routes = [
             },
             {
                 path:'/myteam',
-                element: <YourTeam />
+                element: <MyTeam />
             },
             {
                 path:'/newteam',

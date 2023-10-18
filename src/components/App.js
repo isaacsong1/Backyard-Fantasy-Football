@@ -9,7 +9,7 @@ const URL = "http://localhost:3000/players"
 
 function App() {
   const [players, setPlayers] = useState([])
-  const [yourTeam, setYourTeam] = useState([])
+  const [myTeam, setMyTeam] = useState([])
 
 
   useEffect(() => {
@@ -20,17 +20,18 @@ function App() {
   }, [])
 
   const handleAddToRoster = (playerToAdd) => {
-    const playerToFind = yourTeam.find(player => player.id === playerToAdd.id)
+    const playerToFind = myTeam.find(player => player.id === playerToAdd.id)
     if (!playerToFind) {
       setPlayers(currPlayers => currPlayers.map(player => player.id === playerToAdd.id ? ({...player, isDrafted: !player.isDrafted}): player));
-      setYourTeam(currYourTeam => [({...playerToAdd, isDrafted: !playerToAdd.isDrafted}), ...currYourTeam]);
+      setMyTeam(currYourTeam => [({...playerToAdd, isDrafted: !playerToAdd.isDrafted}), ...currYourTeam]);
     } else {
       alert('That player is already on your team.');
     }
   }
 
   const handleDeleteFromRoster = (playerToRemove) => {
-    console.log(playerToRemove)
+    setPlayers(currPlayers => ([...currPlayers, ({...playerToRemove, isDrafted: !playerToRemove.isDrafted})]));
+    setMyTeam(currMyTeam => currMyTeam.map(player => player.id === playerToRemove.id ? ({...player, isDrafted: !player.isDrafted}) : player));
   }
   
 
@@ -38,7 +39,7 @@ function App() {
     <div className="App">
       <Header /> 
       <NavBar />
-      <Outlet context={{players, setPlayers, yourTeam, handleAddToRoster, handleDeleteFromRoster}} />
+      <Outlet context={{players, setPlayers, myTeam, handleAddToRoster, handleDeleteFromRoster}} />
     </div>
   );
 }
