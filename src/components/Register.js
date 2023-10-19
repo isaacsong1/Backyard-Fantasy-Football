@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import { useNavigate } from "react-router-dom"
-import { Form, Input } from 'semantic-ui-react'
+import { useNavigate, useOutletContext } from "react-router-dom"
+import { Form, Input, Button } from 'semantic-ui-react'
 const userURL = "http://localhost:3000/users"
 
 
 function Register() {
+    const { setUsers } = useOutletContext()
     const [formData, setFormData] = useState({
         name: "",
         password: "",
@@ -25,30 +26,48 @@ function Register() {
             name,
             password
         };
-        if (formData.password === formData.confirm) {
-            fetch(userURL, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(newUser)
-            })
-            .then(response => response.json())
-            .then(data => {
-                setFormData({
-                    name: "",
-                    password: "",
-                    confirm: ""
+        if (formData.name && formData.password) {
+            if (formData.password === formData.confirm) {
+                fetch(userURL, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(newUser)
                 })
-                navigate("/signin")
-            })
-        } else {
+                .then(response => response.json())
+                .then(data => {
+                    setUsers(currentUsers => [...currentUsers, data])
+                    setFormData({
+                        name: "",
+                        password: "",
+                        confirm: ""
+                    })
+                    navigate("/signin")
+                })
+            } else {
             console.log("Please provide info")
-        }
+            };
+        } else {
+            alert("Please fill in register")
+        };
     };
 
 
     return (
+        // <section>
+        //     <Form>
+        //         <Form.Field>
+        //             <label>First Name</label>
+        //             <input placeholder='First Name' />
+        //         </Form.Field>
+        //         <Form.Field>
+        //             <label>Last Name</label>
+        //             <input placeholder='Last Name' />
+        //         </Form.Field>
+        //         <Button type='register'>Register</Button>
+        //     </Form>
+        // </section>
         <section>
             <form onSubmit={handleSubmit}>
                 <h1>Register Now!</h1>
