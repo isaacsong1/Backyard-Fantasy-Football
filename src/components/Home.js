@@ -9,6 +9,7 @@ const URL = "http://localhost:3000/players"
 
 const Home = () => {
     const [players, setPlayers] = useState([])
+
    
     useEffect(() => {
         fetch(URL)
