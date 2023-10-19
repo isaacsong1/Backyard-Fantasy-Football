@@ -5,18 +5,22 @@ import TeamList from "./TeamList";
 const URL = "http://localhost:3000/teams"
 
 function MyTeam() {
-  const {myTeam, teams, selectedTeam, handleSaveTeam} = useOutletContext();
-  // const {draftPlayers} = useOutletContext();
-  const {handlePickTeam} = useOutletContext();
-  const {pickTeam} = useOutletContext();
-  const [myTeamPlayers, setMyTeamPlayers] = useState([])
+  const {myTeam, setMyTeam, teams, handlePickTeam, selectedTeam, handleSaveTeam} = useOutletContext();
+  const userTeamName = window.localStorage.getItem("team")
+
+  if (teams.length) {
+    const myTeamObj = teams.find(team => team.name === userTeamName)
+    if (myTeamObj.players.length) {
+      setMyTeam(myTeamObj.players)
+    }
+  }
+  
   const filterMyTeam = myTeam.filter(player => player.isDrafted !== false)
-  const loggedInUser = window.localStorage.getItem("user")
 
   return (
 
   <div id="yourTeam">
-      <h3>{selectedTeam}</h3>
+      <h3>{window.localStorage.getItem("team")}</h3>
       <ul id="yourTeamList">
         {myTeam.length ? filterMyTeam.map(player => <PlayerCard key={player.id} player={player} />) : null}
       </ul>

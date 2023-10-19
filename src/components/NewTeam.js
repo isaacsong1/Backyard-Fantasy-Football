@@ -61,7 +61,7 @@ console.log(newTeam)
         <input type="submit" value="Submit"/>
     </form>
       {
-        <TeamList teams={teams} handlePickTeam={handlePickTeam}/>
+        <TeamList teams={teams} />
       }
     </div>
     

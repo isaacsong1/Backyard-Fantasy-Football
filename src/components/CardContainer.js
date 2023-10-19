@@ -4,7 +4,7 @@ import { Card } from 'semantic-ui-react'
 import PlayerCard from "./PlayerCard";
 
 function CardContainer()  {
-  const {players, setPlayers, selectedTeam} = useOutletContext();
+  const {players, setPlayers} = useOutletContext();
   const [filterBy, setFilterBy] = useState("All");
 
   const handleSort = (e) => {
@@ -22,14 +22,14 @@ function CardContainer()  {
 
   const mappedPlayers = players
                         .filter(player => player.isDrafted !== true)
-                        .filter(player => filterBy === "All" || player.position.toUpperCase() === filterBy.toUpperCase())
+                        .filter(player => filterBy === "All" || player.position === filterBy)
                         .map(player => <PlayerCard key={player.id} player={player} />)
 
 
   return (
     <div id="playerContainer">
       <h2>Football Players</h2>
-      {selectedTeam ? <h3>{selectedTeam}</h3> : null}
+      {window.localStorage.getItem("team") ? <h3>{window.localStorage.getItem("team") }</h3> : null}
       <select onChange={handleFilter} value={filterBy} >
         <option value="All">All Players</option>
         <option value="QB">QB</option>

@@ -15,10 +15,10 @@ const SignIn = () => {
 
     const navigate = useNavigate()
 
-    // const findUser = (e) => {
-    //     e.preventDefault();
+    const findUser = (e) => {
+        e.preventDefault();
     
-    //     const foundUser = users.find((user) => user.name === name.trim());
+        const foundUser = users.find((user) => user.name === name.trim());
         
 
         if (foundUser && foundUser.password !== password) {
@@ -35,12 +35,12 @@ const SignIn = () => {
         } else {
             console.log('User not found');
         }
-      };
-
+    }
         
     
     const addNewUser = () => {
       navigate("/register")
+      
     };
     return (
             <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
@@ -112,5 +112,6 @@ const SignIn = () => {
 // )
 
 }
+
 
 export default SignIn

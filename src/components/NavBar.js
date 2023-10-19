@@ -10,7 +10,7 @@ function NavBar() {
         <NavLink id="link" to='/'>
           <Icon.Group size='big'>
             <Icon size='big' name='circle outline' />
-          <Icon name='home' color="" />
+          <Icon name='home' />
           </Icon.Group>
         </NavLink>
         <NavLink id="link" to='/players'>
