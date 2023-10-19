@@ -917,6 +917,23 @@
           "past_PPR": 6.7,
           "PPR_projected": 6.4,
           "isDrafted": true
+        },
+        {
+          "id": 4,
+          "name": "Tony Delvecchio",
+          "nickname": "Vec",
+          "position": "RB",
+          "image": "https://theyarde.files.wordpress.com/2014/03/f.png?w=270",
+          "team": "",
+          "attribute": {
+            "Catching": 2,
+            "Running": 2,
+            "Kicking": 2
+          },
+          "team_img": "",
+          "past_PPR": 9.8,
+          "PPR_projected": 9,
+          "isDrafted": true
         }
       ]
     },

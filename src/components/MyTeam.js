@@ -14,7 +14,7 @@ function MyTeam() {
       setMyTeam(myTeamObj.players)
     } 
   }
-
+  
   const filterMyTeam = myTeam.filter(player => player.isDrafted !== false)
 
   return (
