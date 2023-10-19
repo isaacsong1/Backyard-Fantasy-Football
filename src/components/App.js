@@ -56,15 +56,26 @@ function App() {
     .catch(err => console.log(err))
   }, []);
 
+  useEffect(() => {
+    if (!loggedInUser.id && localUser?.foundUser) {
+      setLoggedInUser(localUser.foundUser)
+    }
+    },
+      [
+        loggedInUser
+      ]
+    )
+
 //! ------------------------------------
   
 //! HELPER FUNCTIONS -------------------
   const handleAddToRoster = (playerToAdd) => {
     const playerToFind = myTeam.find(player => player.id === playerToAdd.id)
     const playerPosition = myTeam.find(player => player.position === playerToAdd.position)
-    const teamToFind = teams.find(team => team.name === window.localStorage.getItem("team"))
+    const teamToFind = teams.find(team => team.name === loggedInUser.team)
+    console.log('teamtofind', teamToFind)
     if (!playerToFind) {
-      if (!!window.localStorage.getItem("team")) {
+      if (loggedInUser.team && teamToFind) {
       if (!playerPosition) {
         teamToFind.players.push({...playerToAdd, isDrafted: !playerToAdd.isDrafted})
         fetch(`${teamsURL}/${teamToFind.id}`, {
@@ -87,7 +98,7 @@ function App() {
   };
 
   const handleDeleteFromRoster = (playerToRemove) => {
-    const teamToFind = teams.find(team => team.name === window.localStorage.getItem("team"))
+    const teamToFind = teams.find(team => team.name === loggedInUser.team)
     setMyTeam(currMyTeam => currMyTeam.filter(player => player.id !== playerToRemove.id))
     const myRoster = [...myTeam]
     fetch(`${teamsURL}/${teamToFind.id}`, {
@@ -137,7 +148,7 @@ function App() {
         "Content-Type" : "application/json"
       },
       body: JSON.stringify({
-        teams: newTeam.name
+        team: newTeam.name
       })
     })
     .then(res => {
@@ -148,7 +159,10 @@ function App() {
       }
       
     })
-    .then((currentUser) => setLoggedInUser(currentUser))
+    .then((currentUser) => {
+      setLoggedInUser(currentUser)
+      window.localStorage.setItem("user", JSON.stringify({foundUser: currentUser}))
+    })
     )
    
     .catch(err => alert('err'))

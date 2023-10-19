@@ -5,18 +5,26 @@ import TeamList from "./TeamList";
 const URL = "http://localhost:3000/teams"
 
 function MyTeam() {
-  const {myTeam, setMyTeam, teams, handlePickTeam, selectedTeam, handleSaveTeam, players, setPlayers} = useOutletContext();
+  const {myTeam, setMyTeam, teams, handlePickTeam, selectedTeam, handleSaveTeam, players, setPlayers, loggedInUser} = useOutletContext();
   const userTeamName = window.localStorage.getItem("team")
   
-  if (teams.length) {
-    const myTeamObj = teams.find(team => team.name === userTeamName)
-    console.log(teams, myTeamObj) 
-    if (myTeamObj.players.length) {
-      setMyTeam(myTeamObj.players)
+  // if (teams.length) {
+  //   const myTeamObj = teams.find(team => team.name === userTeamName)
+  //   console.log(teams, myTeamObj) 
+  //   if (myTeamObj.players.length) {
+  //     setMyTeam(myTeamObj.players)
+  //   } 
+  // }
+  // console.log('players', players)
+  // console.log('myteam', myTeam)
+  useEffect(() => {
+    if (loggedInUser && teams.length) {
+      const myTeamObj = teams.find(team => team.name === loggedInUser?.team)
+      console.log('myteamobj', myTeamObj)
+      myTeamObj && setMyTeam(myTeamObj.players)
     } 
   }
-  console.log('players', players)
-  console.log('myteam', myTeam)
+  )
   if (Array.isArray(myTeam)) {
     myTeam.filter(player => player.isDrafted !== false);
   }
@@ -26,7 +34,8 @@ function MyTeam() {
   return (
 
   <div id="yourTeam">
-      <h3>{window.localStorage.getItem("team")}</h3>
+      {/* <h3>{window.localStorage.getItem("team")}</h3> */}
+      <h3>{loggedInUser.team}</h3>
       <ul id="yourTeamList">
         {myTeam.length ? myTeam.map(player => <PlayerCard key={player.id} player={player} />) : null}
       </ul>

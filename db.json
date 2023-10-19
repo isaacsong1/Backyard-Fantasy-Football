@@ -909,6 +909,20 @@
         }
       ],
       "id": 3
+    },
+    {
+      "name": "Test Team",
+      "image": "https://miamicityballers.files.wordpress.com/2017/10/mcb-ballers-logo-e1507338731901.jpg",
+      "owner": "testuser",
+      "players": [],
+      "id": 4
+    },
+    {
+      "name": "Team Test",
+      "image": "https://sportsteamhistory.com/wp-content/uploads/2020/04/chicago_enforcers_2001.png",
+      "owner": "testuser2",
+      "players": [],
+      "id": 5
     }
   ],
   "users": [
@@ -929,6 +943,18 @@
       "name": "Austin",
       "password": "Ohlfs",
       "team": "Austin's BackYard Ballerz"
+    },
+    {
+      "name": "testuser",
+      "password": "test",
+      "id": 4,
+      "team": "Test Team"
+    },
+    {
+      "name": "testuser2",
+      "password": "test",
+      "id": 5,
+      "team": "Team Test"
     }
   ]
 }
