@@ -23,9 +23,10 @@ function App() {
  const localUserId = localUser?.foundUser?.id || ''
   const localUserName = localUser?.foundUser?.name || ''
   const localUserTeam = localUser?.foundUser?.team || ''
-
   console.log(localUserId, localUserName, localUserTeam) 
-
+  const [users, setUsers] = useState([])
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("")
   
 
   const navigate = useNavigate()
@@ -47,6 +48,12 @@ function App() {
     .catch(err => alert('error'))
   }, []);
 // Users
+useEffect(() => {
+  fetch(usersURL)
+  .then(res => res.json())
+  .then(usersArray => setUsers(usersArray))
+  .catch(err => console.log(err))
+}, []);
 
 //! ------------------------------------
   
@@ -161,11 +168,15 @@ function App() {
     }
   }
 
+  //? WESLEY'S CODE ------------------------------
+
+//? -------------------------------------------------------
+
   return (
     <div className="App">
       <Header /> 
       <NavBar />
-      <Outlet context={{players, setPlayers, myTeam, setMyTeam, handleAddToRoster, handleDeleteFromRoster, teams, handlePickTeam, pickTeam, loggedInUser, setLoggedInUser, selectedTeam, setSelectedTeam, handleSubmit}} />
+      <Outlet context={{players, setPlayers, myTeam, setMyTeam, handleAddToRoster, handleDeleteFromRoster, teams, handlePickTeam, pickTeam, loggedInUser, setLoggedInUser, selectedTeam, setSelectedTeam, handleSubmit, users, setUsers, password, setPassword, name, setName}} />
     </div>
   );
 

@@ -1,33 +1,31 @@
-import React, { useState, useEffect } from 'react'
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 import { useNavigate, useOutletContext } from "react-router-dom";
 import Logo from '../Logo.png'
+import Register from "./Register"
 
-const usersURL = "http://localhost:3000/users"
 
 
 const SignIn = () => {
 
-    const { setLoggedInUser, handlePickTeam} = useOutletContext()
-    const [users, setUsers] = useState([])
-    const [name, setName] = useState("");
-    const [password, setPassword] = useState("")
+    const { users, name, setName, password, setPassword, handlePickTeam} = useOutletContext()
 
     const navigate = useNavigate()
 
-    useEffect(() => {
-        fetch(usersURL)
-        .then(res => res.json())
-        .then(usersArray => setUsers(usersArray))
-        .catch(err => console.log(err))
-      }, []);
+
+
+    const localUser = JSON.parse(localStorage.getItem('user'));
+    const localUserId = localUser?.foundUser?.id || "";
+    const localUserName = localUser?.foundUser?.name || "";
+    const localUserTeam = localUser?.foundUser?.team || "";
+
+    console.log(localUserId, localUserName, localUserTeam)
 
     const findUser = (e) => {
         e.preventDefault();
     
         const foundUser = users.find((user) => user.name === name.trim());
         
-
+    
         if (foundUser && foundUser.password !== password) {
             console.log("Password does not match")
         } else if(foundUser && foundUser.password === password) {
@@ -39,16 +37,9 @@ const SignIn = () => {
             navigate("/myTeam")
         } else {
             console.log('User not found');
-
+    
         };
     };
-
-    const localUser = JSON.parse(localStorage.getItem('user'));
-    const localUserId = localUser?.foundUser?.id || "";
-    const localUserName = localUser?.foundUser?.name || "";
-    const localUserTeam = localUser?.foundUser?.team || "";
-
-    console.log(localUserId, localUserName, localUserTeam)
         
     
     const addNewUser = () => {

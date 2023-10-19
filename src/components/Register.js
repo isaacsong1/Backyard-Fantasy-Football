@@ -20,109 +20,100 @@ function Register() {
     };
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        const { name, password } = formData
+        e.preventDefault();
+        const { name, password } = formData;
         const newUser = {
             name,
-            password
+            password,
         };
         if (formData.name && formData.password) {
             if (formData.password === formData.confirm) {
-                fetch(userURL, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(newUser)
-                })
-                .then(response => response.json())
-                .then(data => {
-                    setUsers(currentUsers => [...currentUsers, data])
-                    setFormData({
-                        name: "",
-                        password: "",
-                        confirm: ""
-                    })
-                    navigate("/signin")
-                })
+                // Check if the user already exists on the server
+                fetch(userURL)
+                    .then((response) => response.json())
+                    .then((data) => {
+                        // Assuming data is an array of existing users
+                        if (data.some((user) => user.name === name && user.password === password)) {
+                            alert("User with the same name and password already exists.");
+                        } else {
+                            // If the user doesn't exist, proceed with registration
+                            fetch(userURL, {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                },
+                                body: JSON.stringify(newUser),
+                            })
+                                .then((response) => response.json())
+                                .then((data) => {
+                                    setUsers((currentUsers) => [...currentUsers, data]);
+                                    setFormData({
+                                        name: "",
+                                        password: "",
+                                        confirm: "",
+                                    });
+                                    navigate("/signin");
+                                    return (<Message positive>
+                                                <Message.Header>Success!</Message.Header>
+                                                <p>
+                                                    You have successfully registered!
+                                                </p>
+                                             </Message>)
+                                });
+                        }
+                    });
             } else {
-            console.log("Please provide info")
-            };
+                console.log("Passwords do not match.");
+            }
         } else {
-            alert("Please fill in register")
-        };
+            return(
+                <div>
+                <Message negative>
+                    <Message.Header>Alert!</Message.Header>
+                    <p>Please fill out the form completely</p>
+                </Message>
+                </div>
+            );
+        }
     };
 
 
     return (
-        <div id="signin">
-    <Message
-      attached
-      header="Who's Ready to Play Some Football?"
-      content='Please login to start playing!'
-    />
-    <Form className='attached fluid segment'>
-      <Form.Input
-        label="Username" 
-        type="username" 
-        placeholder="Username" 
-        id="username" 
-        name="username"/>
-      <Form.Input 
-        label='Password'
-        type="password" 
-        placeholder='********' 
-        id="password"
-        name="password"/>
-      <Button color='blue'>Log In</Button>
-    </Form>
-    <Message attached='bottom' warning>
-      <Icon name='help' />
-      New kid on the block? <button>Sign up here!</button>
-    </Message>
+        <div id="register">
+            <br />
+            <Message
+                attached
+                header="Who's Ready to Play Some Football?"
+                content='Please register to start playing!'
+                />
+            <Form onSubmit={handleSubmit} className='attached fluid segment'>
+                <Form.Input
+                    onChange={handleChange}
+                    value={formData.username}
+                    label="Username" 
+                    type="name" 
+                    placeholder="Username" 
+                    id="name" 
+                    name="name"/>
+                <Form.Input 
+                    onChange={handleChange}
+                    value={formData.password}
+                    label='Password'
+                    type="password" 
+                    placeholder='********' 
+                    id="password"
+                    name="password"/>
+                <Form.Input 
+                    onChange={handleChange}
+                    value={formData.confirm}
+                    label='Confirm Password'
+                    type="password" 
+                    placeholder='********' 
+                    id="confirm"
+                    name="confirm"/>
+                <Button color='yellow'>Register</Button>
+            </Form>
   </div>
-        // <section>
-        //     <form onSubmit={handleSubmit}>
-        //         <h1>Register Now!</h1>
-        //         <Form.Field required>
-        //             <label htmlFor='name'>Username</label><br />
-        //             <br />
-        //             <Input
-        //                 onChange={handleChange}
-        //                 value={formData.name}
-        //                 type="name"
-        //                 placeholder="User's Name"
-        //                 id="name"
-        //                 name="name"
-        //             />
-        //             <br /> 
-        //             <br /><label htmlFor='password'>Password</label><br />
-        //             <br />
-        //             <Input
-        //                 onChange={handleChange}
-        //                 value={formData.password}
-        //                 type="password"
-        //                 placeholder='********'
-        //                 id="password"
-        //                 name="password"
-        //             />
-        //             <br />
-        //             <br /><label htmlFor='confirm'>Confirm Password</label><br />
-        //             <br />
-        //             <Input
-        //                 onChange={handleChange}
-        //                 value={formData.confirm}
-        //                 type="password"
-        //                 placeholder='********'
-        //                 id="confirm"
-        //                 name="confirm"
-        //             />
-        //             <br />
-        //             <button>Register</button> <br />
-        //             <br />
-        //         </Form.Field>
-        //     </form>
-        // </section>
     )
 };
 
