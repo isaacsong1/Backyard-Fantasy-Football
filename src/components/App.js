@@ -100,15 +100,17 @@ function App() {
   const handleDeleteFromRoster = (playerToRemove) => {
     const teamToFind = teams.find(team => team.name === loggedInUser.team)
     setMyTeam(currMyTeam => currMyTeam.filter(player => player.id !== playerToRemove.id))
-    const updateTeam = {...myTeam, players: myTeam.player.filter(player => player.id !== playerToRemove.id)}
+    // const updateTeam = {...myTeam, players: myTeam.player.filter(player => player.id !== playerToRemove.id)}
       //setMyTeam(updateTeam)
-    //const myRoster = [...myTeam]
+    const myRoster = [...myTeam]
     fetch(`${teamsURL}/${teamToFind.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type" : "application/json"
       },
-      body: JSON.stringify(updateTeam)
+      body: JSON.stringify({
+        players: myRoster.filter(player => player.id !== playerToRemove.id)
+      })
     })
     .then(res => res.json())
     .then((data) => {
