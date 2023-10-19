@@ -20,11 +20,7 @@ function App() {
   const [password, setPassword] = useState("")
   const [selectedTeam, setSelectedTeam] = useState("")
   const localUser = JSON.parse(localStorage.getItem('user'))
-
-
- 
   
-
   const navigate = useNavigate()
 
 
@@ -139,7 +135,7 @@ function App() {
     .then(data => {
       setTeams(currentTeams => [...currentTeams, data]);
     })
-    .then(() => fetch(`${usersURL}/${localUser.foundUser.id}`, {
+    .then(() => fetch(`${usersURL}/${localUser.foundUser.id}` , {
       method: "PATCH",
       headers: {
         "Content-Type" : "application/json"

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate, useOutletContext } from "react-router-dom"
-import { Form, Input } from 'semantic-ui-react'
+import { Button, Form, Icon, Message, Input } from 'semantic-ui-react'
 const userURL = "http://localhost:3000/users"
 
 
@@ -20,96 +20,83 @@ function Register() {
     };
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        const { name, password } = formData
+        e.preventDefault();
+        const { name, password } = formData;
         const newUser = {
             name,
-            password
+            password,
         };
         if (formData.name && formData.password) {
             if (formData.password === formData.confirm) {
-                fetch(userURL, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(newUser)
-                })
-                .then(response => response.json())
-                .then(data => {
-                    setUsers(currentUsers => [...currentUsers, data])
-                    setFormData({
-                        name: "",
-                        password: "",
-                        confirm: ""
-                    })
-                    navigate("/signin")
-                })
+                fetch(userURL)
+                    .then((response) => response.json())
+                    .then((data) => {
+                        if (data.some((user) => user.name === name && user.password === password)) {
+                            alert("User with the same name and password already exists.");
+                        } else {
+                            fetch(userURL, {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                },
+                                body: JSON.stringify(newUser),
+                            })
+                                .then((response) => response.json())
+                                .then((data) => {
+                                    setUsers((currentUsers) => [...currentUsers, data]);
+                                    setFormData({
+                                        name: "",
+                                        password: "",
+                                        confirm: "",
+                                    });
+                                    navigate("/signin");
+                                });
+                        }
+                    });
             } else {
-            console.log("Please provide info")
-            };
+                console.log("Passwords do not match.");
+            }
         } else {
-            alert("Please fill in register")
-        };
+            return(
+                console.log()
+            );
+        }
     };
-
-
     return (
-        // <section>
-        //     <Form>
-        //         <Form.Field>
-        //             <label>First Name</label>
-        //             <input placeholder='First Name' />
-        //         </Form.Field>
-        //         <Form.Field>
-        //             <label>Last Name</label>
-        //             <input placeholder='Last Name' />
-        //         </Form.Field>
-        //         <Button type='register'>Register</Button>
-        //     </Form>
-        // </section>
-        <section>
-            <form onSubmit={handleSubmit}>
-                <h1>Register Now!</h1>
-                <Form.Field required>
-                    <label htmlFor='name'>Username</label><br />
-                    <br />
-                    <Input
+        <div id="register">
+            <Message
+            attached
+            header="Who's Ready to Play Some Football?"
+            content='Please register to start playing!'
+            />
+                <Form onSubmit={handleSubmit} className='attached fluid segment'>
+                    <Form.Input
+                        label="Username" 
                         onChange={handleChange}
                         value={formData.name}
-                        type="name"
-                        placeholder="User's Name"
-                        id="name"
-                        name="name"
-                    />
-                    <br /> 
-                    <br /><label htmlFor='password'>Password</label><br />
-                    <br />
-                    <Input
+                        type="name" 
+                        placeholder="Username" 
+                        id="name" 
+                        name="name"/>
+                    <Form.Input 
+                        label='Password'
                         onChange={handleChange}
                         value={formData.password}
-                        type="password"
-                        placeholder='********'
+                        type="password" 
+                        placeholder='********' 
                         id="password"
-                        name="password"
-                    />
-                    <br />
-                    <br /><label htmlFor='confirm'>Confirm Password</label><br />
-                    <br />
-                    <Input
+                        name="password"/>
+                    <Form.Input 
+                        label='Confirm Password'
                         onChange={handleChange}
                         value={formData.confirm}
-                        type="password"
-                        placeholder='********'
+                        type="password" 
+                        placeholder='********' 
                         id="confirm"
-                        name="confirm"
-                    />
-                    <br />
-                    <button>Register</button> <br />
-                    <br />
-                </Form.Field>
-            </form>
-        </section>
+                        name="confirm"/>
+                    <Button color='yellow'>Register</Button>
+                </Form>
+        </div>
     )
 };
 

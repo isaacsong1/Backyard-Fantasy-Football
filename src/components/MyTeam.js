@@ -13,8 +13,9 @@ function MyTeam() {
       const myTeamObj = teams.find(team => team.name === loggedInUser?.team)
       myTeamObj && setMyTeam(myTeamObj.players)
     } 
-  })
- 
+  });
+
+
 
   if (Array.isArray(myTeam)) {
     myTeam.filter(player => player.isDrafted !== false);
