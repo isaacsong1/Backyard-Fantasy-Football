@@ -79,7 +79,6 @@ function App() {
         .then(resp => resp.json())
         .then(() => {
           setPlayers(currPlayers => currPlayers.map(player => player.id === playerToAdd.id ? ({...player, isDrafted: !player.isDrafted}): player));
-          // setMyTeam(currYourTeam => [({...playerToAdd, isDrafted: !playerToAdd.isDrafted}), ...currYourTeam]);
         })
         .catch(err => alert(err))
       }}  
@@ -92,8 +91,6 @@ function App() {
   const handleDeleteFromRoster = (playerToRemove) => {
     setPlayers(currPlayers => ([...currPlayers, ({...playerToRemove, isDrafted: !playerToRemove.isDrafted})]));
     setMyTeam(currMyTeam => currMyTeam.map(player => player.id === playerToRemove.id ? ({...player, isDrafted: !player.isDrafted}) : player));
-    console.log(myTeam)
-    // debugger
     fetch(`${teamsURL}/3`, {
       method: "PATCH",
       headers: {
@@ -164,7 +161,6 @@ function App() {
     // navigate("/myTeam")
     setSelectedTeam(pickedTeamName)
     const foundTeam = teams.find(obj => obj.name === pickedTeamName)
-    console.log(foundTeam)
     if (foundTeam) {
       setPlayers(currPlayers => currPlayers.map(player => {
         const playerName = player.name
