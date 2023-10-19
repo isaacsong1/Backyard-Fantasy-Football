@@ -20,10 +20,11 @@ function CardContainer()  {
   const handleFilter = (e) => {
     setFilterBy(e.target.value);
   }
-
-  const draftedPlayers = teams.find(team => team.name === userTeamName).players
-
-  const mappedPlayers = players
+  
+  const mapPlayers = () => {
+    const draftedPlayers = teams.find(team => team.name === userTeamName).players
+    const mappedPlayers = players
+                        // .filter(player => player.isDrafted !== true)
                         .filter(player => {
                           if (!draftedPlayers.find(drafted => drafted.name === player.name)) {
                             return player
@@ -34,6 +35,10 @@ function CardContainer()  {
 
                         .filter(player => filterBy === "All" || player.position === filterBy)
                         .map(player => <PlayerCard key={player.id} player={player} />)
+    return mappedPlayers
+  }
+  // const draftedPlayers = teams.find(team => team.name === userTeamName)
+  // console.log('draftedPlayers:', draftedPlayers)
 
 
   return (
@@ -53,7 +58,7 @@ function CardContainer()  {
         <option value="lowestPPR">Lowest PPR</option>
       </select>
         <Card.Group id='playerTable' itemsPerRow={6}>
-          {mappedPlayers}
+          {teams.length ? mapPlayers() : null}
         </Card.Group>
     </div>
   )

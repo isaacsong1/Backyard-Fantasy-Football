@@ -157,7 +157,6 @@ function App() {
     // navigate("/myTeam")
     setSelectedTeam(pickedTeamName)
     const foundTeam = teams.find(obj => obj.name === pickedTeamName)
-    console.log(foundTeam)
     if (foundTeam) {
       setPlayers(currPlayers => currPlayers.map(player => {
         const playerName = player.name
