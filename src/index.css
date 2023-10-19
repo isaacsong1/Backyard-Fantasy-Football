@@ -39,7 +39,7 @@ img.logo {
 }
 
 .navbar {
-  /* display: flex; */
+  display: flex;
   margin-top: 15px;
   width: 25px;
   height: 50%;

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate, useOutletContext } from "react-router-dom"
-import { Form, Input, Button } from 'semantic-ui-react'
+import { Button, Form, Icon, Message } from 'semantic-ui-react'
 const userURL = "http://localhost:3000/users"
 
 
@@ -55,61 +55,74 @@ function Register() {
 
 
     return (
+        <div id="signin">
+    <Message
+      attached
+      header="Who's Ready to Play Some Football?"
+      content='Please login to start playing!'
+    />
+    <Form className='attached fluid segment'>
+      <Form.Input
+        label="Username" 
+        type="username" 
+        placeholder="Username" 
+        id="username" 
+        name="username"/>
+      <Form.Input 
+        label='Password'
+        type="password" 
+        placeholder='********' 
+        id="password"
+        name="password"/>
+      <Button color='blue'>Log In</Button>
+    </Form>
+    <Message attached='bottom' warning>
+      <Icon name='help' />
+      New kid on the block? <button>Sign up here!</button>
+    </Message>
+  </div>
         // <section>
-        //     <Form>
-        //         <Form.Field>
-        //             <label>First Name</label>
-        //             <input placeholder='First Name' />
+        //     <form onSubmit={handleSubmit}>
+        //         <h1>Register Now!</h1>
+        //         <Form.Field required>
+        //             <label htmlFor='name'>Username</label><br />
+        //             <br />
+        //             <Input
+        //                 onChange={handleChange}
+        //                 value={formData.name}
+        //                 type="name"
+        //                 placeholder="User's Name"
+        //                 id="name"
+        //                 name="name"
+        //             />
+        //             <br /> 
+        //             <br /><label htmlFor='password'>Password</label><br />
+        //             <br />
+        //             <Input
+        //                 onChange={handleChange}
+        //                 value={formData.password}
+        //                 type="password"
+        //                 placeholder='********'
+        //                 id="password"
+        //                 name="password"
+        //             />
+        //             <br />
+        //             <br /><label htmlFor='confirm'>Confirm Password</label><br />
+        //             <br />
+        //             <Input
+        //                 onChange={handleChange}
+        //                 value={formData.confirm}
+        //                 type="password"
+        //                 placeholder='********'
+        //                 id="confirm"
+        //                 name="confirm"
+        //             />
+        //             <br />
+        //             <button>Register</button> <br />
+        //             <br />
         //         </Form.Field>
-        //         <Form.Field>
-        //             <label>Last Name</label>
-        //             <input placeholder='Last Name' />
-        //         </Form.Field>
-        //         <Button type='register'>Register</Button>
-        //     </Form>
+        //     </form>
         // </section>
-        <section>
-            <form onSubmit={handleSubmit}>
-                <h1>Register Now!</h1>
-                <Form.Field required>
-                    <label htmlFor='name'>Username</label><br />
-                    <br />
-                    <Input
-                        onChange={handleChange}
-                        value={formData.name}
-                        type="name"
-                        placeholder="User's Name"
-                        id="name"
-                        name="name"
-                    />
-                    <br /> 
-                    <br /><label htmlFor='password'>Password</label><br />
-                    <br />
-                    <Input
-                        onChange={handleChange}
-                        value={formData.password}
-                        type="password"
-                        placeholder='********'
-                        id="password"
-                        name="password"
-                    />
-                    <br />
-                    <br /><label htmlFor='confirm'>Confirm Password</label><br />
-                    <br />
-                    <Input
-                        onChange={handleChange}
-                        value={formData.confirm}
-                        type="password"
-                        placeholder='********'
-                        id="confirm"
-                        name="confirm"
-                    />
-                    <br />
-                    <button>Register</button> <br />
-                    <br />
-                </Form.Field>
-            </form>
-        </section>
     )
 };
 

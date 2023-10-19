@@ -15,11 +15,8 @@ const teamsURL = "http://localhost:3000/teams"
 function App() {
   const [players, setPlayers] = useState([])
   const [teams, setTeams] = useState([])
-  const [users, setUsers] = useState([])
   const [loggedInUser, setLoggedInUser] = useState({})
   const [myTeam, setMyTeam] = useState([])
-  const [name, setName] = useState("");
-  const [password, setPassword] = useState("")
   const [pickTeam, setPickTeam] = useState({})
   const [selectedTeam, setSelectedTeam] = useState("")
   const localUser = JSON.parse(localStorage.getItem('user'))
@@ -28,6 +25,7 @@ function App() {
   const localUserTeam = localUser?.foundUser?.team || ''
 
   console.log(localUserId, localUserName, localUserTeam) 
+
   
 
   const navigate = useNavigate()
@@ -49,12 +47,6 @@ function App() {
     .catch(err => alert('error'))
   }, []);
 // Users
-  useEffect(() => {
-    fetch(usersURL)
-    .then(res => res.json())
-    .then(usersArray => setUsers(usersArray))
-    .catch(err => console.log(err))
-  }, []);
 
 //! ------------------------------------
   
@@ -103,10 +95,6 @@ function App() {
    
   };
 
-
- 
-//  console.log(localUser.foundUser.id)
-  
   const handleSubmit = (newTeam) => {
     
    if (loggedInUser.teams !== true) {
@@ -173,32 +161,11 @@ function App() {
     }
   }
 
-//? WESLEY'S CODE -----------------------
-const findUser = (e) => {
-  e.preventDefault();
-
-  const foundUser = users.find((user) => user.name === name.trim());
-  
-  if (foundUser && foundUser.password !== password) {
-      console.log("Password does not match")
-  } else if(foundUser && foundUser.password === password) {
-      window.localStorage.setItem("isLoggedIn", true);
-      window.localStorage.setItem("user", foundUser.name)
-      setLoggedInUser(foundUser)
-      setName("")
-      setPassword("")
-      navigate("/newTeam")
-  } else {
-      console.log('User not found');
-  }
-};
-//? -------------------------------------
   return (
     <div className="App">
       <Header /> 
       <NavBar />
-      <Outlet context={{players, setPlayers, myTeam, setMyTeam, handleAddToRoster, handleDeleteFromRoster, teams, handlePickTeam, pickTeam, users, setUsers, loggedInUser, setLoggedInUser, selectedTeam, setSelectedTeam, handleSubmit, findUser, password, name, setName, setPassword}} />
-
+      <Outlet context={{players, setPlayers, myTeam, setMyTeam, handleAddToRoster, handleDeleteFromRoster, teams, handlePickTeam, pickTeam, loggedInUser, setLoggedInUser, selectedTeam, setSelectedTeam, handleSubmit}} />
     </div>
   );
 

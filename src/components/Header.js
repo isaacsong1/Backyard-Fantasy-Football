@@ -2,7 +2,6 @@ import React from "react"
 import Logo from "../Logo.png"
 import { Button, Menu } from 'semantic-ui-react'
 import { useNavigate } from 'react-router-dom'
-import SignIn from './SignIn'
 
 
 function Header()  {

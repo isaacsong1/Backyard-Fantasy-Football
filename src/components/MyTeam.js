@@ -25,7 +25,7 @@ function MyTeam() {
   return (
 
   <div id="yourTeam">
-      <h3>{window.localStorage.getItem("team")}</h3>
+      <h1>{userTeamName}</h1>
       <ul id="yourTeamList">
         {myTeam.length ? myTeam.map(player => <PlayerCard key={player.id} player={player} />) : null}
       </ul>
