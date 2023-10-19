@@ -4,8 +4,9 @@ import { Card } from 'semantic-ui-react'
 import PlayerCard from "./PlayerCard";
 
 function CardContainer()  {
-  const {players, setPlayers} = useOutletContext();
+  const {players, setPlayers, teams} = useOutletContext();
   const [filterBy, setFilterBy] = useState("All");
+  const userTeamName = window.localStorage.getItem("team")
 
   const handleSort = (e) => {
     const selectedValue = e.target.value; 
@@ -20,8 +21,16 @@ function CardContainer()  {
     setFilterBy(e.target.value);
   }
 
+  const draftedPlayers = teams.find(team => team.name === userTeamName).players
+
   const mappedPlayers = players
-                        .filter(player => player.isDrafted !== true)
+                        .filter(player => {
+                          if (!draftedPlayers.find(drafted => drafted.name === player.name)) {
+                            return player
+                          } else {
+                            return null
+                          }
+                        })
                         .filter(player => filterBy === "All" || player.position === filterBy)
                         .map(player => <PlayerCard key={player.id} player={player} />)
 

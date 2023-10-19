@@ -48,7 +48,7 @@ function App() {
     .then(usersArray => setUsers(usersArray))
     .catch(err => console.log(err))
   }, []);
-  
+
 //! ------------------------------------
   
 //! HELPER FUNCTIONS -------------------
@@ -127,7 +127,6 @@ function App() {
     .then((currentUser) => setLoggedInUser(currentUser))
     )
    
-    // .then(setNewTeam())
     .catch(err => alert('err'))
     
   } else {
@@ -155,21 +154,6 @@ function App() {
     }
   }
 
-  // const draftPlayers = () => {
-    
-  //   fetch(`${URL}/${pickTeam.id}`, {
-  //     method: "PATCH",
-  //     headers: {
-  //       "Content-Type" : "application/json"
-  //     },
-  //     body: JSON.stringify({
-  //       players: myTeam 
-  //     })
-  //   })
-  //  .then(res => res.json())
-  //  .then(setMyTeam(currentMyTeam => currentMyTeam = []))
-  //  .catch(err => alert(''))
-  // };
 //? WESLEY'S CODE -----------------------
 const findUser = (e) => {
   e.preventDefault();
