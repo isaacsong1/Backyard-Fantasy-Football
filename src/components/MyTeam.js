@@ -10,16 +10,10 @@ function MyTeam() {
 
   if (teams.length) {
     const myTeamObj = teams.find(team => team.name === userTeamName)
-    console.log('myteamteams:', teams)
-    console.log('myteamobj:', myTeamObj)
     if (myTeamObj.players.length) {
       setMyTeam(myTeamObj.players)
-    } else {
-      console.log('cannot')
     } 
   }
-
-  console.log('myteam: ',myTeam)
 
   const filterMyTeam = myTeam.filter(player => player.isDrafted !== false)
 
