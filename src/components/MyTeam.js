@@ -8,23 +8,20 @@ function MyTeam() {
   const {myTeam, setMyTeam, teams, handlePickTeam, selectedTeam, handleSaveTeam, players, setPlayers, loggedInUser} = useOutletContext();
   const userTeamName = window.localStorage.getItem("team")
   
-  // if (teams.length) {
-  //   const myTeamObj = teams.find(team => team.name === userTeamName)
-  //   console.log(teams, myTeamObj) 
-  //   if (myTeamObj.players.length) {
-  //     setMyTeam(myTeamObj.players)
-  //   } 
-  // }
-  // console.log('players', players)
-  // console.log('myteam', myTeam)
   useEffect(() => {
     if (loggedInUser && teams.length) {
       const myTeamObj = teams.find(team => team.name === loggedInUser?.team)
-      console.log('myteamobj', myTeamObj)
       myTeamObj && setMyTeam(myTeamObj.players)
     } 
   }
   )
+  useEffect(() => {
+    if (loggedInUser && teams.length) {
+      const myTeamObj = teams.find(team => team.name === loggedInUser?.team)
+      myTeamObj && setMyTeam(myTeamObj.players)
+    } 
+  })
+
   if (Array.isArray(myTeam)) {
     myTeam.filter(player => player.isDrafted !== false);
   }
@@ -34,10 +31,9 @@ function MyTeam() {
   return (
 
   <div id="yourTeam">
-      {/* <h3>{window.localStorage.getItem("team")}</h3> */}
       <h3>{loggedInUser.team}</h3>
       <ul id="yourTeamList">
-        {myTeam.length ? myTeam.map(player => <PlayerCard key={player.id} player={player} />) : null}
+        {myTeam.players ? myTeam.players.map(player => <PlayerCard key={player.id} player={player} />) : null}
       </ul>
       {/* <button onClick={draftPlayers}>Add Players To Team</button> */}
       <table id="pickTeam">

@@ -60,6 +60,7 @@ function App() {
     if (!loggedInUser.id && localUser?.foundUser) {
       setLoggedInUser(localUser.foundUser)
     }
+
     },
       [
         loggedInUser
@@ -73,7 +74,6 @@ function App() {
     const playerToFind = myTeam.find(player => player.id === playerToAdd.id)
     const playerPosition = myTeam.find(player => player.position === playerToAdd.position)
     const teamToFind = teams.find(team => team.name === loggedInUser.team)
-    console.log('teamtofind', teamToFind)
     if (!playerToFind) {
       if (loggedInUser.team && teamToFind) {
       if (!playerPosition) {
@@ -100,15 +100,15 @@ function App() {
   const handleDeleteFromRoster = (playerToRemove) => {
     const teamToFind = teams.find(team => team.name === loggedInUser.team)
     setMyTeam(currMyTeam => currMyTeam.filter(player => player.id !== playerToRemove.id))
-    const myRoster = [...myTeam]
+    const updateTeam = {...myTeam, players: myTeam.player.filter(player => player.id !== playerToRemove.id)}
+      //setMyTeam(updateTeam)
+    //const myRoster = [...myTeam]
     fetch(`${teamsURL}/${teamToFind.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type" : "application/json"
       },
-      body: JSON.stringify({
-        players: myRoster.filter(player => player.id !== playerToRemove.id)
-      })
+      body: JSON.stringify(updateTeam)
     })
     .then(res => res.json())
     .then((data) => {
@@ -187,7 +187,7 @@ function App() {
           return {...player}
         }
       }))
-      setMyTeam(foundTeam.players)
+      setMyTeam(foundTeam)
     }
   }
 

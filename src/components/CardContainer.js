@@ -40,7 +40,6 @@ function CardContainer()  {
   return (
     <div id="playerContainer">
       <h2>Football Players</h2>
-      {/* {window.localStorage.getItem("team") ? <h3>{window.localStorage.getItem("team") }</h3> : null} */}
       {<h3>{loggedInUser.team}</h3> || <h3>Go Create A Team!</h3>}
       <select onChange={handleFilter} value={filterBy} >
         <option value="All">All Players</option>
