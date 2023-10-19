@@ -63,11 +63,11 @@ function Register() {
         }
     };
     return (
-        <div id="signin">
+        <div id="register">
             <Message
             attached
             header="Who's Ready to Play Some Football?"
-            content='Please login to start playing!'
+            content='Please register to start playing!'
             />
                 <Form onSubmit={handleSubmit} className='attached fluid segment'>
                     <Form.Input

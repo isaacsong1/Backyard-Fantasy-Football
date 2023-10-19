@@ -267,3 +267,10 @@ input {
   width: 89vh;
   margin: auto;
 }
+
+#register {
+  margin-top: 8vh;
+  display: grid;
+  width: 89vh;
+  margin: auto;
+}
