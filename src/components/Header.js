@@ -37,7 +37,7 @@ function Header()  {
                       <Button onClick={handleSignIn}>Log In</Button>
                     </Menu.Item>
                     <Menu.Item>
-                      <Button primary onClick={handleRegister}>Sign up</Button>
+                      <Button color="yellow" onClick={handleRegister}>Sign up</Button>
                     </Menu.Item> 
                   </Menu>
                     :

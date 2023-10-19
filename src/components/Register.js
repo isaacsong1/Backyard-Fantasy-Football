@@ -21,54 +21,47 @@ function Register() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const { name, password, confirm } = formData;
-    
-        if (name && password && confirm) {
-            fetch(userURL + `?name=${name}`, {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.exists) {
-                    console.log("User already exists.");
-                } else {
-                    if (password === confirm) {
-                        fetch(userURL, {
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/json"
-                            },
-                            body: JSON.stringify({ name, password })
-                        })
-                        .then(response => response.json())
-                        .then(data => {
-                            setUsers(currentUsers => [...currentUsers, data]);
-                            setFormData({
-                                name: "",
-                                password: "",
-                                confirm: ""
-                            });
-                            navigate("/signin");
-                        })
-                        .catch(error => {
-                            console.error("Registration failed:", error);
-                        });
-                    } else {
-                        console.log("Password and confirmation do not match.");
-                    }
-                }
-            })
-            .catch(error => {
-                console.error("Server error:", error);
-            });
+        const { name, password } = formData;
+        const newUser = {
+            name,
+            password,
+        };
+        if (formData.name && formData.password) {
+            if (formData.password === formData.confirm) {
+                fetch(userURL)
+                    .then((response) => response.json())
+                    .then((data) => {
+                        if (data.some((user) => user.name === name && user.password === password)) {
+                            alert("User with the same name and password already exists.");
+                        } else {
+                            fetch(userURL, {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                },
+                                body: JSON.stringify(newUser),
+                            })
+                                .then((response) => response.json())
+                                .then((data) => {
+                                    setUsers((currentUsers) => [...currentUsers, data]);
+                                    setFormData({
+                                        name: "",
+                                        password: "",
+                                        confirm: "",
+                                    });
+                                    navigate("/signin");
+                                });
+                        }
+                    });
+            } else {
+                console.log("Passwords do not match.");
+            }
         } else {
-            alert("Please fill in all registration fields.");
+            return(
+                console.log()
+            );
         }
     };
-
     return (
         <div id="signin">
             <Message
@@ -101,7 +94,7 @@ function Register() {
                         placeholder='********' 
                         id="confirm"
                         name="confirm"/>
-                    <Button color='blue'>Register</Button>
+                    <Button color='yellow'>Register</Button>
                 </Form>
         </div>
     )
