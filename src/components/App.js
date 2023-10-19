@@ -60,35 +60,34 @@ function App() {
     if (!loggedInUser.id && localUser?.foundUser) {
       setLoggedInUser(localUser.foundUser)
     }
-  },
-  [
-    loggedInUser
-  ]
-  )
+
+    },
+      [
+        loggedInUser
+      ]
+    )
 
 //! ------------------------------------
   
 //! HELPER FUNCTIONS -------------------
   const handleAddToRoster = (playerToAdd) => {
-    const playerToFind = players.find(player => player.id === playerToAdd.id)
-    const playerPosition = myTeam.players.find(player => player.position === playerToAdd.position)
+    const playerToFind = myTeam.find(player => player.id === playerToAdd.id)
+    const playerPosition = myTeam.find(player => player.position === playerToAdd.position)
     const teamToFind = teams.find(team => team.name === loggedInUser.team)
-    if (playerToFind) {
-      if (loggedInUser.team) {
+    if (!playerToFind) {
+      if (loggedInUser.team && teamToFind) {
       if (!playerPosition) {
-      const teamCopy = {...teamToFind, players: [...teamToFind.players, {...playerToFind, isDrafted: true}]}
-      debugger
+        teamToFind.players.push({...playerToAdd, isDrafted: !playerToAdd.isDrafted})
         fetch(`${teamsURL}/${teamToFind.id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify(teamCopy)
+          body: JSON.stringify(teamToFind)
         })
         .then(resp => resp.json())
-        .then((updatedTeam) => {
+        .then(() => {
           setPlayers(currPlayers => currPlayers.map(player => player.id === playerToAdd.id ? ({...player, isDrafted: !player.isDrafted}): player));
-          setMyTeam(updatedTeam)
         })
         .catch(err => alert(err))
       }}  
@@ -100,17 +99,22 @@ function App() {
 
   const handleDeleteFromRoster = (playerToRemove) => {
     const teamToFind = teams.find(team => team.name === loggedInUser.team)
+    setMyTeam(currMyTeam => currMyTeam.filter(player => player.id !== playerToRemove.id))
     const updateTeam = {...myTeam, players: myTeam.player.filter(player => player.id !== playerToRemove.id)}
-      setMyTeam(updateTeam)
-    const myRoster = [...myTeam]
+      //setMyTeam(updateTeam)
+    //const myRoster = [...myTeam]
     fetch(`${teamsURL}/${teamToFind.id}`, {
       method: "PATCH",
       headers: {
-       "Content-Type" : "application/json"
+        "Content-Type" : "application/json"
       },
       body: JSON.stringify(updateTeam)
     })
     .then(res => res.json())
+    .then((data) => {
+      setMyTeam(data.players)
+      setTeams(currTeams => currTeams.map(team => team.name === teamToFind.name ? ({...team, players: data.players}) : team))
+    })
    
   };
 

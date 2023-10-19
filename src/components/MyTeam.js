@@ -8,21 +8,20 @@ function MyTeam() {
   const {myTeam, setMyTeam, teams, handlePickTeam, selectedTeam, handleSaveTeam, players, setPlayers, loggedInUser} = useOutletContext();
   const userTeamName = window.localStorage.getItem("team")
   
-  // if (teams.length) {
-  //   const myTeamObj = teams.find(team => team.name === loggedInUser?.team)
-  //   console.log(teams, myTeamObj) 
-  //   if (myTeamObj?.players?.length) {
-  //     setMyTeam(myTeamObj.players)
-  //   } 
-  // }
   useEffect(() => {
     if (loggedInUser && teams.length) {
       const myTeamObj = teams.find(team => team.name === loggedInUser?.team)
-      myTeamObj && setMyTeam(myTeamObj)
+      myTeamObj && setMyTeam(myTeamObj.players)
+    } 
+  }
+  )
+  useEffect(() => {
+    if (loggedInUser && teams.length) {
+      const myTeamObj = teams.find(team => team.name === loggedInUser?.team)
+      myTeamObj && setMyTeam(myTeamObj.players)
     } 
   })
 
-  console.log(myTeam)
   if (Array.isArray(myTeam)) {
     myTeam.filter(player => player.isDrafted !== false);
   }
