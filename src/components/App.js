@@ -87,19 +87,23 @@ function App() {
   };
 
   const handleDeleteFromRoster = (playerToRemove) => {
-    
-      setMyTeam(currMyTeam => currMyTeam.filter(player => player.id !== playerToRemove.id))
+    const teamToFind = teams.find(team => team.name === window.localStorage.getItem("team"))
+    setMyTeam(currMyTeam => currMyTeam.filter(player => player.id !== playerToRemove.id))
     const myRoster = [...myTeam]
-    fetch(`${teamsURL}/3`, {
+    fetch(`${teamsURL}/${teamToFind.id}`, {
       method: "PATCH",
       headers: {
-       "Content-Type" : "application/json"
+        "Content-Type" : "application/json"
       },
       body: JSON.stringify({
         players: myRoster.filter(player => player.id !== playerToRemove.id)
       })
     })
     .then(res => res.json())
+    .then((data) => {
+      setMyTeam(data.players)
+      setTeams(currTeams => currTeams.map(team => team.name === teamToFind.name ? ({...team, players: data.players}) : team))
+    })
    
   };
 
