@@ -15,10 +15,10 @@ const SignIn = () => {
 
     const navigate = useNavigate()
 
-    // const findUser = (e) => {
-    //     e.preventDefault();
+    const findUser = (e) => {
+        e.preventDefault();
     
-    //     const foundUser = users.find((user) => user.name === name.trim());
+        const foundUser = users.find((user) => user.name === name.trim());
         
 
         if (foundUser && foundUser.password !== password) {

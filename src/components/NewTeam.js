@@ -45,6 +45,7 @@ const onSubmit = (e) => {
 console.log(newTeam)
   return (
     <div id="newTeamForm">
+      <h1 id="createTeam">CREATE YOUR TEAM!</h1>
     <form id="form" onSubmit={onSubmit}>
         <label htmlFor="fname">Team name:</label>
         <br/>
@@ -61,7 +62,7 @@ console.log(newTeam)
         <input type="submit" value="Submit"/>
     </form>
       {
-        <TeamList teams={teams} handlePickTeam={handlePickTeam}/>
+        <TeamList teams={teams} />
       }
     </div>
     

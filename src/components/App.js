@@ -56,8 +56,10 @@ function App() {
   const handleAddToRoster = (playerToAdd) => {
     const playerToFind = myTeam.find(player => player.id === playerToAdd.id)
     const teamToFind = teams.find(team => team.name === selectedTeam)
+    const playerPosition = myTeam.find(player => player.position === playerToAdd.position)
     if (!playerToFind) {
       if (!!selectedTeam) {
+        if (!playerPosition) {
         teamToFind.players.push({...playerToAdd, isDrafted: !playerToAdd.isDrafted})
         fetch(`${teamsURL}/${teamToFind.id}`, {
           method: "PATCH",
@@ -69,10 +71,10 @@ function App() {
         .then(resp => resp.json())
         .then(() => {
           setPlayers(currPlayers => currPlayers.map(player => player.id === playerToAdd.id ? ({...player, isDrafted: !player.isDrafted}): player));
-          setMyTeam(currYourTeam => [({...playerToAdd, isDrafted: !playerToAdd.isDrafted}), ...currYourTeam]);
+          // setMyTeam(currYourTeam => [({...playerToAdd, isDrafted: !playerToAdd.isDrafted}), ...currYourTeam]);
         })
         .catch(err => alert(err))
-      }   
+      }}  
     } else {
       alert('That player is already on your team.');
     }
@@ -82,6 +84,19 @@ function App() {
   const handleDeleteFromRoster = (playerToRemove) => {
     setPlayers(currPlayers => ([...currPlayers, ({...playerToRemove, isDrafted: !playerToRemove.isDrafted})]));
     setMyTeam(currMyTeam => currMyTeam.map(player => player.id === playerToRemove.id ? ({...player, isDrafted: !player.isDrafted}) : player));
+    console.log(myTeam)
+    // debugger
+    fetch(`${teamsURL}/3`, {
+      method: "PATCH",
+      headers: {
+       "Content-Type" : "application/json"
+      },
+      body: JSON.stringify({
+        players: myTeam.filter(player => player.id !== playerToRemove.id)
+      })
+    })
+    .then(res => res.json())
+    .then(setMyTeam)
   };
 
 
