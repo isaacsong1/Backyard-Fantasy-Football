@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate, useOutletContext } from "react-router-dom"
-import { Form, Input, Button } from 'semantic-ui-react'
+import { Button, Form, Icon, Message, Modal } from 'semantic-ui-react'
 const userURL = "http://localhost:3000/users"
 
 
@@ -20,96 +20,90 @@ function Register() {
     };
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        const { name, password } = formData
-        const newUser = {
-            name,
-            password
-        };
-        if (formData.name && formData.password) {
-            if (formData.password === formData.confirm) {
-                fetch(userURL, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(newUser)
-                })
-                .then(response => response.json())
-                .then(data => {
-                    setUsers(currentUsers => [...currentUsers, data])
-                    setFormData({
-                        name: "",
-                        password: "",
-                        confirm: ""
-                    })
-                    navigate("/signin")
-                })
-            } else {
-            console.log("Please provide info")
-            };
+        e.preventDefault();
+        const { name, password, confirm } = formData;
+    
+        if (name && password && confirm) {
+            fetch(userURL + `?name=${name}`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.exists) {
+                    console.log("User already exists.");
+                } else {
+                    if (password === confirm) {
+                        fetch(userURL, {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({ name, password })
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            setUsers(currentUsers => [...currentUsers, data]);
+                            setFormData({
+                                name: "",
+                                password: "",
+                                confirm: ""
+                            });
+                            navigate("/signin");
+                        })
+                        .catch(error => {
+                            console.error("Registration failed:", error);
+                        });
+                    } else {
+                        console.log("Password and confirmation do not match.");
+                    }
+                }
+            })
+            .catch(error => {
+                console.error("Server error:", error);
+            });
         } else {
-            alert("Please fill in register")
-        };
+            alert("Please fill in all registration fields.");
+        }
     };
 
-
     return (
-        // <section>
-        //     <Form>
-        //         <Form.Field>
-        //             <label>First Name</label>
-        //             <input placeholder='First Name' />
-        //         </Form.Field>
-        //         <Form.Field>
-        //             <label>Last Name</label>
-        //             <input placeholder='Last Name' />
-        //         </Form.Field>
-        //         <Button type='register'>Register</Button>
-        //     </Form>
-        // </section>
-        <section>
-            <form onSubmit={handleSubmit}>
-                <h1>Register Now!</h1>
-                <Form.Field required>
-                    <label htmlFor='name'>Username</label><br />
-                    <br />
-                    <Input
+        <div id="signin">
+            <Message
+            attached
+            header="Who's Ready to Play Some Football?"
+            content='Please login to start playing!'
+            />
+                <Form onSubmit={handleSubmit} className='attached fluid segment'>
+                    <Form.Input
+                        label="Username" 
                         onChange={handleChange}
                         value={formData.name}
-                        type="name"
-                        placeholder="User's Name"
-                        id="name"
-                        name="name"
-                    />
-                    <br /> 
-                    <br /><label htmlFor='password'>Password</label><br />
-                    <br />
-                    <Input
+                        type="name" 
+                        placeholder="Username" 
+                        id="name" 
+                        name="name"/>
+                    <Form.Input 
+                        label='Password'
                         onChange={handleChange}
                         value={formData.password}
-                        type="password"
-                        placeholder='********'
+                        type="password" 
+                        placeholder='********' 
                         id="password"
-                        name="password"
-                    />
-                    <br />
-                    <br /><label htmlFor='confirm'>Confirm Password</label><br />
-                    <br />
-                    <Input
+                        name="password"/>
+                    <Form.Input 
+                        label='Confirm Password'
                         onChange={handleChange}
                         value={formData.confirm}
-                        type="password"
-                        placeholder='********'
+                        type="password" 
+                        placeholder='********' 
                         id="confirm"
-                        name="confirm"
-                    />
-                    <br />
-                    <button>Register</button> <br />
-                    <br />
-                </Form.Field>
-            </form>
-        </section>
+                        name="confirm"/>
+                    <Button color='blue'>Register</Button>
+                </Form>
+        </div>
     )
 };
 

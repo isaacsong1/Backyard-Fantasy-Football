@@ -23,13 +23,6 @@ function App() {
   const [pickTeam, setPickTeam] = useState({})
   const [selectedTeam, setSelectedTeam] = useState("")
   const localUser = JSON.parse(localStorage.getItem('user'))
- const localUserId = localUser?.foundUser?.id || ''
-  const localUserName = localUser?.foundUser?.name || ''
-  const localUserTeam = localUser?.foundUser?.team || ''
-
-  console.log(localUserId, localUserName, localUserTeam) 
-  
-
   const navigate = useNavigate()
 
 
@@ -144,7 +137,7 @@ function App() {
     .then(data => {
       setTeams(currentTeams => [...currentTeams, data]);
     })
-    .then(() => fetch(`${usersURL}/${localUser.foundUser.id}`, {
+    .then(() => fetch(`${usersURL}/${localUser.foundUser.id}` , {
       method: "PATCH",
       headers: {
         "Content-Type" : "application/json"

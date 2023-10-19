@@ -14,8 +14,8 @@ function MyTeam() {
       console.log('myteamobj', myTeamObj)
       myTeamObj && setMyTeam(myTeamObj.players)
     } 
-  })
-  console.log(myTeam)
+  });
+
 
   if (Array.isArray(myTeam)) {
     myTeam.filter(player => player.isDrafted !== false);
