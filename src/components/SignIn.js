@@ -32,7 +32,7 @@ const SignIn = () => {
             setName("")
             setPassword("")
             handlePickTeam(window.localStorage.getItem("team"))
-            navigate("/myTeam")
+            navigate("/")
         } else {
             console.log('User not found');
 

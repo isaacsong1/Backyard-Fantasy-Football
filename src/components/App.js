@@ -56,27 +56,39 @@ function App() {
     .catch(err => console.log(err))
   }, []);
 
+  useEffect(() => {
+    if (!loggedInUser.id && localUser?.foundUser) {
+      setLoggedInUser(localUser.foundUser)
+    }
+  },
+  [
+    loggedInUser
+  ]
+  )
+
 //! ------------------------------------
   
 //! HELPER FUNCTIONS -------------------
   const handleAddToRoster = (playerToAdd) => {
-    const playerToFind = myTeam.find(player => player.id === playerToAdd.id)
-    const playerPosition = myTeam.find(player => player.position === playerToAdd.position)
-    const teamToFind = teams.find(team => team.name === window.localStorage.getItem("team"))
-    if (!playerToFind) {
-      if (!!window.localStorage.getItem("team")) {
+    const playerToFind = players.find(player => player.id === playerToAdd.id)
+    const playerPosition = myTeam.players.find(player => player.position === playerToAdd.position)
+    const teamToFind = teams.find(team => team.name === loggedInUser.team)
+    if (playerToFind) {
+      if (loggedInUser.team) {
       if (!playerPosition) {
-        teamToFind.players.push({...playerToAdd, isDrafted: !playerToAdd.isDrafted})
+      const teamCopy = {...teamToFind, players: [...teamToFind.players, {...playerToFind, isDrafted: true}]}
+      debugger
         fetch(`${teamsURL}/${teamToFind.id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify(teamToFind)
+          body: JSON.stringify(teamCopy)
         })
         .then(resp => resp.json())
-        .then(() => {
+        .then((updatedTeam) => {
           setPlayers(currPlayers => currPlayers.map(player => player.id === playerToAdd.id ? ({...player, isDrafted: !player.isDrafted}): player));
+          setMyTeam(updatedTeam)
         })
         .catch(err => alert(err))
       }}  
@@ -87,17 +99,16 @@ function App() {
   };
 
   const handleDeleteFromRoster = (playerToRemove) => {
-    
-      setMyTeam(currMyTeam => currMyTeam.filter(player => player.id !== playerToRemove.id))
+    const teamToFind = teams.find(team => team.name === loggedInUser.team)
+    const updateTeam = {...myTeam, players: myTeam.player.filter(player => player.id !== playerToRemove.id)}
+      setMyTeam(updateTeam)
     const myRoster = [...myTeam]
-    fetch(`${teamsURL}/3`, {
+    fetch(`${teamsURL}/${teamToFind.id}`, {
       method: "PATCH",
       headers: {
        "Content-Type" : "application/json"
       },
-      body: JSON.stringify({
-        players: myRoster.filter(player => player.id !== playerToRemove.id)
-      })
+      body: JSON.stringify(updateTeam)
     })
     .then(res => res.json())
    
@@ -133,7 +144,7 @@ function App() {
         "Content-Type" : "application/json"
       },
       body: JSON.stringify({
-        teams: newTeam.name
+        team: newTeam.name
       })
     })
     .then(res => {
@@ -144,7 +155,10 @@ function App() {
       }
       
     })
-    .then((currentUser) => setLoggedInUser(currentUser))
+    .then((currentUser) => {
+      setLoggedInUser(currentUser)
+      window.localStorage.setItem("user", JSON.stringify({foundUser: currentUser}))
+    })
     )
    
     .catch(err => alert('err'))
@@ -169,7 +183,7 @@ function App() {
           return {...player}
         }
       }))
-      setMyTeam(foundTeam.players)
+      setMyTeam(foundTeam)
     }
   }
 
