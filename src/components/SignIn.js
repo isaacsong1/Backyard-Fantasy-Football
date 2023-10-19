@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
-// import Header from "./Header"
-// import NavBar from "./NavBar";
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react'
 import { useNavigate, useOutletContext } from "react-router-dom";
-import Logo from '../Logo.png'
+
 
 
 const SignIn = () => {
@@ -21,7 +19,7 @@ const SignIn = () => {
         
 
         if (foundUser && foundUser.password !== password) {
-            console.log("Password does not match")
+            alert("Password does not match")
         } else if(foundUser && foundUser.password === password) {
             window.localStorage.setItem("isLoggedIn", true);
             window.localStorage.setItem("user", foundUser.name)
@@ -33,7 +31,7 @@ const SignIn = () => {
             handlePickTeam(window.localStorage.getItem("team"))
             navigate("/")
         } else {
-            console.log('User not found');
+            alert('User not found');
 
         };
     };

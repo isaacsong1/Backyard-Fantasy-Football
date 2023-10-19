@@ -1,6 +1,6 @@
 import React from "react"
 import PlayerCard from "./PlayerCard"
-import {useOutletContext} from "react-router-dom"
+
 
 const FeaturedPlayers = ({players}) => {
   const sortedPlayer = players.sort((a, b) => b.PPR_projected - a.PPR_projected)
