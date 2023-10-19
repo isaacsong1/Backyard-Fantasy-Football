@@ -23,11 +23,11 @@ function App() {
   const [pickTeam, setPickTeam] = useState({})
   const [selectedTeam, setSelectedTeam] = useState("")
   const localUser = JSON.parse(localStorage.getItem('user'))
-  const localUserId = localUser.foundUser.id
-  const localUserName = localUser.foundUser.name
-  const localUserTeam = localUser.foundUser.team
+ const localUserId = localUser?.foundUser?.id || ''
+  const localUserName = localUser?.foundUser?.name || ''
+  const localUserTeam = localUser?.foundUser?.team || ''
 
-  console.log(localUserId, localUserName, localUserTeam)
+  console.log(localUserId, localUserName, localUserTeam) 
   
 
   const navigate = useNavigate()
@@ -61,8 +61,6 @@ function App() {
 //! HELPER FUNCTIONS -------------------
   const handleAddToRoster = (playerToAdd) => {
     const playerToFind = myTeam.find(player => player.id === playerToAdd.id)
-
-        
     const playerPosition = myTeam.find(player => player.position === playerToAdd.position)
     const teamToFind = teams.find(team => team.name === window.localStorage.getItem("team"))
     if (!playerToFind) {
@@ -89,27 +87,28 @@ function App() {
   };
 
   const handleDeleteFromRoster = (playerToRemove) => {
-    setPlayers(currPlayers => ([...currPlayers, ({...playerToRemove, isDrafted: !playerToRemove.isDrafted})]));
-    setMyTeam(currMyTeam => currMyTeam.map(player => player.id === playerToRemove.id ? ({...player, isDrafted: !player.isDrafted}) : player));
+    
+      setMyTeam(currMyTeam => currMyTeam.filter(player => player.id !== playerToRemove.id))
+    const myRoster = [...myTeam]
     fetch(`${teamsURL}/3`, {
       method: "PATCH",
       headers: {
        "Content-Type" : "application/json"
       },
       body: JSON.stringify({
-        players: myTeam.filter(player => player.id !== playerToRemove.id)
+        players: myRoster.filter(player => player.id !== playerToRemove.id)
       })
     })
     .then(res => res.json())
-    .then(setMyTeam)
+   
   };
 
 
  
- 
-
+//  console.log(localUser.foundUser.id)
+  
   const handleSubmit = (newTeam) => {
-
+    
    if (loggedInUser.teams !== true) {
     fetch(teamsURL, {
       method: "POST",
@@ -128,13 +127,13 @@ function App() {
     .then(data => {
       setTeams(currentTeams => [...currentTeams, data]);
     })
-    .then(() => fetch(`${usersURL}/${loggedInUser.id}`, {
+    .then(() => fetch(`${usersURL}/${localUser.foundUser.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type" : "application/json"
       },
       body: JSON.stringify({
-        teams: newTeam
+        teams: newTeam.name
       })
     })
     .then(res => {
