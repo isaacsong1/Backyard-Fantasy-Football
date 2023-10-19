@@ -39,11 +39,12 @@ img.logo {
 }
 
 .navbar {
+  /* display: flex; */
   margin-top: 15px;
-  width: 100vh;
-  height: 2vh;
+  width: 25px;
+  height: 50%;
   display: grid;
-  margin-left: -4vh;
+  margin-left: 0vh;
 }
 
 #link {

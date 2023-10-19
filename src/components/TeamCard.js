@@ -1,7 +1,7 @@
 import React from "react";
 import { useOutletContext } from 'react-router-dom'
 
-const TeamCard = ({team, handlePickTeam}) => {
+const TeamCard = ({team}) => {
   const {loggedInUser} = useOutletContext();
 
   return (

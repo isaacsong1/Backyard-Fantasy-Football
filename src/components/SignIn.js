@@ -34,13 +34,15 @@ const SignIn = () => {
             navigate("/myTeam")
         } else {
             console.log('User not found');
-        }
-      };
+
+        };
+    };
 
         
     
     const addNewUser = () => {
       navigate("/register")
+      
     };
     return (
             <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
@@ -77,7 +79,7 @@ const SignIn = () => {
                 </Message>
               </Grid.Column>
             </Grid>
-    )
+    )};
 //   return (
 //     <div id="signin">
 //     <Message
@@ -111,6 +113,7 @@ const SignIn = () => {
 //   </div>
 // )
 
-}
+
+
 
 export default SignIn

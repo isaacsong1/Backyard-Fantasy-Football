@@ -2,7 +2,7 @@ import React from 'react'
 import { Header, Image, Table } from 'semantic-ui-react'
 import TeamCard from './TeamCard'
 
-const TeamList = ({teams, handlePickTeam}) => {
+const TeamList = ({teams}) => {
   return (
 
     <div id="teamList">
@@ -14,7 +14,7 @@ const TeamList = ({teams, handlePickTeam}) => {
           <td><h3>Owner</h3></td>
         </thead>
         {
-          teams.map(team => <TeamCard key={team.id} team={team} handlePickTeam={handlePickTeam}/>)
+          teams.map(team => <TeamCard key={team.id} team={team} />)
         }
       </table>
     </div>
