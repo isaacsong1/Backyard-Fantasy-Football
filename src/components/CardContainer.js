@@ -24,7 +24,6 @@ function CardContainer()  {
   const mapPlayers = () => {
     const draftedPlayers = teams.find(team => team.name === userTeamName).players
     const mappedPlayers = players
-                        // .filter(player => player.isDrafted !== true)
                         .filter(player => {
                           if (!draftedPlayers.find(drafted => drafted.name === player.name)) {
                             return player
@@ -37,9 +36,6 @@ function CardContainer()  {
                         .map(player => <PlayerCard key={player.id} player={player} />)
     return mappedPlayers
   }
-  // const draftedPlayers = teams.find(team => team.name === userTeamName)
-  // console.log('draftedPlayers:', draftedPlayers)
-
 
   return (
     <div id="playerContainer">
