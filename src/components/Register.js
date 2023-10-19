@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate, useOutletContext } from "react-router-dom"
-import { Form, Input, Button } from 'semantic-ui-react'
+import { Form, Input } from 'semantic-ui-react'
 const userURL = "http://localhost:3000/users"
 
 

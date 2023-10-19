@@ -1,5 +1,4 @@
 import React from 'react'
-import { Header, Image, Table } from 'semantic-ui-react'
 import TeamCard from './TeamCard'
 
 const TeamList = ({teams}) => {

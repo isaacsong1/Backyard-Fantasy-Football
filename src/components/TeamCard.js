@@ -1,8 +1,7 @@
 import React from "react";
-import { useOutletContext } from 'react-router-dom'
 
 const TeamCard = ({team}) => {
-  const {loggedInUser} = useOutletContext();
+ 
 
   return (
     <div id="teamCard">
@@ -12,7 +11,7 @@ const TeamCard = ({team}) => {
       </td>
       <td><h2 id="teamName">{team.name}</h2></td>
       <td><h2>{team.owner}</h2></td>
-      {/* {(team.owner === loggedInUser.name ? <button onClick={() => handlePickTeam(team)}>View Team</button> : null)} */}
+     
     </div>
     
   )
