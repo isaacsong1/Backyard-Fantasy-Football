@@ -116,6 +116,10 @@ img.logo {
     margin-left: -6vh;
   }
 
+  #createTeam {
+    text-align: center;
+  }
+
   #teamList {
     background-color: rgb(56, 80, 52, 0.7);
     display: grid;
