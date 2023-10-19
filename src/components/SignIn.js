@@ -28,6 +28,7 @@ const SignIn = () => {
             window.localStorage.setItem("user", foundUser.name)
             window.localStorage.setItem("team", foundUser.team)
             setLoggedInUser(foundUser)
+            localStorage.setItem('user', JSON.stringify({foundUser}))
             setName("")
             setPassword("")
             handlePickTeam(window.localStorage.getItem("team"))
@@ -37,7 +38,6 @@ const SignIn = () => {
 
         };
     };
-
         
     
     const addNewUser = () => {

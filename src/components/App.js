@@ -22,6 +22,13 @@ function App() {
   const [password, setPassword] = useState("")
   const [pickTeam, setPickTeam] = useState({})
   const [selectedTeam, setSelectedTeam] = useState("")
+  const localUser = JSON.parse(localStorage.getItem('user'))
+  const localUserId = localUser.foundUser.id
+  const localUserName = localUser.foundUser.name
+  const localUserTeam = localUser.foundUser.team
+
+  console.log(localUserId, localUserName, localUserTeam)
+  
 
   const navigate = useNavigate()
 
