@@ -81,6 +81,9 @@ function App() {
   const handleDeleteFromRoster = (playerToRemove) => {
     // setPlayers(currPlayers => ([...currPlayers, ({...playerToRemove, isDrafted: !playerToRemove.isDrafted})]));
     // setMyTeam(currMyTeam => currMyTeam.map(player => player.id === playerToRemove.id ? ({...player, isDrafted: !player.isDrafted}) : player));
+    const playerToFind = myTeam.find(player => player.id === playerToRemove.id)
+    const teamToFind = teams.find(team => team.name === window.localStorage.getItem("team"))
+      
   };
 
 

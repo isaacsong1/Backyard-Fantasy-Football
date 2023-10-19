@@ -7,9 +7,7 @@ function PlayerCard({player})  {
   const loggedIn = window.localStorage.getItem("isLoggedIn")
 
   const handleClick = () => {
-
     player.isDrafted ? handleDeleteFromRoster(player) : handleAddToRoster(player)
-    // handleAddToRoster(player)
   }
 
   return (
