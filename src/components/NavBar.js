@@ -34,12 +34,6 @@ function NavBar() {
           </Icon.Group>
           Create New Team
         </NavLink>
-        {/* <NavLink
-          id="link"
-          to='/'
-          >
-          Log in/Sign-up
-        </NavLink> */}
       </nav>
       : null
     )

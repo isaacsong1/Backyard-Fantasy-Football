@@ -1,19 +1,12 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import TeamList from "./TeamList";
-import { handleRef } from "@fluentui/react-component-ref";
-import { useNavigate } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
-const URL = "http://localhost:3000/teams"
-const usersURL = "http://localhost:3000/users"
+
 
 const NewTeam = () => {
-  const [pickTeam, setPickTeam] = useState({})
-  const navigate = useNavigate()
+
   const {teams} = useOutletContext();
   const {handleSubmit} = useOutletContext();
-  const {loggedInUser} = useOutletContext();
-  // const {newTeam} = useOutletContext();
-  // const {handleChange} = useOutletContext();
   const [newTeam ,setNewTeam] = useState({
     name: "",
     image: "",

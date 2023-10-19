@@ -2,8 +2,6 @@ import React, {useState, useEffect} from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import NavBar from "./NavBar";
-
-import SignIn from "./SignIn";
 import { useNavigate } from "react-router-dom";
 
 //? GLOBAL VARIABLES--------------------------
@@ -20,14 +18,11 @@ function App() {
   const [myTeam, setMyTeam] = useState([])
   const [name, setName] = useState("");
   const [password, setPassword] = useState("")
-  const [pickTeam, setPickTeam] = useState({})
   const [selectedTeam, setSelectedTeam] = useState("")
   const localUser = JSON.parse(localStorage.getItem('user'))
- const localUserId = localUser?.foundUser?.id || ''
-  const localUserName = localUser?.foundUser?.name || ''
-  const localUserTeam = localUser?.foundUser?.team || ''
 
-  console.log(localUserId, localUserName, localUserTeam) 
+
+ 
   
 
   const navigate = useNavigate()
@@ -53,7 +48,7 @@ function App() {
     fetch(usersURL)
     .then(res => res.json())
     .then(usersArray => setUsers(usersArray))
-    .catch(err => console.log(err))
+    .catch(err => alert('error'))
   }, []);
 
   useEffect(() => {
@@ -78,6 +73,7 @@ function App() {
       if (loggedInUser.team && teamToFind) {
       if (!playerPosition) {
         teamToFind.players.push({...playerToAdd, isDrafted: !playerToAdd.isDrafted})
+       
         fetch(`${teamsURL}/${teamToFind.id}`, {
           method: "PATCH",
           headers: {
@@ -100,8 +96,6 @@ function App() {
   const handleDeleteFromRoster = (playerToRemove) => {
     const teamToFind = teams.find(team => team.name === loggedInUser.team)
     setMyTeam(currMyTeam => currMyTeam.filter(player => player.id !== playerToRemove.id))
-    // const updateTeam = {...myTeam, players: myTeam.player.filter(player => player.id !== playerToRemove.id)}
-      //setMyTeam(updateTeam)
     const myRoster = [...myTeam]
     fetch(`${teamsURL}/${teamToFind.id}`, {
       method: "PATCH",
@@ -116,16 +110,17 @@ function App() {
     .then((data) => {
       setMyTeam(data.players)
       setTeams(currTeams => currTeams.map(team => team.name === teamToFind.name ? ({...team, players: data.players}) : team))
+      setPlayers(currPlayers => currPlayers.map(player => player.id === playerToRemove.id ? ({...player, isDrafted: !player.isDrafted}): player))
     })
    
   };
 
 
  
-//  console.log(localUser.foundUser.id)
+
   
   const handleSubmit = (newTeam) => {
-    
+    window.localStorage.setItem("team", newTeam.name)
    if (loggedInUser.teams !== true) {
     fetch(teamsURL, {
       method: "POST",
@@ -176,8 +171,6 @@ function App() {
 
 
   const handlePickTeam = (pickedTeamName) => {
-    // setPickTeam(pickedTeam)
-    // navigate("/myTeam")
     setSelectedTeam(pickedTeamName)
     const foundTeam = teams.find(obj => obj.name === pickedTeamName)
     if (foundTeam) {
@@ -200,7 +193,7 @@ const findUser = (e) => {
   const foundUser = users.find((user) => user.name === name.trim());
   
   if (foundUser && foundUser.password !== password) {
-      console.log("Password does not match")
+      alert("Password does not match")
   } else if(foundUser && foundUser.password === password) {
       window.localStorage.setItem("isLoggedIn", true);
       window.localStorage.setItem("user", foundUser.name)
@@ -209,7 +202,7 @@ const findUser = (e) => {
       setPassword("")
       navigate("/newTeam")
   } else {
-      console.log('User not found');
+      alert('User not found');
   }
 };
 //? -------------------------------------
@@ -217,7 +210,7 @@ const findUser = (e) => {
     <div className="App">
       <Header /> 
       <NavBar />
-      <Outlet context={{players, setPlayers, myTeam, setMyTeam, handleAddToRoster, handleDeleteFromRoster, teams, handlePickTeam, pickTeam, users, setUsers, loggedInUser, setLoggedInUser, selectedTeam, setSelectedTeam, handleSubmit, findUser, password, name, setName, setPassword}} />
+      <Outlet context={{players, setPlayers, myTeam, setMyTeam, handleAddToRoster, handleDeleteFromRoster, teams, handlePickTeam, users, setUsers, loggedInUser, setLoggedInUser, selectedTeam, setSelectedTeam, handleSubmit, findUser, password, name, setName, setPassword}} />
 
     </div>
   );
