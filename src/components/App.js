@@ -25,7 +25,6 @@ function App() {
 
   const navigate = useNavigate()
 
-  console.log(loggedInUser.name)
 
 //! FETCH CALLS (Players, Teams, Users)--
 // Players
@@ -55,9 +54,9 @@ function App() {
 //! HELPER FUNCTIONS -------------------
   const handleAddToRoster = (playerToAdd) => {
     const playerToFind = myTeam.find(player => player.id === playerToAdd.id)
-    const teamToFind = teams.find(team => team.name === selectedTeam)
+    const teamToFind = teams.find(team => team.name === window.localStorage.getItem("team"))
     if (!playerToFind) {
-      if (!!selectedTeam) {
+      if (!!window.localStorage.getItem("team")) {
         teamToFind.players.push({...playerToAdd, isDrafted: !playerToAdd.isDrafted})
         fetch(`${teamsURL}/${teamToFind.id}`, {
           method: "PATCH",
@@ -69,7 +68,7 @@ function App() {
         .then(resp => resp.json())
         .then(() => {
           setPlayers(currPlayers => currPlayers.map(player => player.id === playerToAdd.id ? ({...player, isDrafted: !player.isDrafted}): player));
-          setMyTeam(currYourTeam => [({...playerToAdd, isDrafted: !playerToAdd.isDrafted}), ...currYourTeam]);
+          // setMyTeam(currYourTeam => [({...playerToAdd, isDrafted: !playerToAdd.isDrafted}), ...currYourTeam]);
         })
         .catch(err => alert(err))
       }   
@@ -80,8 +79,11 @@ function App() {
   };
 
   const handleDeleteFromRoster = (playerToRemove) => {
-    setPlayers(currPlayers => ([...currPlayers, ({...playerToRemove, isDrafted: !playerToRemove.isDrafted})]));
-    setMyTeam(currMyTeam => currMyTeam.map(player => player.id === playerToRemove.id ? ({...player, isDrafted: !player.isDrafted}) : player));
+    // setPlayers(currPlayers => ([...currPlayers, ({...playerToRemove, isDrafted: !playerToRemove.isDrafted})]));
+    // setMyTeam(currMyTeam => currMyTeam.map(player => player.id === playerToRemove.id ? ({...player, isDrafted: !player.isDrafted}) : player));
+    const playerToFind = myTeam.find(player => player.id === playerToRemove.id)
+    const teamToFind = teams.find(team => team.name === window.localStorage.getItem("team"))
+      
   };
 
 
@@ -128,7 +130,6 @@ function App() {
     .then((currentUser) => setLoggedInUser(currentUser))
     )
    
-    // .then(setNewTeam())
     .catch(err => alert('err'))
     
   } else {
@@ -149,28 +150,13 @@ function App() {
         if (foundTeam.players.find(draftedPlayer => draftedPlayer.name === playerName)) {
           return {...player, isDrafted: !player.isDrafted}
         } else {
-          return player
+          return {...player}
         }
       }))
       setMyTeam(foundTeam.players)
     }
   }
 
-  // const draftPlayers = () => {
-    
-  //   fetch(`${URL}/${pickTeam.id}`, {
-  //     method: "PATCH",
-  //     headers: {
-  //       "Content-Type" : "application/json"
-  //     },
-  //     body: JSON.stringify({
-  //       players: myTeam 
-  //     })
-  //   })
-  //  .then(res => res.json())
-  //  .then(setMyTeam(currentMyTeam => currentMyTeam = []))
-  //  .catch(err => alert(''))
-  // };
 //? WESLEY'S CODE -----------------------
 const findUser = (e) => {
   e.preventDefault();
@@ -198,7 +184,7 @@ const findUser = (e) => {
 
 
 
-      <Outlet context={{players, setPlayers, myTeam, handleAddToRoster, handleDeleteFromRoster, teams, handlePickTeam, pickTeam, users, loggedInUser, setLoggedInUser, selectedTeam, setSelectedTeam, handleSubmit, findUser, password, name, setName, setPassword}} />
+      <Outlet context={{players, setPlayers, myTeam, setMyTeam, handleAddToRoster, handleDeleteFromRoster, teams, handlePickTeam, pickTeam, users, loggedInUser, setLoggedInUser, selectedTeam, setSelectedTeam, handleSubmit, findUser, password, name, setName, setPassword}} />
 
     </div>
   );
