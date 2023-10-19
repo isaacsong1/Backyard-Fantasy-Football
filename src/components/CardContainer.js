@@ -31,6 +31,7 @@ function CardContainer()  {
                             return null
                           }
                         })
+
                         .filter(player => filterBy === "All" || player.position === filterBy)
                         .map(player => <PlayerCard key={player.id} player={player} />)
 

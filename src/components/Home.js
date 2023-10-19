@@ -21,7 +21,6 @@ const Home = () => {
         <div>
             <FeaturedPlayers players={players}/>
             <LowestFeatured players={players}/>
-            
         </div>
     )
 }

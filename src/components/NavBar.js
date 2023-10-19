@@ -19,14 +19,14 @@ function NavBar() {
             <Icon name='football ball' id="football"/>
           </Icon.Group>
           Player Draft
-        </NavLink>
+        </NavLink><br />
         <NavLink id="link" to='/myteam'>
           <Icon.Group size='big'>
               <Icon size='big' color="yellow" name='circle outline' />
             <Icon name='football ball'/>
           </Icon.Group>
           My Team
-        </NavLink>
+        </NavLink><br />
         <NavLink id="link" to='/newteam'>
         <Icon.Group size='big'>
               <Icon size='big' color="yellow" name='circle outline' />
