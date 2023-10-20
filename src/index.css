@@ -274,3 +274,13 @@ input {
   width: 89vh;
   margin: auto;
 }
+#pageHeader {
+  color: white;
+}
+
+#standings {
+  margin-top: 8vh;
+  display: grid;
+  width: 89vh;
+  margin: auto;
+}

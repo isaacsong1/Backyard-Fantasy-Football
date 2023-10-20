@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import SignIn from "./components/SignIn";
 import NewTeam from "./components/NewTeam";
 import Register from "./components/Register";
+import Standings from "./components/Standings"
 
 const routes = [
   {
@@ -35,6 +36,10 @@ const routes = [
         {
             path: '/register',
             element: <Register />
+        },
+        {
+            path: '/standings',
+            element: <Standings />
         }
     ]
 }
