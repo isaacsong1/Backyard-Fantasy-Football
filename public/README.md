@@ -76,6 +76,6 @@
 
 - `Austin`: 
 - `Isaac`: 
-- `Wesley`: 
+- `Wesley`: Working with Isaac and Austin has been an awesome and beneficial experience to learn from and with them throughout the whole process. I've learned that keeping good communication among all team members is key especially with so many components coming together and without open conversations, issues and bugs can stack up quickly. I've also learned more in depth on user authorization and being able to persist that user throughout the web application.
 
 * [Back To Top](#backyard-fantasy-football)

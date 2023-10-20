@@ -1053,6 +1053,82 @@
         }
       ],
       "id": 4
+    },
+    {
+      "name": "Moppy",
+      "image": "https://m.media-amazon.com/images/I/71Dn7cS5guL.jpg",
+      "owner": "Nolan",
+      "players": [
+        {
+          "id": 36,
+          "name": "Rich Gannon",
+          "nickname": "The Cannon",
+          "position": "QB",
+          "image": "data:image/jpeg;base64,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",
+          "team": "",
+          "attribute": {
+            "Catching": 4,
+            "Running": 4,
+            "Kicking": 3
+          },
+          "team_img": "",
+          "past_PPR": 21.9,
+          "PPR_projected": 19.4,
+          "isDrafted": true
+        },
+        {
+          "id": 23,
+          "name": "Pablo Sanchez",
+          "nickname": "Secret Weapon",
+          "position": "RB",
+          "image": "https://theyarde.files.wordpress.com/2014/03/pablo.png?w=270",
+          "team": "",
+          "attribute": {
+            "Catching": 5,
+            "Running": 5,
+            "Kicking": 1
+          },
+          "team_img": "",
+          "past_PPR": 21.4,
+          "PPR_projected": 19.6,
+          "isDrafted": true
+        },
+        {
+          "id": 25,
+          "name": "Ernie Steele",
+          "nickname": "Funnybones",
+          "position": "WR",
+          "image": "https://theyarde.files.wordpress.com/2014/03/untitled.png?w=280",
+          "team": "",
+          "attribute": {
+            "Catching": 4,
+            "Running": 2,
+            "Kicking": 2
+          },
+          "team_img": "",
+          "past_PPR": 16.2,
+          "PPR_projected": 14.7,
+          "isDrafted": true
+        },
+        {
+          "id": 17,
+          "name": "Luanne Lui",
+          "nickname": "Lulu",
+          "position": "K",
+          "image": "https://theyarde.files.wordpress.com/2014/03/luanne.png?w=272",
+          "team": "",
+          "attribute": {
+            "Catching": 2,
+            "Running": 4,
+            "Kicking": 3
+          },
+          "team_img": "",
+          "past_PPR": 15.6,
+          "PPR_projected": 13.7,
+          "isDrafted": true
+        }
+      ],
+      "id": 5
     }
   ],
   "users": [
@@ -1079,6 +1155,12 @@
       "password": "Scott",
       "id": 4,
       "team": "Dunder"
+    },
+    {
+      "name": "Nolan",
+      "password": "Smith",
+      "id": 5,
+      "team": "Moppy"
     }
   ]
 }
