@@ -16,11 +16,15 @@ code {
     monospace;
 }
 
-.App {
+/* .App {
   height: 100%;
-  width: 100%;
-  /* background-image: url("https://i.pinimg.com/736x/f8/cd/d5/f8cdd5f210f21e225922296389f46dd4.jpg"); */
+  width: 100%; */
+  /* background-image: url("https://i.pinimg.com/736x/f8/cd/d5/f8cdd5f210f21e225922296389f46dd4.jpg");
   background-size: cover; 
+} */
+.app {
+  display: flex;
+  position: relative;
 }
 
 #logo{
