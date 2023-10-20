@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+# Backyard Fantasy Football
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Home
 
-In the project directory, you can run:
+* [Dependencies](#dependencies)
+* [Starting the Application](#starting-the-application)
+* [Using the Application](#using-the-application)
+* [License](#license)
+* [Attributions](#attributions)
+* [What I Learned](#what-i-learned)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Intro To Project
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- This project is a web application where you can create a fantasy football team and draft players based on characters from the game series `Backyard Football`.
+- This project was made to complete the assignment `Phase 2 Project` for the `SE-West-091123` class for the [Flatiron](https://flatironschool.com/) Software Engineering Boot Camp.
+- The project was completed using the following: `React`,`JavaScript`, `HTML`, `CSS`, & `Semantic-UI`.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Dependencies
 
-### `npm run build`
+- The following is needed to run this application: `Node`, `JSON Server`, & `React` .
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- You must have access to these dependencies in the directory that you are running this application in. If your environment does not have these requirements, you may install them in this order by going to these websites and following the installation instructions:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [NPM - Node.JS](https://www.npmjs.com/package/node)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [NPM - JSON Server](https://www.npmjs.com/package/json-server)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Starting the Application
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Make sure nothing is currently running on `http://localhost:3000` and `http://localhost:3001`.
+- Open a terminal window in the main directory of where this project is located on your computer.
+- Run `npm install` and then run `json-server --watch db.json`
+- It should be running on `http://localhost:3000` and your terminal should look something like this:
+- ==============================================
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    ![JSON Server running correctly.](./JSON-Server.png "JSON Server")
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- ==============================================
+- Open another terminal window in the main directory of where this project is located on your computer
+- Run `npm start`.
+- It should take you to a page that looks like this:
+- ==============================================
 
-## Learn More
+    ![Log In page of app.](./StartUpScreen.png "Log In Page")
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- ==============================================
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Using the Application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- User can create an account and log in.
+- User can create a fantasy football team.
+- User can view and filter available players in database.
+- User can add and remove players from their created team.
+- User can then check the team standings according to players projected points.
+- User can then log out of the application
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## License
 
-### Making a Progressive Web App
+- This project is is made in conjunction with the standard `MIT` license provided by `GitHub` upon creation of a new repository. A copy of the license is included with this project in a file named: `LICENSE`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Attributions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- The project was completed with collaboration from: `Austin Ohlfs`, `Isaac Song`, and `Wesley Smith.`
+- This project was created with combination of skills learned from the `Flatiron` curriculum and our own individual research.
+- The data used was locally created based on the game series `Backyard Football` created by `Humongous Entertainment`.
+- We used character images owned entirely by `Humongous Entertainment` and its affiliates.
 
-### Deployment
+## What I Learned
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- `Austin`: 
+- `Isaac`: I learned how to create a web application from scratch using React and improved my ability to work in groups. More specifically, the project taught me how to use the browser's local storage to allow users to sign in and refresh the page without resetting the user that is logged in. 
+- `Wesley`: 
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* [Back To Top](#backyard-fantasy-football)
