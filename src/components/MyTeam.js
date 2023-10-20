@@ -26,7 +26,7 @@ function MyTeam() {
   return (
 
   <div id="yourTeam">
-      <h3>{loggedInUser.team}</h3>
+      <h1 id="pageHeader">{loggedInUser.team}</h1>
       <ul id="yourTeamList">
         {loggedInUser.team === userTeamName && myTeam.length? myTeam.map(player => <PlayerCard key={player.id} player={player} />) : null}
       </ul>

@@ -111,13 +111,12 @@ function App() {
    
   };
 
-
- 
+  
 
   
   const handleSubmit = (newTeam) => {
     window.localStorage.setItem("team", newTeam.name)
-   if (loggedInUser.teams !== true) {
+   if (!loggedInUser.team === true) {
     fetch(teamsURL, {
       method: "POST",
       headers: {

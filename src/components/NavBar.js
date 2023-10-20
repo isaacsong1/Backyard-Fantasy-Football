@@ -1,9 +1,11 @@
+import { useState, useEffect } from 'react'
 import { NavLink } from "react-router-dom";
 import { Icon } from 'semantic-ui-react'
 
 
 function NavBar() {
   const loggedIn = window.localStorage.getItem("isLoggedIn")
+
     return(
      loggedIn ?
         <nav className="navbar">
@@ -26,6 +28,13 @@ function NavBar() {
             <Icon name='football ball'/>
           </Icon.Group>
           My Team
+        </NavLink><br />
+        <NavLink id="link" to='/standings'>
+          <Icon.Group size='big'>
+              <Icon size='big' color="yellow" name='circle outline' />
+            <Icon name='football ball'/>
+          </Icon.Group>
+          Team Standings
         </NavLink><br />
         <NavLink id="link" to='/newteam'>
         <Icon.Group size='big'>

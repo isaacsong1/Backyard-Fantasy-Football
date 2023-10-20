@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { useNavigate, useOutletContext } from "react-router-dom"
-import { Button, Form, Icon, Message, Input } from 'semantic-ui-react'
+import { Button, Form, Message } from 'semantic-ui-react'
 const userURL = "http://localhost:3000/users"
 
 
 function Register() {
-    const { setUsers } = useOutletContext()
+    const { setUsers} = useOutletContext()
     const [formData, setFormData] = useState({
         name: "",
         password: "",
@@ -43,7 +43,7 @@ function Register() {
                             })
                                 .then((response) => response.json())
                                 .then((data) => {
-                                    setUsers((currentUsers) => [...currentUsers, data]);
+                                    setUsers((currentUsers) => [...currentUsers, data])
                                     setFormData({
                                         name: "",
                                         password: "",

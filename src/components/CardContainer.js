@@ -39,8 +39,8 @@ function CardContainer()  {
 
   return (
     <div id="playerContainer">
-      <h2>Football Players</h2>
-      {<h3>{loggedInUser.team}</h3> || <h3>Go Create A Team!</h3>}
+      <h1 id="pageHeader">Football Players</h1>
+      {<h2 id="pageHeader">{loggedInUser.team}</h2> || <h2 id="pageHeader">Go Create A Team!</h2>}
       <select onChange={handleFilter} value={filterBy} >
         <option value="All">All Players</option>
         <option value="QB">QB</option>
