@@ -74,8 +74,10 @@
 
 ## What I Learned
 
+
 - `Austin`: The phase 2 project was a great learning experience. This project was more complex than my first vanilla JavaScript project but having a good group with Isaac and Wesley made it all possible. This it the my first react js project that I worked on and in the process learn a lot about the JavaScript library.  Using client-side routing to navigate through the app, and using state variables and local storage to keep or data persistent between users. In the future I plan to use my knowledge from this project to build even more complex apps.
 - `Isaac`: I learned how to create a web application from scratch using React and improved my ability to work in groups. More specifically, the project taught me how to use the browser's local storage to allow users to sign in and refresh the page without resetting the user that is logged in. 
 - `Wesley`: Working with Isaac and Austin has been an awesome and beneficial experience to learn from and with them throughout the whole process. I've learned that keeping good communication among all team members is key especially with so many components coming together and without open conversations, issues and bugs can stack up quickly. I've also learned more in depth on user authorization and being able to persist that user throughout the web application.
+
 
 * [Back To Top](#backyard-fantasy-football)
